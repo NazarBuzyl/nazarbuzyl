@@ -1,0 +1,4 @@
+Lesson01 - Resume:[UA](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework01-resume/index.html) | [EN](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework01-resume/en_resume.html)
+Lesson04 - [List](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework02-lesson-4/task-1.html) | [Link](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework02-lesson-4/task-2-01.html)
+Lesson05 - [My simple website](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework03-task1-lesson-5/index.html) | [Your Company](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework03-task2-lesson-5/index.html)
+Lesson06 - [Task 1](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework04-lesson-6/task1.html) | [Task 2](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework04-lesson-6/task2.html)
