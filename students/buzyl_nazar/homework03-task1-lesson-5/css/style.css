@@ -1,0 +1,23 @@
+h1 {
+    background-color: #a52a2a;
+    color: #fff;
+}
+header{
+   text-align: center;
+   margin: 0 auto;
+}
+main {
+    width: 760px;
+    font-size: 18px;
+    margin: 0 auto  ;
+}
+.cars {
+    text-align: center;
+}
+footer {
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+}
