@@ -1,0 +1,1 @@
+Lesson01 - Resume:[UA](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework01-resume/index.html) | [EN](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework01-resume/en_resume.html)
