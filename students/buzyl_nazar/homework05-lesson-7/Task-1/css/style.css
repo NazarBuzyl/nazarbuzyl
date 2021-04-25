@@ -15,7 +15,7 @@
     font-family: "Montserrat", sans-serif;
     color: #898f99;
     font-weight: bold;
-    margin: 35px 0;
+    margin: 25px auto;
 }
 
 .Hello-and-Namaste>p~p {
@@ -23,26 +23,23 @@
     font-family: "PT Sans", sans-serif;
     color: #999999;
     text-transform: uppercase;
-    margin: 40px auto 108px auto;
+    margin: 40px auto 58px auto;
     max-width: 512px;
-    height: 46px;
 }
 
 h2 {
     color: #0ec8cb;
     font-size: 48px;
     font-family: "Montserrat", sans-serif;
-    margin: 35px 0 40px 0;
+    margin: 25px auto 40px auto;
 }
 
 .cards {
     display: inline-block;
 }
-.card>div{
-    
-    padding: 55px 30px 90px 30px;
-}
+
 .card {
+    padding: 55px 30px 90px 30px;
     max-width: 300px;
     background-color: #f7f7f7;
     list-style-type: none;
@@ -53,20 +50,11 @@ h2 {
     border-right: 0.5px solid #ececec;
 }
 
-/* .card:first-child~.card {
-    border-right: 1px solid #ececec;
-    border-top: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
-}
-
-.card:first-child {
-    border: 1px solid #ececec;
-} */
-
 .st0 {
     margin: 55 auto;
     width: 66px;
     height: 66px;
+    fill: #000;
 }
 
 h3 {
@@ -77,26 +65,30 @@ h3 {
     height: 50px;
     width: 175px;
     margin: 55px auto 40px auto;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.card>div>p {
+.card>p {
     display: block;
     font-size: 14px;
     font-family: "PT Sans", sans-serif;
     color: #777777;
-    line-height: 1.571;
-    margin: 40px auto 60px auto;
+    margin: 40px auto 0px auto;
     width: 190px;
 }
-/* .card:hover{
+
+.card:hover,
+.card:hover>p,
+.card:hover>h3,
+.card:hover>.st0 {
     color: #fff;
     background-color: #0ec8cb;
-    fill: tomato;
-} */
-.st0>svg>use:hover #diamond,
-.st0>svg>use:hover #monitor,
-.st0>svg>use:hover #anchor,
-.st0>svg>use:hover #eyeglasses{
-    fill: tomato;
+    fill: #fff;
+}
+
+.card:hover {
+    border-bottom: 1px solid #0ec8cb;
+    border-top: 1px solid #0ec8cb;
+    border-left: 0.5px solid #0ec8cb;
+    border-right: 0.5px solid #0ec8cb;
 }
