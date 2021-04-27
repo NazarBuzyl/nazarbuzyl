@@ -1,0 +1,1 @@
+Lesson07 - [Hello & Namaste](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework05-lesson-7/Task-1/index.html) | [CSS Weather Forecast](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework05-lesson-7/Task-2/index.html)
