@@ -1,0 +1,1 @@
+Lesson08 - [Task 1](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework06-lesson-8/Task-1/index.html) | [Task 2](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework06-lesson-8/Task-1/index.html)
