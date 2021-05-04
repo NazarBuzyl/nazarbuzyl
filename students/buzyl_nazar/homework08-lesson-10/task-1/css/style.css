@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 17px;
+    font-family: "Raleway", sans-serif;
+    color: rgb(38, 38, 38);
+}
+
+.contact {
+    background-image: url(../img/contact-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+.contact-title {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+.contact>p {
+    width: 370px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-form-with-data {
+    padding: 45px 165px 60px;
+    display: block;
+}
+
+.contact-form {
+    display: inline-block;
+    margin-right: 75px;
+    margin-left: -260px;
+}
+
+.companys-data {
+    display: inline-block;
+    margin-left: 85px;
+    text-align: left;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgb(255, 255, 255);
+}
+
+:focus::-webkit-input-placeholder {
+    visibility: hidden;
+}
+
+.form-group>input,
+.form-group>textarea {
+    background-color: rgb(0, 196, 196);
+    display: block;
+    width: 500px;
+    line-height: 50px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    border: none;
+    border-left: 5px solid rgb(0, 196, 196);
+    font-size: 15px;
+    font-family: "Raleway";
+    opacity: 0.502;
+}
+
+.form-group>textarea {
+    height: 250px;
+    line-height: 25px;
+    resize: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background-color: #00c4c4;
+    border-left: 5px solid #355b82;
+    opacity: 0.9;
+}
+
+.contact-h3 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contact-h3:nth-of-type(2),
+.contact-h3:nth-of-type(3) {
+    margin-top: 16px;
+}
+
+.footer {
+    background-color: #262626;
+    color: rgb(185, 185, 185);
+    padding: 30px 120px;
+    width: 1260px;
+    margin: 0 auto;
+}
+
+.footer>p {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.footer>p:nth-of-type(1) {
+    width: 570px;
+}
+
+.footer>p:nth-of-type(2) {
+    width: 160px;
+}
+
+.footer>p:nth-of-type(3) {
+    margin-left: 300px;
+}
+
+.footer>p>a {
+    font-size: 25px;
+    font-family: "Pacifico", sans-serif;
+    color: rgb(185, 185, 185);
+}
+
+.footer>p>span {
+    color: #ff2b58;
+}
