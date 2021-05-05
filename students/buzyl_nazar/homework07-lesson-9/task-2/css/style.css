@@ -1,26 +1,33 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     color: rgb(60, 60, 60);
     font-family: "Lato";
 }
 
-.who_we_are-h2 {
-    font-size: 56px;
+.who_we_are{
+    padding-top: 106px;
+}
+.who_we_are-title {
+    font-size: 33px;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 36px;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    margin-top: -12px;
 }
 
-.who_we_are-h2::after {
+.who_we_are-title::after {
     content: "";
     display: block;
     background-color: rgb(221, 219, 219);
     width: 45px;
     height: 4px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .who_we_are-p {
@@ -28,15 +35,16 @@
     text-align: center;
     width: 561px;
     margin: 0 auto;
-    margin-bottom: 62px;
+    margin-bottom: 59px;
+    line-height: 1.4;
 }
 
-.who_we_are-cards {
+.who_we_are-list {
     max-width: 1170px;
     margin: 0 auto;
 }
 
-.who_we_are-card {
+.who_we_are-list_item {
     width: 22%;
     display: inline-block;
     margin: 0px 15px;
@@ -44,13 +52,13 @@
     overflow: hidden;
 }
 
-.who_we_are-card .who_we_are-contacts {
+.who_we_are-list_item .who_we_are-contacts {
     background-color: #18b5dc;
     width: 269px;
     height: 268px;
     position: absolute;
-    bottom: 42px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 10;
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
@@ -68,26 +76,27 @@
 }
 
 .icons {
-    /* display: block; */
-    /* width: 25px;
-    height: 25px; */
-    /* margin: 8.5px auto; */
-    
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 8.5px auto;
+    fill: #fff;
 }
 
-.who_we_are-card:hover .who_we_are-contacts {
+.who_we_are-list_item:hover .who_we_are-contacts {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: rotateY(0deg) scale(1);
 }
 
-.who_we_are-card figcaption {
+.who_we_are-list_item figcaption {
     font-size: 18px;
     color: rgb(40, 37, 40);
     font-weight: bold;
+    margin-top: 10px;
 }
 
-.who_we_are-card figcaption span {
+.who_we_are-list_item figcaption span {
     display: block;
     font-weight: normal;
     font-size: 14px;
