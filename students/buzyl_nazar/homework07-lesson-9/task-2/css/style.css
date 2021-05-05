@@ -68,12 +68,11 @@
 }
 
 .icons {
-    display: block;
-    width: 25px;
-    height: 25px;
-    margin: 8.5px auto;
-    fill: #000;
-    background-color: #fff;
+    /* display: block; */
+    /* width: 25px;
+    height: 25px; */
+    /* margin: 8.5px auto; */
+    
 }
 
 .who_we_are-card:hover .who_we_are-contacts {

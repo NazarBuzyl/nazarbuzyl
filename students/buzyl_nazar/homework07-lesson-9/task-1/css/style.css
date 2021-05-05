@@ -8,9 +8,11 @@ body {
     color: #fff;
     font-family: 'Raleway', sans-serif;
 }
-.blog{
+
+.blog {
     padding: 100px 0;
 }
+
 .blog_h2 {
     font-size: 90px;
     font-weight: bold;
@@ -78,8 +80,8 @@ body {
     left: 15px;
     color: #fff;
     z-index: 10;
-    transform: translateY(180%);
-    transition: transform 0.7s ease-in-out;
+    /* transform: translateY(180%);
+    transition: transform 0.7s ease-in-out; */
 }
 
 .blog-card::after {
@@ -90,25 +92,21 @@ body {
     bottom: 5px;
     left: 3px;
     right: 0;
-    opacity: 0;
     background: rgb(255, 255, 255);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 65%, rgba(0, 0, 0, 1) 100%);
-    transition: opacity .2s ease-in-out .2s;
 }
 
 .blog-card:hover::after {
-    opacity: 1;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3452731434370623) 35%, rgba(0, 0, 0, 0.5021358885351015) 65%, rgba(0, 0, 0, 1) 100%);
 }
 
-.blog-card:hover .blog-caption {
-    transform: translateY(0);
-}
-.blog form>button{
+.blog form>button {
     display: block;
     text-transform: uppercase;
     background-color: #f72b3b;
     border: none;
-    box-shadow: 1px ;
+    box-shadow: 1px;
     line-height: 55px;
     padding: 0 40px;
     color: #ffffff;
