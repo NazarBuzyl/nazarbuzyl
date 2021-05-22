@@ -1,0 +1,128 @@
+* {
+    transition: all 0.1s ease-in;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #2B81AC;
+}
+.css-weather-forecast {
+    font-family:'Lucida Grande', sans-serif;
+    background-color: #3399CC;
+    color: #ffffff;
+    border: 25px solid #2B81AC;
+    height: 100vh;
+    min-height: 850px;
+}
+
+.tittle-for-css-weather-forecast {
+    padding: 30px 0;
+    font-size: 28px;
+}
+.tittle-for-css-weather-forecast>h2,
+.tittle-for-css-weather-forecast>i{
+    display: inline-block;
+}
+.container-for-css-weather-forecast {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 0 20px;
+}
+
+.list-city {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    padding: 3px;
+    background: #FFF;
+}
+
+.list-city:hover>li {
+    opacity: .6;
+}
+
+.list-city li {
+    border: 0 solid #fff;
+    text-align: center;
+    display: inline-block;
+    padding: 30px 10px;
+    border: 3px solid #fff;
+    font-size: 26px;
+    width: 25%;
+}
+
+.list-city li:hover {
+    opacity: 1;
+}
+
+.list-city li:active {
+    background: #ffffff;
+}
+
+.list-city li{
+    padding-bottom: 10px;
+}
+.item-list-city>span{
+    display: block;
+    padding: 20px 0px;
+}
+.item-list-city>span>i{
+    margin-left: 10px;
+}
+.list-city li .wi-icon {
+    font-size: 36px;
+}
+
+.list-city li:nth-child(1) {
+    background: #3399CC;
+    width: 50%;
+}
+
+.list-city li:nth-child(2) {
+    background: #33CCCC;
+}
+
+.list-city li:nth-child(3) {
+    background: #996699;
+}
+
+.list-city li:nth-child(4) {
+    background: #C24747;
+}
+
+.list-city li:nth-child(5) {
+    background: #e2674a;
+}
+
+.list-city li:nth-child(6n) {
+    background: #FFCC66;
+}
+
+.list-city li:nth-child(7n) {
+    background: #99CC99;
+}
+
+.list-city li:nth-child(8n) {
+    background: #669999;
+}
+
+.list-city li:nth-child(9n) {
+    background: #CC6699;
+    width: 50%;
+}
+
+.list-city li:nth-child(10n) {
+    background: #339966;
+}
+
+.list-city li:nth-child(11n) {
+    background: #666699;
+    width: 100%;
+}
+.footer-in-css-weather-forecast {
+    font-size: 18px;
+    padding: 30px 0 120px;
+    font-family: 'Lucida Sans Unicode',sans-serif;
+}
