@@ -10,12 +10,12 @@ const age = now_year - birth_year;
 console.log(age);
 /*3)   Запросите у пользователя длину стороны квадрата и выведите периметр такого квадрата.*/
 const side = +prompt('Введи размер стороны квадрата.');
-const perimeter = side * 2;
+const perimeter = side * 4;
 console.log(perimeter);
 /*4)   Запросите у пользователя радиус окружности и выведите площадь такой окружности.*/
 const radius = +prompt("Введи радиус окружности.");
-const pi = 314;
-const area = radius * pi / 100;
+const pi = 3.14;
+const area = radius * (pi ** 2);
 console.log(area);
 /*5)   Запросите у пользователя расстояние в км между двумя городами и за сколько часов он хочет добраться. Посчитайте скорость,
 с которой необходимо двигаться, чтобы успеть вовремя.*/
@@ -24,9 +24,9 @@ const time = +prompt("За сколько часов хочешь добрать
 const speed = Math.floor(length / time) + " km/hour";
 console.log(speed);
 /*6)   Реализуйте конвертор валют. Пользователь вводит доллары, программа переводит в евро. Курс валюты храните в константе.*/
-const usd_eur = 82;
+const usd_eur = 0.82;
 const USD = +prompt("Введи цену в долларах.");
-const EUR = USD * usd_eur / 100;
+const EUR = USD * usd_eur;
 console.log(EUR);
 /*7)   Пользователь указывает объем флешки в Гб. Программа должна посчитать сколько файлов размером в 820 Мб помещается на флешку.*/
 const main_file = 820;
