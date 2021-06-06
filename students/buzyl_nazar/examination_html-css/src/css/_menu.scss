@@ -1,12 +1,21 @@
 $color-menu-item: $color-white;
-.header{
-    &__menu{
+
+.header {
+
+    &__menu {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
     }
+
+    &__menu-logo {
+        font-size: 24px;
+        vertical-align: middle;
+        font-weight: 700px;
+    }
 }
+
 .menu-open {
     overflow: hidden;
     position: fixed;
@@ -15,16 +24,11 @@ $color-menu-item: $color-white;
 .menu {
     display: flex;
     justify-content: flex-end;
-    
-    &__logo{
-        font-size: 24px;
-        vertical-align: middle;
-        font-weight: 700px;
-    }
+
     &__list {
         display: flex;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 885px) {
             position: absolute;
             display: block;
             left: 0;
@@ -50,14 +54,6 @@ $color-menu-item: $color-white;
             .menu__link::after {
                 visibility: visible;
                 opacity: 1;
-            }
-        }
-
-        &:hover {
-            .menu__sub-menu {
-                visibility: visible;
-                opacity: 1;
-                pointer-events: all;
             }
         }
     }
@@ -93,8 +89,7 @@ $color-menu-item: $color-white;
             bottom: 0;
         }
 
-        @media screen and (max-width: 768px) {
-            border-right: none;
+        @media screen and (max-width: 885px) {
             display: block;
             padding: 20px;
             position: relative;
@@ -113,11 +108,16 @@ $color-menu-item: $color-white;
         }
     }
 
-    
+    &__input {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+    }
 
     &__input {
-        
-        @include media('lg') {
+        @media screen and (max-width: 885px) {
             &:checked {
                 &+.menu__burger-btn .burger-btn__line {
                     background-color: transparent;
@@ -148,7 +148,9 @@ $color-menu-item: $color-white;
     }
 }
 
+
 .burger-btn {
+    border: $mercury;
     border-radius: 3px;
     width: 40px;
     height: 40px;
@@ -156,7 +158,7 @@ $color-menu-item: $color-white;
     justify-content: center;
     align-items: center;
 
-    @include media('md') {
+    @media screen and (max-width: 885px) {
         display: flex;
     }
 
@@ -164,7 +166,7 @@ $color-menu-item: $color-white;
         display: block;
         width: 25px;
         height: 3px;
-        background-color: $color-white;
+        background-color: $mercury;
         position: relative;
         transition: background-color .5s ease-in-out;
 
@@ -174,7 +176,7 @@ $color-menu-item: $color-white;
             display: block;
             width: 25px;
             height: 3px;
-            background-color: $color-white;
+            background-color: $mercury;
             position: absolute;
             transition: all .5s ease-in-out;
         }
@@ -188,3 +190,183 @@ $color-menu-item: $color-white;
         }
     }
 }
+
+// .header {
+//     &__menu {
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         right: 0;
+//         display: flex;
+//         justify-content: flex-end;
+//     }
+// }
+
+// .row_relative {
+// }
+
+// .menu {
+//     width: 100%;
+//     &__logo {
+//         font-size: 24px;
+//         vertical-align: middle;
+//         font-weight: 700px;
+//     }
+
+//     &__input {
+//         position: absolute;
+//         left: 150%;
+//         @media screen and (max-width: 911px) {
+//             &:checked {
+//                 &+.menu__burger-btn .burger-btn__line {
+//                     background-color: transparent;
+
+//                     &::after,
+//                     &::before {
+//                         top: 0;
+//                         bottom: 0;
+//                     }
+
+//                     &::after {
+//                         transform: rotate(45deg);
+//                     }
+
+//                     &::before {
+//                         transform: rotate(-45deg);
+//                     }
+//                 }
+
+//                 &~.menu__list {
+//                     display: block;
+//                     visibility: visible;
+//                     pointer-events: all;
+//                     transform: translateX(0);
+//                 }
+//             }
+//         }
+//     }
+
+//     &__list {
+//         display: flex;
+//         // @media screen and (max-width: 911px) {
+//         //             position: absolute;
+//         //             display: block;
+//         //             left: 0;
+//         //             right: 0;
+//         //             top: 100%;
+//         //             height: calc(100vh - 85px);
+//         //             background-color: $color-white;
+//         //             transform: translateX(-100%);
+//         //             pointer-events: none;
+//         //             transition: transform .5s ease-in-out;
+//         //             padding-bottom: 80px;
+//         //             overflow-y: auto;
+//         //         }
+//     }
+
+//     &__item {
+//         position: relative;
+
+//         &:hover,
+//         &_active {
+
+//             .menu__link::before,
+//             .menu__link::after {
+//                 visibility: visible;
+//                 opacity: 1;
+//             }
+//         }
+//     }
+
+//     &__link {
+//         text-decoration: none;
+//         text-transform: uppercase;
+//         font-weight: 700;
+//         font-size: 16px;
+//         color: $color-menu-item;
+//         display: inline-block;
+//         padding: 10px 20px;
+//         position: relative;
+
+//         &::before,
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             display: block;
+//             width: 100%;
+//             left: 0;
+//             height: 3px;
+//             visibility: hidden;
+//             opacity: 0;
+//             transition: opacity .5s ease-in-out;
+//         }
+
+//         &::before {
+//             top: 0;
+//         }
+
+//         &::after {
+//             bottom: 0;
+//         }
+
+//         // @media screen and (max-width: 911px) {
+//         //     border-right: none;
+//         //     display: block;
+//         //     padding: 20px;
+//         //     position: relative;
+
+//         //     &::after {
+//         //         content: none;
+//         //     }
+
+//         //     &::before {
+//         //         width: 3px;
+//         //         height: auto;
+//         //         top: 0px;
+//         //         bottom: 0;
+//         //         left: 0;
+//         //     }
+//         //}
+//     }
+// }
+
+// .burger-btn {
+//     border-radius: 3px;
+//     width: 40px;
+//     height: 40px;
+//     display: none;
+//     justify-content: center;
+//     align-items: center;
+
+//     // @media screen and (max-width: 911px) {
+//     //     display: flex;
+//     // }
+
+//     &__line {
+//         display: block;
+//         width: 25px;
+//         height: 3px;
+//         background-color: $color-white;
+//         position: relative;
+//         transition: background-color .5s ease-in-out;
+
+//         &::before,
+//         &::after {
+//             content: '';
+//             display: block;
+//             width: 25px;
+//             height: 3px;
+//             background-color: $color-white;
+//             position: absolute;
+//             transition: all .5s ease-in-out;
+//         }
+
+//         &::before {
+//             top: -8px;
+//         }
+
+//         &::after {
+//             bottom: -8px;
+//         }
+//     }
+// }

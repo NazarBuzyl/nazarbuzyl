@@ -10,7 +10,7 @@ $color-header-item: $color-white;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-75%) translateX(-50%);
         width: 100%;
         text-align: center;
     }
@@ -24,14 +24,49 @@ $color-header-item: $color-white;
         margin-bottom: 54px;
     }
 
-    &__bhromaon-search {}
-
     &__scroll-block {
         position: absolute;
     }
 
     &__menu {
         background-color: $dodger-blue;
+    }
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+
+    &__input {
+        display: inline-block;
+        max-width: 500px;
+        width: 100%;
+        height: 60px;
+        border: 2px solid $color-header-item;
+        background: $color-header-item;
+        color: $dusty-gray;
+        font-family: $font-dafault;
+        letter-spacing: 0.3em;
+        text-align: center;
+    }
+
+    &__button {
+        width: 150px;
+        border: 2px solid white;
+        letter-spacing: 0.2em;
+        font-size: 14px;
+        position: relative;
+
+        &::after {
+            content: '';
+            background-image: url(../image/search-btn.svg);
+            background-repeat: no-repeat;
+            top: 30%;
+            left: 80%;
+            color: $color-header-item;
+            padding-left: 15px;
+            vertical-align: middle;
+        }
     }
 }
 
@@ -56,33 +91,4 @@ $color-header-item: $color-white;
         border-left: none;
         border-top: none;
     }
-}
-
-.search-wrapper {
-    max-width: 650px;
-    margin: 0 auto;
-    background-color: $color-header-item;
-    text-align: center;
-    font-size: 14px;
-    color: $dusty-gray;
-
-    &__text {
-        display: block;
-        max-width: 500px
-    }
-
-    &__button {
-        font-size: 16px;
-        border: 2px solid $color-white;
-        width: 150px;
-
-        &::after {
-            content: url(../image/search.svg);
-            fill: $color-white;
-            position: absolute;
-            width: 20px;
-            height: 22px;
-        }
-    }
-
 }

@@ -15,9 +15,13 @@
             <div class="header__bhromaon">
                 <strong class="header__bhromaon-strong logo">Bhromaon</strong>
                 <h1 class="header__bhromaon-title title-h1">Safe Travel Anywhere</h1>
-                <div class="header__bhromaon-search search-wrapper">
-                    <span class="search-block__text">Search Your Travel Destination</span>
-                    <button class="search-block__button button"><span>search</span></button>
+                <div class="header__search search">
+                    <form class="search-form">
+                        <input class="search-form__input" type="text" placeholder="Search Your Travel Destination">
+                        <button class="search-form__button button" type="submit">
+                            <span>Search</span>
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="header__scroll-block scroll-block">
@@ -26,31 +30,28 @@
         </div>
         <div class="header__menu">
             <div class="container">
-                <div class="row row_relative">
-                    <div class="col-3 col-md-9">
-                        <strong class="menu__logo logo">Bhromaon</strong>
+                <div class="row">
+                    <div class="col-3">
+                        <strong class="header__menu-logo logo">Bhromaon</strong>
                     </div>
-                    <div class="col-9 col-md-3">
+                    <div class="col-9">
                         <nav class="menu">
                             <input class="menu__input" type="checkbox" id="burgerMenuBtn">
                             <label class="menu__burger-btn burger-btn" id="burgerMenuBtnItem" for="burgerMenuBtn">
                                 <span class="burger-btn__line"></span>
                             </label>
                             <ul class="menu__list">
-                                <li class="menu__item menu__item_active">
-                                    <a href="#" class="menu__link">who we are</a>
+                                <li class="menu__item">
+                                    <a href="#about-us" class="menu__link">who we are</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">what we do</a>
+                                    <a href="#our-actions" class="menu__link">what we do</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">text</a>
+                                    <a href="#travel" class="menu__link">travel with us</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">travel with us</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a href="#" class="menu__link">contact us</a>
+                                    <a href="#contact-us" class="menu__link">contact us</a>
                                 </li>
                             </ul>
                         </nav>
@@ -60,7 +61,7 @@
         </div>
     </header>
     <main class="main">
-        <section class="about-us">
+        <section class="about-us" id="about-us">
             <div class="container">
                 <div class="row">
                     <div class="col-7">
@@ -79,7 +80,7 @@
             </div>
         </section>
 
-        <section class="our-actions">
+        <section class="our-actions" id="our-actions">
             <div class="container">
                 <div class="row">
                     <div class="col-4">
@@ -99,11 +100,70 @@
             </div>
         </section>
 
-        <section class="travel-option">
+        <section class="travel-option-1" id="travel">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="travel-option-1__block">
+                            <h3 class="travel-option-1__text-country title-h3">Spain</h3>
+                            <p class="travel-option-1__text-city info-section">Grand Spain Madrid</p>
+                            <p class="travel-option-1__text">But I must explain to you how all this mistaken idea of
+                                account to denouncing pleasure and praising pain was account born and I account will
+                                give you a complete acco</p>
+                            <a href="#" class="button travel-option-1__link">book now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="travel-option-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="travel-option-2__block">
+                            <h3 class="travel-option-2__text-country title-h3">Spain</h3>
+                            <p class="travel-option-2__text-city info-section">Grand Spain Madrid</p>
+                            <p class="travel-option-2__text">But I must explain to you how all this mistaken idea of
+                                account to denouncing pleasure and praising pain was account born and I account will
+                                give you a complete acco</p>
+                            <a href="#" class="button travel-option-2__link">book now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="clients__title title-h2">What Our  Tourist Say</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <img class="clients__img" src="image/img-tourist.jpg" alt="Tourist Photo">
+                    </div>
+                    <div class="col-7">
+                        <p class="clients__name info-section">Sam Sumon</p>
+                        <q class="clients__quotation">But I must explain to you how all this mistaken idea of account to
+                            denouncinpleasure and praising pain But I must explain to you how all this mistaken idea of
+                            account to nai denouncing pleasure and praising pain was account born and I account will
+                            give you a complete account of the system was account born and I account will give you a nai
+                            the complete account of the system</q>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="footer"></footer>
+    <script>
+        let btn = document.querySelector('#burgerMenuBtnItem');
+        btn.addEventListener('click', function () {
+            document.documentElement.classList.toggle('menu-open');
+        });
+    </script>
 </body>
 
 </html>
