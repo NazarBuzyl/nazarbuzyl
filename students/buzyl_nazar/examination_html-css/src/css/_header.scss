@@ -1,0 +1,88 @@
+$color-header-item: $color-white;
+
+.header {
+    @include bg-cover('#{$folder-image}bg-header.jpg');
+    height: 100vh;
+    color: $color-header-item;
+    position: relative;
+
+    &__bhromaon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    &__bhromaon-strong {
+        font-size: 48px;
+        margin-bottom: 17px;
+    }
+
+    &__bhromaon-title {
+        margin-bottom: 54px;
+    }
+
+    &__bhromaon-search {}
+
+    &__scroll-block {
+        position: absolute;
+    }
+
+    &__menu {
+        background-color: $dodger-blue;
+    }
+}
+
+.scroll-block {
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+
+    &__link {
+        color: $color-header-item;
+    }
+
+    ::after {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 20px;
+        height: 20px;
+        border: 2px solid $color-header-item;
+        border-left: none;
+        border-top: none;
+    }
+}
+
+.search-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: $color-header-item;
+    text-align: center;
+    font-size: 14px;
+    color: $dusty-gray;
+
+    &__text {
+        display: block;
+        max-width: 500px
+    }
+
+    &__button {
+        font-size: 16px;
+        border: 2px solid $color-white;
+        width: 150px;
+
+        &::after {
+            content: url(../image/search.svg);
+            fill: $color-white;
+            position: absolute;
+            width: 20px;
+            height: 22px;
+        }
+    }
+
+}
