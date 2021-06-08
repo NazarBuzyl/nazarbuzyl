@@ -59,8 +59,11 @@ $color-header-item: $color-white;
 
         &::after {
             content: '';
-            background-image: url(../image/search-btn.svg);
+            background-image: url(../image/svg_search.svg);
             background-repeat: no-repeat;
+            fill: $color-header-item;
+            width: 20px;
+            height: 22px;
             top: 30%;
             left: 80%;
             color: $color-header-item;
@@ -77,6 +80,7 @@ $color-header-item: $color-white;
 
     &__link {
         color: $color-header-item;
+        padding-bottom: 60px;
     }
 
     ::after {
@@ -85,10 +89,26 @@ $color-header-item: $color-white;
         display: block;
         left: 50%;
         transform: translateX(-50%) rotate(45deg);
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         border: 2px solid $color-header-item;
         border-left: none;
         border-top: none;
+        animation: scroll 1.5s ease infinite;
     }
+
+    @keyframes scroll {
+        from {
+            top: 20px;
+            opacity: 1;
+        }
+        75%{
+            opacity: 0.5;
+        }
+        to {
+            top: 60px;
+            opacity: 0;
+        }
+    }
+
 }
