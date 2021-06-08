@@ -1,0 +1,30 @@
+.our-clients {
+    @include bg-cover('#{$folder-image}bg-tourist.jpg');
+    padding: 120px 0;
+
+    &__title {
+        margin-bottom: 100px;
+        text-align: center;
+    }
+
+    
+
+    &__img {
+        display: block;
+    }
+    &__black-block {background-color: $clients-mine-shaft;
+        height: 100%;
+        margin-left: - $default-gap * 2;}
+    &__info-block {
+        margin-left: 10px;
+        padding: 50px 25px 0 50px;
+    }
+
+    &__name {
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+
+    &__quotation {
+    }
+}
