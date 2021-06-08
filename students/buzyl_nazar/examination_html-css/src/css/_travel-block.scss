@@ -1,0 +1,62 @@
+.travel-block {
+    padding: 100px;
+
+    &_first {
+        @include bg-cover('#{$folder-image}bg-spain01.jpg');
+    }
+
+    &_second {
+        @include bg-cover('#{$folder-image}bg-spain02.jpg');
+    }
+
+    &__flex-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__info {
+        display: block;
+        margin-top: 129px;
+        max-width: 50%;
+        background-color: rgba(35, 35, 35, 0.902);
+        padding: 50px 30px;
+    }
+
+    &__text-country,
+    &__text-city,
+    &__text {
+        margin-bottom: 30px;
+    }
+
+    &__text-city {
+        font-size: 20px;
+    }
+
+    &__link {
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width: 1261px) {
+    .travel-block {
+
+        &_first {}
+
+        &_second {}
+
+        &__info {
+            margin-top: 0px;
+            max-width: 70%;
+        }
+
+        &__text-country {}
+
+        &__text-city {}
+
+        &__text {}
+
+        &__link {}
+
+        &__flex-right {}
+    }
+}

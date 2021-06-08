@@ -12,7 +12,7 @@
     }
 
     &__link {
-        margin-top: 15px;
+        margin-top: 45px;
     }
 
     &__photo-block {
@@ -24,6 +24,7 @@
 
         &_left {
             margin-left: 12%;
+            margin-bottom: 5px;
         }
     }
 
@@ -35,6 +36,9 @@
 
 @media screen and (max-width: 888px) {
     .about-us {
+        &__title {
+            margin-top: 0px;
+        }
         &__photo-block {
 
             &_left {
@@ -47,13 +51,10 @@
         }
     }
 }
-@media screen and (max-width: 888px) {
+@media screen and (max-width: 768px) {
     .about-us {
-        &__photo-block {
-
-            &_right {
-                justify-content: center;
-            }
+        &__info-block{
+            max-width: 75%;
         }
     }
 }
