@@ -1,5 +1,5 @@
 .travel-block {
-    padding: 100px;
+    padding: 85px 0;
 
     &_first {
         @include bg-cover('#{$folder-image}bg-spain01.jpg');
