@@ -5,8 +5,7 @@ $color-menu-item: $color-white;
     &__menu {
         position: absolute;
         bottom: 0;
-        left: 0;
-        right: 0;
+        width: 100%;
     }
 
     &__menu-logo {
@@ -46,14 +45,11 @@ $color-menu-item: $color-white;
 
     &__item {
         position: relative;
-
-        &:hover,
-        &_active {
-
-            .menu__link::before,
+        z-index: 1;
+        &:hover {
             .menu__link::after {
-                visibility: visible;
-                opacity: 1;
+                visibility:visible;
+                opacity: 0.75;
             }
         }
     }
@@ -67,17 +63,22 @@ $color-menu-item: $color-white;
         display: inline-block;
         padding: 10px 20px;
         position: relative;
-
+        
         &::before,
         &::after {
             content: '';
             position: absolute;
             display: block;
-            width: 100%;
-            left: 0;
-            height: 3px;
+            width: 75%;
+            left: 50%;
+            top: 75%;
+            border-radius: 25%;
+            transform: translateX(-50%);
+            height: 2px;
+            background-color: $chambray;
             visibility: hidden;
             opacity: 0;
+            z-index: 5;
             transition: opacity .5s ease-in-out;
         }
 

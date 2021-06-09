@@ -8,8 +8,6 @@
         margin-bottom: 10px;
     }
 
-    /* .footer__text */
-
     &__text {
         margin-bottom: 20px;
     }
@@ -19,61 +17,54 @@
         margin: 0 auto;
     }
 
-    /* .footer__facebook-link */
-
     &__facebook-link {}
-
-    /* .footer__twitter */
 
     &__twitter {}
 
-    /* .footer__linkedin */
-
     &__linkedin {}
-
-    /* .footer__youtube */
 
     &__youtube {}
 
-    /* .footer__pinterest */
-
     &__pinterest {}
 }
-
-.logo {}
 
 .social-sites {
     &__flex {
         justify-content: space-between;
     }
 
-    /* .social-sites__logo-facebook */
+    &__logo-facebook {
+        &:hover {
+            fill: $dodger-blue;
+        }
+    }
 
-    &__logo-facebook {}
+    &__logo-twitter {
+        &:hover {
+            fill: $dodger-blue;
+        }
+    }
 
-    /* .social-sites__logo-twitter */
+    &__logo-linkedin {
+        &:hover {
+            fill: $dodger-blue;
+        }
+    }
 
-    &__logo-twitter {}
+    &__logo-youtube {
+        &:hover {
+            fill: $red-orange;
+        }
+    }
 
-    /* .social-sites__logo-linkedin */
-
-    &__logo-linkedin {}
-
-    /* .social-sites__logo-youtube */
-
-    &__logo-youtube {}
-
-    /* .social-sites__logo-pinterest */
-
-    &__logo-pinterest {}
-
-    &__item {}
-
+    &__logo-pinterest {
+        &:hover {
+            fill: $red-orange;
+        }
+    }
 }
 
 .icon-sites {
     fill: $color-white;
-    &:hover{
-        fill: $dodger-blue;
-    }
+
 }

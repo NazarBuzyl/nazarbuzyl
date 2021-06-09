@@ -50,22 +50,33 @@ $color-header-item: $color-white;
         text-align: center;
     }
 
+    &__button-text {
+        line-height: 14px;
+        display: block;
+    }
+
     &__button {
         width: 150px;
-        border: 2px solid white;
+        border: 2px solid $color-white;
         letter-spacing: 0.2em;
         font-size: 14px;
         position: relative;
+        &:hover{
+            border-color: $dodger-blue;
+            transition: 1s;
+        }
 
         &::after {
             content: '';
-            background-image: url(../image/svg_search.svg);
+            background-image: url('#{$folder-image}search-btn.svg');
             background-repeat: no-repeat;
+            position: absolute;
             fill: $color-header-item;
             width: 20px;
             height: 22px;
-            top: 30%;
             left: 80%;
+            top: 50%;
+            transform: translateY(-50%);
             color: $color-header-item;
             padding-left: 15px;
             vertical-align: middle;
@@ -102,9 +113,11 @@ $color-header-item: $color-white;
             top: 20px;
             opacity: 1;
         }
-        75%{
+
+        75% {
             opacity: 0.5;
         }
+
         to {
             top: 60px;
             opacity: 0;
