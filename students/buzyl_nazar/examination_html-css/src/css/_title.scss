@@ -21,3 +21,17 @@
 .title-h5 {}
 
 .title-h6 {}
+
+@media screen and (max-width: 576px) {
+    .title-h1 {
+        font-size: 20px;
+    }
+
+    .title-h2 {
+        font-size: 28px;
+    }
+
+    .title-h3 {
+        font-size: 18px;
+    }
+}

@@ -56,5 +56,19 @@
         &__info-block{
             max-width: 75%;
         }
+        &__photo-block{
+            &_right{
+                justify-content: flex-end;
+            }
+        }
+
     }
 }
+@media screen and (max-width: 576px) {
+    .about-us {
+        &__info-block{
+            max-width: 100%;
+        }
+    }
+}
+
