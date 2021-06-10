@@ -3,6 +3,14 @@
     text-align: center;
     padding: 105px 0 35px;
 
+    @media screen and (max-width: 1100px) {
+        padding: 65px 0;
+    }
+
+    @media screen and (max-width: 650px) {
+        padding: 45px 0;
+    }
+
     &__strong {
         display: block;
         margin-bottom: 10px;
@@ -16,16 +24,6 @@
         max-width: 140px;
         margin: 0 auto;
     }
-
-    &__facebook-link {}
-
-    &__twitter {}
-
-    &__linkedin {}
-
-    &__youtube {}
-
-    &__pinterest {}
 }
 
 .social-sites {
