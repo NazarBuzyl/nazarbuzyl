@@ -6,6 +6,10 @@ $color-menu-item: $color-white;
         position: absolute;
         bottom: 0;
         width: 100%;
+
+        @media screen and (max-width: 768px) {
+            padding-bottom: 30px;
+        }
     }
 
     &__menu-logo {
@@ -32,15 +36,14 @@ $color-menu-item: $color-white;
             display: block;
             left: 0;
             right: 0;
-            bottom: 100%;
-            height: calc(100vh - 100%);
+            bottom: calc(100%);
+            height: calc(100vh - 125px);
             background-color: $dodger-blue;
             transform: translateX(-110%);
             pointer-events: none;
             transition: transform .5s ease-in-out;
             padding-bottom: 80px;
             overflow-y: auto;
-
         }
     }
 
