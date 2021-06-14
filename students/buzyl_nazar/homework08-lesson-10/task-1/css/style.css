@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.page {
+    font-size: 17px;
+    font-family: "Raleway", sans-serif;
+    color: rgb(38, 38, 38);
+}
+
+.contact {
+    background-image: url(../img/contact-background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-bottom: 72px;
+}
+.container{
+    max-width: 1172px;
+    margin: 0 auto;
+    padding: 15px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.contact-title {
+    padding-top: 65px;
+    padding-bottom: 21px;
+    font-size: 90px;
+    font-weight: bold;
+}
+.col-6{
+    width: 50%;
+}
+.contact-paragraph {
+    max-width: 370px;
+    margin: 0 auto;
+    line-height: 1.6;
+    margin-bottom: 41px;
+}
+
+.contact-form {
+    display: block;
+}
+
+.contact-form {
+    align-items: left;
+}
+.wrapper{
+    padding-left: 86px;
+}
+.companys-data {
+    display: block;
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgb(255, 255, 255);
+}
+
+:focus::-webkit-input-placeholder {
+    visibility: hidden;
+}
+
+.form-group>input,
+.form-group>textarea {
+    background-color: rgb(0, 196, 196);
+    display: block;
+    width: 468px;
+    line-height: 50px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    border: none;
+    border-left: 5px solid rgb(0, 196, 196);
+    font-size: 15px;
+    font-family: "Raleway";
+    opacity: 0.502;
+}
+
+.form-group>textarea {
+    height: 250px;
+    line-height: 25px;
+    resize: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background-color: #00c4c4;
+    border-left: 5px solid #355b82;
+    opacity: 0.9;
+}
+
+.contact-h3 {
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.contact-h3:nth-of-type(2),
+.contact-h3:nth-of-type(3) {
+    margin-top: 16px;
+}
+
+.footer {
+    background-color: #262626;
+    color: rgb(185, 185, 185);
+    font-size: 15px;
+    min-height: 90px;
+    padding: 30px;
+}
+.footer__link {
+    font-size: 25px;
+    font-family: "Pacifico", sans-serif;
+    color: rgb(185, 185, 185);
+}
+
+.footer__creator_red {
+    color: #ff2b58;
+}

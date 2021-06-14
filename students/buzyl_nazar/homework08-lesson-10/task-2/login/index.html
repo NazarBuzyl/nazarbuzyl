@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="sign-or-log">
+        <form action="#" method="GET" class="sign-or-log-form">
+            <div class="sign-join">
+                <div class="sign-in"><input type="radio" class="sign-radio" name="sign" id="sign-in"><label
+                        for="sign-in">Sign in</label></div>
+                <div class="join-us">
+                    <input type="radio" class="sign-radio" name="sign" id="join-us">
+                    <label for="join-us">Join us</label>
+                    <div class="register-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" autocomplete="off" name="Name" value="" id="name-1">
+                        </div>
+                        <div class="form-group">
+                            <label for="surname">Surname</label>
+                            <input type="text" autocomplete="off" name="Surname" value="" id="surname-1">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" autocomplete="off" name="Username" value="" id="username-1">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" autocomplete="off" name="email" value="" id="email-1">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="text" placeholder="********" autocomplete="off" name="Password" value=""
+                                id="password-1">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm">Confirm</label>
+                            <input type="text" placeholder="********" autocomplete="off" name="Password" value=""
+                                id="confirm-1">
+                        </div>
+                        <label for="keep-me">
+                            <input type="checkbox" class="keep-me-checkbox" name="keep-me" id="keep-me-1">
+                            <span>I'm not a robot</span>
+                        </label>
+                        <button class="sign-in-button">Create account</button>
+                    </div>
+                </div>
+                <!-- <div class="sign-join">
+                    <p><a href="../login/index.html">Sign in</a><a href="../register/index.html">Join us</a></p>
+                </div> -->
+                <div class="sign-in-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" autocomplete="off" name="Username" value="" id="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" autocomplete="off" name="Password" value="" id="password">
+                    </div>
+                    <label for="keep-me">
+                        <input type="checkbox" class="keep-me-checkbox" name="keep-me" id="keep-me">
+                        <span>Keep me signed in</span>
+                    </label>
+                    <button class="sign-in-button">Sign in</button>
+                    <p><a href="#">Forgot password </a><a href="#">Create an account</a></p>
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
