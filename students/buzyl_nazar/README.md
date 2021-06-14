@@ -7,3 +7,6 @@ Lesson08 - [Willow Crest](https://nazarbuzyl.github.io/1-front-end/students/buzy
 Lesson09 - [Blog](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework07-lesson-9/task-1/index.html) | [WHO WE ARE](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework07-lesson-9/task-2/index.html)
 Lesson10 - [Contact](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework08-lesson-10/task-1/index.html) | [Sign in](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework08-lesson-10/task-2/login/index.html)
 Lesson11 - [Cup of coffee](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework09-lesson-11/task-1/index.html) | [Travel](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework09-lesson-11/task-2/index.html)
+Lesson20 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework12-lesson-20/build/index.html)
+Lesson22 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework13-lesson-23/build/index.html)
+Lesson23 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework14-lesson-23/build/index.html)
