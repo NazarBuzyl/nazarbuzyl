@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'MuseoSansRounded 100';
+    font-style: normal;
+    font-weight: 100;
+    src: local(''),
+        url('../fonts/MuseoSansRounded-100.woff2') format('woff2'),
+        url('../fonts/MuseoSansRounded-100.woff') format('woff');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page {}
+
+.main {}
+
+.page__main {}
+
+.container {
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+.product-card {
+    font-family: "MuseoSansRounded 100", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 100px 0;
+    height: 100vh;
+    background: url(../img/bg-nike.png) center/cover no-repeat;
+}
+
+.product-card_container {
+    background-color: #111a28;
+    border-radius: 20px;
+    width: 690px;
+    margin: 0 auto;
+    padding: 19px;
+}
+
+.product-card__logo {
+    padding: 5px 0 21px 2px;
+}
+
+.product-card__content {
+    display: flex;
+}
+
+.product-card__slider {
+    width: calc(100% - 190px);
+}
+
+.product-card__slider-item {
+    padding: 47px 0 70px 17px;
+}
+
+.product-card__slider-assortment {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 92px;
+    list-style-type: none;
+}
+
+.product-card__slider-assortment-item {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: #111a28 solid 2px;
+}
+
+.product-card__slider-another-item_black {
+    background-color: #1f273f;
+}
+
+.product-card__slider-assortment-item_activ {
+    border-color: #7e838b;
+}
+
+.product-card__slider-another-item_white {
+    background-color: #fff;
+}
+
+.product-card__slider-another-item_red {
+    background-color: #ed3333;
+}
+
+.product-card__slider-another-item_lightblue {
+    background-color: #29e3ea;
+}
+
+.product-card__info {
+    color: #e1e1e1;
+    width: 190px;
+}
+
+.product-card__name {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.product-card__clothe-style {
+    color: #555a62;
+    margin-bottom: 25px;
+}
+
+.product-card__rating {
+    margin-bottom: 27px;
+}
+
+.rating {
+    display: flex;
+    align-items: baseline;
+}
+
+.rating__list {
+    display: flex;
+    list-style-type: none;
+}
+
+.rating__item {
+    height: 12px;
+    width: 12px;
+    margin-right: 4px;
+    background-image: url(../img/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.rating__item_active {
+    background-image: url(../img/star-active.svg);
+}
+
+.product-card__action {
+    margin-left: 4px;
+    
+}
+.product-card__list{
+    width: 69px;
+    border: #4f5560 solid 1px;
+    background-color: inherit;
+    color: #a9aaad;
+    min-height: 30px;
+}
+.product-card__list_size {}
+
+.product-card__size-list-option {
+    line-height: 30px;
+}
+
+.product-card__list_quantity {
+    margin-left: 2px;
+}
+
+.product-card__quantity-list-option {}
+
+.product-card__add-to-cart {
+    margin-top: 30px;
+    background-color: #202835;
+    border-color: #4f5560;
+    color: #8a8c91;
+}
+
+.button {
+    min-height: 40px;
+    min-width: calc(100% - 4px);
+    padding: 14px 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 1px solid;
+}
