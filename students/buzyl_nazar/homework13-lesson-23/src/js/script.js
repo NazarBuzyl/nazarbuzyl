@@ -60,10 +60,10 @@ if (numeralFirst !== numeralSecond || numeralSecond !== numeralThird || numeralT
 } else {
     answerEquality = "There are the same numbers.";
 }
-console.log(answerEquality); 
+console.log(answerEquality);
 // Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100.
 const yearCheck = +prompt('Введи год');
-const heighYear = (yearCheck % 400 === 0 || yearCheck % 4 === 0 && yearCheck % 100 !== 0) ? 'Високосный год' : 'Простой год';
+const heighYear = (yearCheck % 400 === 0 || (yearCheck % 4 === 0 && yearCheck % 100 !== 0)) ? 'Високосный год' : 'Простой год';
 console.log(heighYear);
 // Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
 const fiveDigit = +prompt('Введи пятизначное числою.');
@@ -91,26 +91,26 @@ switch (currency) {
         sum = money * USD_AZN;
         break;
 }
-console.log(sum); 
+console.log(sum);
 // Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
 const amountPurchase = +prompt('Введи сумму покупкию');
 let discounts = 0;
 if (amountPurchase >= 200 && amountPurchase < 300) {
-    discounts = 3;
+    discounts = 0.97;
 } else if (amountPurchase >= 300 && amountPurchase < 500) {
-    discounts = 5;
+    discounts = 0.95;
 } else if (amountPurchase >= 500) {
-    discounts = 7;
+    discounts = 0.93;
 }
-const amountWithDiscount = amountPurchase * (100 - discounts) / 100;
-console.log(amountWithDiscount); 
+const amountWithDiscount = amountPurchase * discounts;
+console.log(amountWithDiscount);
 // Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
 const circumference = +prompt('Введи длину окружности круга.');
 const perimeterSquare = +prompt('Введи периметр квадрата.');
 const pi = 3.14;
 const sideSquare = perimeterSquare / 4;
 const diametrCircle = circumference / pi;
-if(diametrCircle <= sideSquare) console.log('It can do');
+if (diametrCircle <= sideSquare) console.log('It can do');
 else console.log('It can not do');
 // Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
 
@@ -118,10 +118,10 @@ const firstQuestion = +prompt('Кто старее? Мужчина на 5 лет
 const secondQuestion = +prompt('Сколько будет 15*15? 115 | 225 | 625');
 const thirdQuestion = +prompt('У меня 6 яблок, я Георгия в полтора больше чем у меня. А в Юры на 3 яблока меньше чем в Георгия. Сколько яблок в Георгия? 6 | 9 | 12');
 let pointsAnswer = 0;
-if(firstQuestion === 3) pointsAnswer+=2;
-if(secondQuestion === 225) pointsAnswer+=2;
-if(thirdQuestion === 6) pointsAnswer+=2;
-console.log(pointsAnswer); 
+if (firstQuestion === 3) pointsAnswer += 2;
+if (secondQuestion === 225) pointsAnswer += 2;
+if (thirdQuestion === 6) pointsAnswer += 2;
+console.log(pointsAnswer);
 // Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.
 let day = +prompt('Day?');
 let month = +prompt('Month?');

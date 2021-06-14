@@ -118,14 +118,14 @@ var amountPurchase = +prompt('Введи сумму покупкию');
 var discounts = 0;
 
 if (amountPurchase >= 200 && amountPurchase < 300) {
-  discounts = 3;
+  discounts = 0.97;
 } else if (amountPurchase >= 300 && amountPurchase < 500) {
-  discounts = 5;
+  discounts = 0.95;
 } else if (amountPurchase >= 500) {
-  discounts = 7;
+  discounts = 0.93;
 }
 
-var amountWithDiscount = amountPurchase * (100 - discounts) / 100;
+var amountWithDiscount = amountPurchase * discounts;
 console.log(amountWithDiscount); // Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
 
 var circumference = +prompt('Введи длину окружности круга.');
