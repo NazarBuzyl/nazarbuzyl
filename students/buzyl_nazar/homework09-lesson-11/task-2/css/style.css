@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "HansKendrick";
+    src: url("../font/HansKendrick-Regular.otf") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e2e7ec;
+    font-family: "HansKendrick", Arial, Helvetica, sans-serif;
+}
+
+.travel-card {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 15px;
+    margin-top: 66px;
+}
+
+.travel-card__row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 0 -10;
+    align-items: stretch;
+}
+
+.travel-card__item {
+    width: 360px;
+    margin: 10px;
+    background-color: #fff;
+}
+
+.travel-card__item_bigger {
+    width: 740px;
+    position: relative;
+}
+
+.travel-card__item_bigger::before {
+    content: "";
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    position: absolute;
+}
+
+.travel-card__wrapper {}
+
+.travel-card__photo {
+    margin-bottom: -4px;
+}
+
+.travel-card__info {
+    padding: 25px 10px 21px 27px;
+    display: block;
+}
+
+.travel-card__info_absolute {
+    top: 376px;
+    left: 15px;
+    position: absolute;
+}
+
+.travel-card__date {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #818181;
+    text-transform: uppercase;
+}
+
+.travel-card__tittle {
+    font-size: 22px;
+    color: #1d1d1d;
+    text-transform: uppercase;
+}
+
+.travel-card__tittle_absolute {
+    color: #fff;
+    font-size: 27px;
+    max-width: 400px;
+}
+
+.travel-card__logo {
+    margin-top: 66px;
+}
+
+.travel-card__logo_absolute {
+    display: none;
+}
+.travel-card__loading{
+    margin: 80px auto;
+    text-align: center;
+}
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 45px;
+}
+.lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 0.8s linear infinite;
+}
+
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 29px;
+    left: 37px;
+    width: 2px;
+    height: 5px;
+    border-radius: 20%;
+    background: #99a5b0;
+}
+
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(2) {
+    transform: rotate(45deg);
+    animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(3) {
+    transform: rotate(90deg);
+    animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(4) {
+    transform: rotate(135deg);
+    animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(5) {
+    transform: rotate(180deg);
+    animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(6) {
+    transform: rotate(225deg);
+    animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(7) {
+    transform: rotate(270deg);
+    animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(8) {
+    transform: rotate(315deg);
+    animation-delay: -0s;
+}
+
+/* .lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+} */
+
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+.loading__text{
+    font-size: 13px;
+}

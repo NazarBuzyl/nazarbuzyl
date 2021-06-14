@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "Miso";
+    src: url("../fonts/miso-light.ttf") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Miso-Bold";
+    src: url("../fonts/miso-bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fdde7e;
+}
+
+.main .container {
+    text-align: center;
+    font-family: "Miso";
+}
+
+.container__wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 62px;
+}
+
+.coffee-card__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coffee-card__list-item {
+    width: 33.333%;
+    background-color: white;
+    margin: 0 15px;
+    padding: 40px 100px;
+    box-shadow: 0 px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.coffee-card__list-price {
+    display: block;
+    font-family: "Miso-Bold";
+    margin-bottom: 15px;
+    font-size: 70px;
+    color: rgb(2, 153, 91);
+}
+
+.coffee-card__list-img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 23px;
+}
+
+.coffee-card__list-tittle {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 56px;
+    color: rgb(51, 51, 51);
+}
+
+.coffee-card__list-p {
+    display: block;
+    font-size: 20px;
+    color: rgb(51, 51, 51);
+}
+
+.coffee-card__list-item:hover {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.coffee-card__list-item:hover .coffee-card__list-price {
+    margin-bottom: 40px;
+}
+
+.coffee-card__list-item:hover .coffee-card__list-img {
+    margin-bottom: 45px;
+}
