@@ -29,9 +29,9 @@ console.log(numberOne);
 // Запросить у пользователя число и вывести все делители этого числа.
 
 const numberDivider = +prompt('write number, pls');
-for (let i = 1; i <= Math.sqrt(number); i++)
-    if (number % i == 0) console.log(i);
-console.log(number);
+for (let i = 1; i <= numberDivider/2; i++)
+    if (numberDivider % i == 0) console.log(i);
+console.log(numberDivider);
 
 // Определить количество цифр в введенном числе.
 
