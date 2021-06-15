@@ -96,7 +96,7 @@ console.log(watch());
 // Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
 
 function allInSeconds(hour, minutes, seconds) {
-    messageSeconds = hour * 3600 + minutes % 60 * 60 + seconds % 60;
+    let messageSeconds = hour * 3600 + minutes % 60 * 60 + seconds % 60;
     return messageSeconds;
 }
 
@@ -117,7 +117,8 @@ function secondsInAnother(seconds) {
     if (s < 10) {
         s = 0 + String(s);
     }
-    return result = h + ':' + m + ':' + s;
+    result = h + ':' + m + ':' + s;
+    return result;
 }
 
 // Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров,
