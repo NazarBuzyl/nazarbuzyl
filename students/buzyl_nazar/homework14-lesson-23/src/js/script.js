@@ -12,33 +12,40 @@ console.log(sum);
 
 const firstNumber = +prompt('write number one, pls');
 const secondNumber = +prompt('write number two, pls');
-let numberOne = firstNumber;
-let numberTwo = secondNumber;
+let numberOne = 0;
+let numberTwo = 0;
 let res;
-if (firstNumber < secondNumber) {
-    numberOne = secondNumber;
-    numberTwo = firstNumber;
+if (firstNumber !== 0 && secondNumber !== 0) {
+    if (firstNumber < secondNumber) {
+        numberOne = secondNumber;
+        numberTwo = firstNumber;
+    } else {
+        numberOne = firstNumber;
+        numberTwo = secondNumber;
+    }
+    do {
+        res = numberOne % numberTwo;
+        numberOne = numberTwo;
+        numberTwo = res;
+    } while (res !== 0);
 }
-do {
-    res = numberOne % numberTwo;
-    numberOne = numberTwo;
-    numberTwo = res;
-} while (res !== 0);
 console.log(numberOne);
-
 // Запросить у пользователя число и вывести все делители этого числа.
 
 const numberDivider = +prompt('write number, pls');
-for (let i = 1; i <= numberDivider/2; i++)
-    if (numberDivider % i == 0) console.log(i);
-console.log(numberDivider);
+let divisors = '';
+for (let i = 1; i <= numberDivider / 2; i++) {
+    if (numberDivider % i == 0) divisors = divisors + ' ' + i;
+}
+divisors = divisors + ' ' + numberDivider;
+console.log(divisors);
 
 // Определить количество цифр в введенном числе.
 
 const numberNumeral = +prompt('write number, pls');
 let resNumber = numberNumeral;
 let quantity = 0;
-while (resNumber !== 0) {
+while (resNumber > 0) {
     resNumber = ~~(resNumber / 10);
     quantity++;
 }
@@ -110,8 +117,34 @@ console.log(shiftNumberChange, shiftNumber);
 const dayWeek = +prompt('What day of week?');
 let changeDayWeek = dayWeek;
 let check;
+let messageDay;
 do {
-    console.log(changeDayWeek);
+    switch (changeDayWeek) {
+        case 1:
+            messageDay = "Monday";
+            break;
+        case 2:
+            messageDay = "Tuesday";
+            break;
+        case 3:
+            messageDay = "Wednesday";
+            break;
+        case 4:
+            messageDay = "Thursday";
+            break;
+        case 5:
+            messageDay = "Friday";
+            break;
+        case 6:
+            messageDay = "Saturday";
+            break;
+        case 7:
+            messageDay = "Sunday";
+            break;
+        default:
+            messageDay = "No correct";
+    }
+    console.log(messageDay);
     check = +prompt('Next day - 1; Stop - 0');
     if (changeDayWeek === 7) changeDayWeek = 1;
     else changeDayWeek++;
