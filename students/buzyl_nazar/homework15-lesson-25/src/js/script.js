@@ -22,8 +22,7 @@ console.log(factorial(14));
 //  Например: цифры 1, 4, 9 превратятся в число 149.
 
 function transformeOfNumber(firstNum, secondNum, thirdNum) {
-    let num = firstNum * 100 + secondNum * 10 + thirdNum;
-    return num;
+    return firstNum * 100 + secondNum * 10 + thirdNum;
 }
 console.log(transformeOfNumber(3, 6, 4));
 // Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь.
@@ -31,7 +30,7 @@ console.log(transformeOfNumber(3, 6, 4));
 
 function area(length, width) {
     let area;
-    if (width === undefined || width === undefined) area = length * length;
+    if (width === undefined || length === undefined) area = length * length;
     else area = length * width;
     return area;
 }
@@ -117,7 +116,7 @@ function secondsInAnother(seconds) {
     if (s < 10) {
         s = 0 + String(s);
     }
-    result = h + ':' + m + ':' + s;
+    result = watch(h, m, s);
     return result;
 }
 
@@ -129,7 +128,7 @@ function secondsInAnother(seconds) {
 function distinctionDate(hour1, minutes1, second1, hour2, minutes2, second2) {
     let sumSeconds1 = allInSeconds(hour1, minutes1, second1);
     let sumSeconds2 = allInSeconds(hour2, minutes2, second2);
-    let distinctionSeconds = Math.abs(sumSeconds1 - sumSeconds2);
+    let distinctionSeconds = sumSeconds1 - sumSeconds2;
     return secondsInAnother(distinctionSeconds);
 }
-console.log(distinctionDate(5, 45, 34, 20, 43, 59));
+console.log(distinctionDate(23, 45, 34, 20, 43, 59));
