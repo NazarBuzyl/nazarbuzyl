@@ -7,11 +7,7 @@ $color-header-item: $color-white;
     position: relative;
 
     &__bhromaon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateY(-75%) translateX(-50%);
-        width: 100%;
+        padding-top: 20%;
         text-align: center;
     }
 
