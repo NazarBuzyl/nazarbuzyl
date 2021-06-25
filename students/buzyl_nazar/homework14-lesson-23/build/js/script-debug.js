@@ -13,36 +13,44 @@ console.log(sum); // Запросить 2 числа и найти только 
 
 var firstNumber = +prompt('write number one, pls');
 var secondNumber = +prompt('write number two, pls');
-var numberOne = firstNumber;
-var numberTwo = secondNumber;
+if (!firstNumber || !secondNumber) console.log('Wrong!! Not correct');
+var numberOne = 0;
+var numberTwo = 0;
 var res;
 
-if (firstNumber < secondNumber) {
-  numberOne = secondNumber;
-  numberTwo = firstNumber;
-}
+if (firstNumber !== 0 && secondNumber !== 0) {
+  if (firstNumber < secondNumber) {
+    numberOne = secondNumber;
+    numberTwo = firstNumber;
+  } else {
+    numberOne = firstNumber;
+    numberTwo = secondNumber;
+  }
 
-do {
-  res = numberOne % numberTwo;
-  numberOne = numberTwo;
-  numberTwo = res;
-} while (res !== 0);
+  do {
+    res = numberOne % numberTwo;
+    numberOne = numberTwo;
+    numberTwo = res;
+  } while (res !== 0);
+}
 
 console.log(numberOne); // Запросить у пользователя число и вывести все делители этого числа.
 
 var numberDivider = +prompt('write number, pls');
+var divisors = '';
 
-for (var _i = 1; _i <= Math.sqrt(number); _i++) {
-  if (number % _i == 0) console.log(_i);
+for (var _i = 1; _i <= numberDivider / 2; _i++) {
+  if (numberDivider % _i == 0) divisors = divisors + ' ' + _i;
 }
 
-console.log(number); // Определить количество цифр в введенном числе.
+divisors = divisors + ' ' + numberDivider;
+console.log(divisors); // Определить количество цифр в введенном числе.
 
 var numberNumeral = +prompt('write number, pls');
 var resNumber = numberNumeral;
 var quantity = 0;
 
-while (resNumber !== 0) {
+while (resNumber > 0) {
   resNumber = ~~(resNumber / 10);
   quantity++;
 }
@@ -113,9 +121,43 @@ console.log(shiftNumberChange, shiftNumber); // Зациклить вывод д
 var dayWeek = +prompt('What day of week?');
 var changeDayWeek = dayWeek;
 var check;
+var messageDay;
 
 do {
-  console.log(changeDayWeek);
+  switch (changeDayWeek) {
+    case 1:
+      messageDay = "Monday";
+      break;
+
+    case 2:
+      messageDay = "Tuesday";
+      break;
+
+    case 3:
+      messageDay = "Wednesday";
+      break;
+
+    case 4:
+      messageDay = "Thursday";
+      break;
+
+    case 5:
+      messageDay = "Friday";
+      break;
+
+    case 6:
+      messageDay = "Saturday";
+      break;
+
+    case 7:
+      messageDay = "Sunday";
+      break;
+
+    default:
+      messageDay = "No correct";
+  }
+
+  console.log(messageDay);
   check = +prompt('Next day - 1; Stop - 0');
   if (changeDayWeek === 7) changeDayWeek = 1;else changeDayWeek++;
 } while (check !== 0); // Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.

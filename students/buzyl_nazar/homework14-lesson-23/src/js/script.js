@@ -12,6 +12,7 @@ console.log(sum);
 
 const firstNumber = +prompt('write number one, pls');
 const secondNumber = +prompt('write number two, pls');
+if(!firstNumber || !secondNumber) console.log('Wrong!! Not correct');
 let numberOne = 0;
 let numberTwo = 0;
 let res;
