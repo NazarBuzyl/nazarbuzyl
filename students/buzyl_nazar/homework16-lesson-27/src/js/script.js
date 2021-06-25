@@ -5,24 +5,24 @@
 // Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. 
 // Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
 
-// let car = {
-//     producer: 'Audi',
-//     model: 'R8',
-//     year: 2018,
-//     averageSpeed: 170,
-// }
+let car = {
+    producer: 'Audi',
+    model: 'R8',
+    year: 2018,
+    averageSpeed: 170,
+}
 
-// function getCarInfo(object) {
-//     console.log(`This is ${object.producer} model ${object.model} and year of issue ${object.year}. Average speed is ${object.averageSpeed}.`);
-// }
+function getCarInfo(object) {
+    console.log(`This is ${object.producer} model ${object.model} and year of issue ${object.year}. Average speed is ${object.averageSpeed}.`);
+}
 
-// function timeInRoad(averageSpeed, roadLenght) {
-//     let time = roadLenght / averageSpeed;
-//     return time + ~~(time / 4) + ' hour';
-// }
-// console.log(getCarInfo(car));
-// console.log(timeInRoad(car.averageSpeed, 700));
-// console.log(car);
+function timeInRoad(averageSpeed, roadLenght) {
+    let time = roadLenght / averageSpeed;
+    return time + ~~(time / 4) + ' hour';
+}
+console.log(getCarInfo(car));
+console.log(timeInRoad(car.averageSpeed, 700));
+console.log(car);
 
 // 2. Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом: 
 
