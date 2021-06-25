@@ -10,3 +10,5 @@ Lesson11 - [Cup of coffee](https://nazarbuzyl.github.io/1-front-end/students/buz
 Lesson20 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework12-lesson-20/build/index.html)
 Lesson22 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework13-lesson-23/build/index.html)
 Lesson23 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework14-lesson-23/build/index.html)
+Lesson25 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework15-lesson-25/build/index.html)
+Lesson27 - [Object](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework16-lesson-27/build/index.html)
