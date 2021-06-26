@@ -55,7 +55,7 @@ function sumFractions(fraction1, fraction2) {
         numerator: (fraction1.numerator * fraction2.denominator) + (fraction2.numerator * fraction1.denominator),
         denominator: fraction1.denominator * fraction2.denominator,
     }
-    return simplificationOfFractions(messageFraction);
+    return messageFraction;
 }
 
 function subtractionFractions(fraction1, fraction2) {
@@ -64,7 +64,7 @@ function subtractionFractions(fraction1, fraction2) {
         numerator: (fraction1.numerator * fraction2.denominator) - (fraction2.numerator * fraction1.denominator),
         denominator: fraction1.denominator * fraction2.denominator,
     }
-    return simplificationOfFractions(messageFraction);
+    return messageFraction;
 }
 
 function multiplicationFractions(fraction1, fraction2) {
@@ -73,7 +73,7 @@ function multiplicationFractions(fraction1, fraction2) {
         numerator: fraction1.numerator * fraction2.numerator,
         denominator: fraction1.denominator * fraction2.denominator,
     }
-    return simplificationOfFractions(messageFraction);
+    return messageFraction;
 }
 
 function divisionFractions(fraction1, fraction2) {
@@ -82,7 +82,7 @@ function divisionFractions(fraction1, fraction2) {
         numerator: fraction1.numerator * fraction2.denominator,
         denominator: fraction1.denominator * fraction2.numerator,
     }
-    return simplificationOfFractions(messageFraction);
+    return messageFraction;
 }
 
 function simplificationOfFractions(fraction) {

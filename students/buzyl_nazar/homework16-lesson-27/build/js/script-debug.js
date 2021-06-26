@@ -5,28 +5,31 @@
 // Функция для вывода на экран информации об автомобиле;
 // Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. 
 // Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
-// let car = {
-//     producer: 'Audi',
-//     model: 'R8',
-//     year: 2018,
-//     averageSpeed: 170,
-// }
-// function getCarInfo(object) {
-//     console.log(`This is ${object.producer} model ${object.model} and year of issue ${object.year}. Average speed is ${object.averageSpeed}.`);
-// }
-// function timeInRoad(averageSpeed, roadLenght) {
-//     let time = roadLenght / averageSpeed;
-//     return time + ~~(time / 4) + ' hour';
-// }
-// console.log(getCarInfo(car));
-// console.log(timeInRoad(car.averageSpeed, 700));
-// console.log(car);
-// 2. Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом: 
+var car = {
+  producer: 'Audi',
+  model: 'R8',
+  year: 2018,
+  averageSpeed: 170
+};
+
+function getCarInfo(object) {
+  console.log("This is ".concat(object.producer, " model ").concat(object.model, " and year of issue ").concat(object.year, ". Average speed is ").concat(object.averageSpeed, "."));
+}
+
+function timeInRoad(averageSpeed, roadLenght) {
+  var time = roadLenght / averageSpeed;
+  return time + ~~(time / 4) + ' hour';
+}
+
+console.log(getCarInfo(car));
+console.log(timeInRoad(car.averageSpeed, 700));
+console.log(car); // 2. Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом: 
 // Функция сложения 2-х объектов-дробей;
 // Функция вычитания 2-х объектов-дробей;
 // Функция умножения 2-х объектов-дробей;
 // Функция деления 2-х объектов-дробей;
 // Функция сокращения объекта-дроби.
+
 var commonFractions1 = {
   numerator: 21,
   denominator: 4
@@ -46,7 +49,7 @@ function sumFractions(fraction1, fraction2) {
     numerator: fraction1.numerator * fraction2.denominator + fraction2.numerator * fraction1.denominator,
     denominator: fraction1.denominator * fraction2.denominator
   };
-  return simplificationOfFractions(messageFraction);
+  return messageFraction;
 }
 
 function subtractionFractions(fraction1, fraction2) {
@@ -55,7 +58,7 @@ function subtractionFractions(fraction1, fraction2) {
     numerator: fraction1.numerator * fraction2.denominator - fraction2.numerator * fraction1.denominator,
     denominator: fraction1.denominator * fraction2.denominator
   };
-  return simplificationOfFractions(messageFraction);
+  return messageFraction;
 }
 
 function multiplicationFractions(fraction1, fraction2) {
@@ -64,7 +67,7 @@ function multiplicationFractions(fraction1, fraction2) {
     numerator: fraction1.numerator * fraction2.numerator,
     denominator: fraction1.denominator * fraction2.denominator
   };
-  return simplificationOfFractions(messageFraction);
+  return messageFraction;
 }
 
 function divisionFractions(fraction1, fraction2) {
@@ -73,7 +76,7 @@ function divisionFractions(fraction1, fraction2) {
     numerator: fraction1.numerator * fraction2.denominator,
     denominator: fraction1.denominator * fraction2.numerator
   };
-  return simplificationOfFractions(messageFraction);
+  return messageFraction;
 }
 
 function simplificationOfFractions(fraction) {
