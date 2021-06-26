@@ -66,7 +66,7 @@ function perfectNumberDiapason(num1, num2) {
     }
     if (beginDiapason % 2) beginDiapason++
     for (let i = beginDiapason; i <= endDiapason; i += 2)
-        if (listPerfectNumber(i)) console.log(i);
+        if (perfectNumber(i)) console.log(`Совершеное число: ${i}`);
 }
 perfectNumberDiapason(3, 64854);
 // Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на 

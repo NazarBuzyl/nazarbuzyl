@@ -26,8 +26,7 @@ console.log(factorial(14)); // Написать функцию, которая �
 //  Например: цифры 1, 4, 9 превратятся в число 149.
 
 function transformeOfNumber(firstNum, secondNum, thirdNum) {
-  var num = firstNum * 100 + secondNum * 10 + thirdNum;
-  return num;
+  return firstNum * 100 + secondNum * 10 + thirdNum;
 }
 
 console.log(transformeOfNumber(3, 6, 4)); // Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь.
@@ -35,7 +34,7 @@ console.log(transformeOfNumber(3, 6, 4)); // Написать функцию, к
 
 function area(length, width) {
   var area;
-  if (width === undefined || width === undefined) area = length * length;else area = length * width;
+  if (width === undefined || length === undefined) area = length * length;else area = length * width;
   return area;
 }
 
@@ -71,7 +70,7 @@ function perfectNumberDiapason(num1, num2) {
   if (beginDiapason % 2) beginDiapason++;
 
   for (var i = beginDiapason; i <= endDiapason; i += 2) {
-    if (listPerfectNumber(i)) console.log(i);
+    if (perfectNumber(i)) console.log("\u0421\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u043E\u0435 \u0447\u0438\u0441\u043B\u043E: ".concat(i));
   }
 }
 
@@ -129,7 +128,7 @@ function secondsInAnother(seconds) {
     s = 0 + String(s);
   }
 
-  result = h + ':' + m + ':' + s;
+  result = watch(h, m, s);
   return result;
 } // Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров,
 //  которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс».
@@ -140,8 +139,8 @@ function secondsInAnother(seconds) {
 function distinctionDate(hour1, minutes1, second1, hour2, minutes2, second2) {
   var sumSeconds1 = allInSeconds(hour1, minutes1, second1);
   var sumSeconds2 = allInSeconds(hour2, minutes2, second2);
-  var distinctionSeconds = Math.abs(sumSeconds1 - sumSeconds2);
+  var distinctionSeconds = sumSeconds1 - sumSeconds2;
   return secondsInAnother(distinctionSeconds);
 }
 
-console.log(distinctionDate(5, 45, 34, 20, 43, 59));
+console.log(distinctionDate(23, 45, 34, 20, 43, 59));
