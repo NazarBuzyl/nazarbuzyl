@@ -20,8 +20,8 @@ $color-menu-item: $color-white;
 }
 
 .menu-open {
-    // overflow: hidden;
-    // position: fixed;
+    overflow: hidden;
+    position: fixed;
 }
 
 .menu {
@@ -63,7 +63,7 @@ $color-menu-item: $color-white;
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 14px;
         color: $color-menu-item;
         display: inline-block;
         padding: 5px 20px;

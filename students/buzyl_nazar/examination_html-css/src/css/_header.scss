@@ -67,7 +67,9 @@ $color-header-item: $color-white;
             border-color: $dodger-blue;
             transition: 1s;
         }
-
+        &::before{
+            display: none;
+        }
         &::after {
             content: '';
             background-image: url('../image/search-btn.svg');
