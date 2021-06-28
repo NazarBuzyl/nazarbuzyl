@@ -7,9 +7,7 @@ $color-menu-item: $color-white;
         bottom: 0;
         width: 100%;
 
-        @media screen and (max-width: 768px) {
-            padding-bottom: 30px;
-        }
+        
     }
 
     &__menu-logo {

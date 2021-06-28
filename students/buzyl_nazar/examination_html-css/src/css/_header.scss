@@ -67,9 +67,11 @@ $color-header-item: $color-white;
             border-color: $dodger-blue;
             transition: 1s;
         }
-        &::before{
+
+        &::before {
             display: none;
         }
+
         &::after {
             content: '';
             background-image: url('../image/search-btn.svg');
@@ -78,19 +80,31 @@ $color-header-item: $color-white;
             background-position: center;
             position: absolute;
             fill: $color-header-item;
-            width: 20px;
+            width: 22px;
             height: 22px;
             left: 80%;
             top: 50%;
             transform: translateY(-50%);
-            padding-left: 15px;
         }
+    }
 
-        @media screen and (max-width: 680px) {
-            max-width: 100px;
+    @media screen and (max-width: 680px) {
+        &__button {
+            max-width: 60px;
             font-size: 12px;
             padding: 0;
+
+            &::after {
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
         }
+
+        &__button-text {
+            display: none;
+        }
+
+
     }
 }
 
@@ -133,7 +147,8 @@ $color-header-item: $color-white;
             opacity: 0;
         }
     }
-    @media screen and (max-width: 768px){
+
+    @media screen and (max-width: 768px) {
         top: 65%;
     }
 }
