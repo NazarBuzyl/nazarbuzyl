@@ -1,16 +1,14 @@
 .header {
     height: 100vh;
     position: relative;
-    background: rgb(85, 182, 254);
-    background: linear-gradient(45deg, rgba(85, 182, 254, 1) 0%, rgba(124, 91, 249, 1) 100%);
+    background: #55b6fe linear-gradient(45deg, rgb(36, 47, 56) 0%, rgba(124, 91, 249, 1) 100%);
+    @include bg-cover("#{$folder-image}bg_hero-block.png");
 
     &__info-block {
         height: 100%;
         position: relative;
         text-align: center;
         color: $color-white;
-        display: flex;
-        @include bg-cover('#{$folder-image}bg_hero-block.png');
         z-index: 10;
         padding-top: 40vh;
         font-family: $font-default-name;
