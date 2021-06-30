@@ -25,10 +25,6 @@
     padding: $default-gap;
 }
 
-:focus {
-    box-shadow: 0 0 5px blue;
-}
-
 img {
     max-width: 100%;
 }
@@ -39,4 +35,20 @@ img {
 
 .row_relative {
     position: relative;
+}
+
+.button{
+    border: none;
+    font-size: 14px;
+    color: $default-color-text;
+    min-width: 190px;
+    padding: 19px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    font-family: $font-default-name;
+    font-weight: 400;
+    background-color:inherit;
+    border: 1px solid $default-color-text;
 }

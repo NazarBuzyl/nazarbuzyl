@@ -3,9 +3,19 @@ $green: #008000;
 $chambray:#3b5998;
 $color-white: #ffffff;
 $color-black: #000000;
+$dodger-blue: #5474FD;
+$mercury: #E8E8E8;
+$dusty-gray:#999999;
+$mine-shaft: #232323;
+$dark-mine-shaft:#333333;
+$red-orange: #ff2727;
 $grey: #bababa;
 $orange: #ff6033;
 $brown: #a52a2a;
+$pickled-bluewood: #2C4058;
+$malibu: #55B7FF;
+$river-bed:#4b5562;
+$heliotrope: #7E5AFF;
 
 $input-border-color: $grey;
 $default-border-radius: 5px;
@@ -23,8 +33,8 @@ $border-color: $alto;
 $font-folder-path: '../fonts/';
 $folder-image: '../image/';
 
-$font-default-name: 'Raleway';
-$font-secondary-name: 'Roboto';
+$font-default-name: 'Gotham';
+$font-secondary-name: 'Open Sans';
 
 $follback: Arial,
 Helvetica,
@@ -35,8 +45,8 @@ $follback;
 $font-secondary: $font-secondary-name,
 $follback;
 
-$default-font-size: 16px;
-$default-color-text: $color-black;
+$default-font-size: 18px;
+$default-color-text: $pickled-bluewood;
 
 
 $breack-points: ("xl": 1200px,

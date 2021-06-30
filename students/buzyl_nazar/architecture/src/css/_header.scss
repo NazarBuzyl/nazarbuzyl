@@ -1,0 +1,80 @@
+.header {
+    height: 100vh;
+    position: relative;
+    background: rgb(85, 182, 254);
+    background: linear-gradient(45deg, rgba(85, 182, 254, 1) 0%, rgba(124, 91, 249, 1) 100%);
+
+    &__info-block {
+        height: 100%;
+        position: relative;
+        text-align: center;
+        color: $color-white;
+        display: flex;
+        @include bg-cover('#{$folder-image}bg_hero-block.png');
+        z-index: 10;
+        padding-top: 40vh;
+        font-family: $font-default-name;
+        font-weight: 700;
+    }
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__motivation-quotation {
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    &__scroll-block {
+        position: absolute;
+    }
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    &__link {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        border: 1px solid $color-white;
+        border-radius: 50%;
+        text-align: center;
+        position: relative;
+    }
+}
+
+.logo-media {
+    position: absolute;
+    fill: $color-white;
+    @include position-center;
+}
+
+.scroll-block {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    height: 40px;
+    width: 40px;
+    border: 1px solid $color-white;
+    border-radius: 50%;
+
+    ::after {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 30%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 10px;
+        height: 10px;
+        border: 2px solid $color-white;
+        border-left: none;
+        border-top: none;
+        animation: scroll 1.5s ease infinite;
+    }
+}

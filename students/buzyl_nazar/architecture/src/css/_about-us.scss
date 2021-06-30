@@ -1,0 +1,92 @@
+.about-us {
+    padding: 140px 0;
+
+    &__first-block {
+        margin-bottom: 210px;
+    }
+
+    &__title {
+        margin-bottom: 170px;
+    }
+
+    &__square-photo {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 585px;
+            height: 100%;
+            top: -70px;
+        }
+
+        &_left {
+            &::before {
+                left: -216px;
+                background-color: $malibu;
+            }
+        }
+
+        &_right {
+            &::before {
+                right: -216px;
+                background-color: $heliotrope;
+            }
+        }
+    }
+
+    &__photo {
+        display: block;
+        position: relative;
+    }
+
+    &__title-card {
+        margin-top: 60px;
+    }
+
+    &__strong {
+        font-size: 44px;
+        font-family: $font-default-name;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    &__info {
+        color: $river-bed;
+        margin-bottom: 35px;
+    }
+
+    &__button {
+        margin-bottom: 60px;
+    }
+
+    &__block-location {
+        text-indent: 20px;
+    }
+
+    &__location-link {
+        text-decoration: none;
+        font-family: $font-secondary-name;
+        color: $default-color-text;
+        font-weight: 700;
+    }
+}
+
+.container {}
+
+.row {}
+
+.col-12 {}
+
+.title-h2 {}
+
+.col-7 {}
+
+.col-5 {}
+
+.title-h3 {}
+
+.button {}
+
+.lockation-link {}
