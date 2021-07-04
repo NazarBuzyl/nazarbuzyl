@@ -1,22 +1,19 @@
 .contact {
-    background: gray;
+    background-color: b2b2b2;
     @include bg-cover("#{$folder-image}bg_contact.jpg");
     position: relative;
     height: 700px;
 
     &__info-card {
-        max-width: 700px;
-        padding: 80px 55px;
+        margin-top: 400px;
+        width: 100%;
+        padding: 35px 55px;
         background-color: #fff;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 400px;
     }
 
     &__title {
         margin-top: 10px;
-        margin-bottom: 60px;
+        margin-bottom: 45px;
     }
 
     &__address,
@@ -28,19 +25,27 @@
         margin-bottom: 45px;
     }
 
-    &__address {}
+    &__icon {
+        margin-right: 6px;
+        vertical-align: middle;
+    }
 
+    &__form {
+        align-items: flex-end;
+    }
 
-    &__tel {}
+    &__form-element {
+        display: block;
+        width: 100%;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: $iron solid 1px;
+        font-size: $default-font-size;
+        font-family: $font-default-name;
+    }
 
-
-    &__email {}
-
-
-    &__work-time {}
-
-
-    &__form {}
-
-    &__button {}
+    &__button {
+        align-items: flex-end;
+    }
 }

@@ -1,6 +1,7 @@
 .news {
-    background: #3c7fd4 $news-gardient;
     @include bg-cover("#{$folder-image}bg_news.png");
+    background-image: url("#{$folder-image}bg_news.png"), $news-gardient;
+    
     padding: 140px 0;
 
     &__title {

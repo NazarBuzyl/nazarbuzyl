@@ -63,6 +63,18 @@
 
     &__block-location {
         text-indent: 20px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 11px;
+            height: 14px;
+            @include bg-cover('#{$folder-image}map-marker-alt-solid.svg');
+        }
     }
 
     &__location-link {
@@ -73,20 +85,3 @@
     }
 }
 
-.container {}
-
-.row {}
-
-.col-12 {}
-
-.title-h2 {}
-
-.col-7 {}
-
-.col-5 {}
-
-.title-h3 {}
-
-.button {}
-
-.lockation-link {}

@@ -6,9 +6,23 @@
         margin-bottom: 100px;
     }
 
+    &__photo-360 {
+        position: relative;
+
+        &::after {
+            content: '';
+            @include position-center;
+            display: block;
+            width: 80px;
+            height: 80px;
+            @include bg-cover('#{$folder-image}360.png');
+        }
+    }
+
     &__photo {
         display: block;
         height: 100%;
+        position: relative;
 
         &_up {
             padding-bottom: 10px;
