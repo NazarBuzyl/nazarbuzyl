@@ -1,0 +1,46 @@
+.contact {
+    background: gray;
+    @include bg-cover("#{$folder-image}bg_contact.jpg");
+    position: relative;
+    height: 700px;
+
+    &__info-card {
+        max-width: 700px;
+        padding: 80px 55px;
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 400px;
+    }
+
+    &__title {
+        margin-top: 10px;
+        margin-bottom: 60px;
+    }
+
+    &__address,
+    &__tel,
+    &__email {
+        display: block;
+        text-decoration: none;
+        color: $default-color-text;
+        margin-bottom: 45px;
+    }
+
+    &__address {}
+
+
+    &__tel {}
+
+
+    &__email {}
+
+
+    &__work-time {}
+
+
+    &__form {}
+
+    &__button {}
+}
