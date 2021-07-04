@@ -34,15 +34,16 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
-    &__link {
-        display: inline-block;
-        height: 40px;
-        width: 40px;
-        border: 1px solid $color-white;
-        border-radius: 50%;
-        text-align: center;
-        position: relative;
-    }
+}
+
+.link-for-media {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
 }
 
 .logo-media {
