@@ -164,13 +164,13 @@ const arrStyle = [{
 
 // Написать функцию, которая принимает массив стилей и текст, и выводит этот текст с помощью
 // document.write() в тегах <p></p>, добавив в открывающий тег атрибут style со всеми стилями, перечисленными в массиве.
-function getTextWithStyle(arrCss, text){
-    if(!text) return;
+function getTextWithStyle(arrCss, text) {
+    if (!text) return;
     const p = document.createElement('p');
     p.textContent = text;
     let style = '';
     arrCss.forEach(function (item) {
-        style +=`${item.name}: ${item.value}; `;
+        style += `${item.name}: ${item.value}; `;
     });
     p.setAttribute('style', style);
     const div = document.getElementById('div');
@@ -180,10 +180,97 @@ getTextWithStyle(arrStyle, 'hufq Ghbdtn vtyz!');
 
 // 4. Создать массив аудиторий академии. Объект-аудитория состоит из названия, 
 // количества посадочных мест (от 10 до 20) и названия факультета, для которого она предназначена. Написать несколько функций для работы с ним^
+const auditoryList = [{
+    title: '217',
+    place: 17,
+    faculty: 'BTF',
+}, {
+    title: '206',
+    place: 16,
+    faculty: 'BMF',
+}, {
+    title: '119a',
+    place: 19,
+    faculty: 'BMW',
+}, {
+    title: '117',
+    place: 17,
+    faculty: 'NTF',
+}, {
+    title: '320',
+    place: 10,
+    faculty: 'NFF',
+}, {
+    title: '320a',
+    place: 14,
+    faculty: 'BTF',
+}, ];
 
 // Вывод на экран всех аудиторий;
+function showAllAuditory(list) {
+    list.forEach(function (item) {
+        console.log(`Auditory: ${item.title}.`)
+    });
+}
+
+showAllAuditory(auditoryList);
+
 // Вывод на экран аудиторий для указанного факультета;
+function getFindAuditory(faculty) {
+    if (!faculty) return;
+    let result = [];
+    this.forEach(function (item) {
+        if (item.faculty === faculty) result.push(item);
+    });
+    return result;
+}
+
+console.log(getFindAuditory.call(auditoryList, 'BTF'));
+
 // Вывод на экран только тех аудиторий, которые подходят для переданной группы. 
+function searchPlaceForGroup(list, sizeGroup){
+    let result = [];
+    list.forEach(function (item) {
+        if(item.place >= sizeGroup) result.push(item);
+    });
+    return result;
+}
+
+console.log(searchPlaceForGroup(auditoryList, 11));
+
 // Объект-группа состоит из названия, количества студентов и названия факультета;
+
+
 // Функция сортировки аудиторий по количеству мест;
+function sortQtyPlace(arr) {
+    let arrRes = arr;
+    for (let i = 0; i < arrRes.length - 1; i++) {
+        for (let j = 0; j < arrRes.length - 1 - i; j++) {
+            if (arrRes[j].place > arrRes[j + 1].place) {
+                let swap = arrRes[j];
+                arrRes[j] = arrRes[j + 1];
+                arrRes[j + 1] = swap;
+            }
+        }
+    }
+    return arrRes
+}
+
+console.log(sortQtyPlace(auditoryList));
+
 // Функция сортировки аудиторий по названию (по алфавиту).
+function sortName(arr) {
+    let arrRes = arr;
+    for (let i = 0; i < arrRes.length - 1; i++) {
+        for (let j = 0; j < arrRes.length - 1 - i; j++) {
+            if (arrRes[j].faculty > arrRes[j + 1].faculty) {
+                let swap = arrRes[j];
+                arrRes[j] = arrRes[j + 1];
+                arrRes[j + 1] = swap;
+            }
+        }
+    }
+    return arrRes
+}
+
+console.log(sortName(auditoryList));
