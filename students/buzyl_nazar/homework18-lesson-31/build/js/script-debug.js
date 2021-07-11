@@ -117,8 +117,6 @@ var count = 0;
 var countLight = 0;
 
 function changeColor() {
-  console.log(count, countLight);
-
   if (count === 3) {
     count = 1;
     countLight = 1;
@@ -129,9 +127,6 @@ function changeColor() {
     countLight = 0;
   }
 
-  console.log(count, countLight, '-'); // console.log(colorList[count], circleList[count], document.getElementsByClassName(`${colorList[count]}`));
-  // let circle =JSON.stringify(document.getElementsByClassName(`${colorList[count]}`));
-
   document.getElementById(colorList[count]).style.backgroundColor = colorList[count];
 
   if (!countLight && count !== 0) {
@@ -139,25 +134,12 @@ function changeColor() {
     count++;
   }
 
-  console.log(count, countLight);
-
   if (countLight) {
     document.getElementById(colorList[count + 1]).style.backgroundColor = "#fff";
     count -= 1;
   }
 
-  console.log(count, countLight);
-  if (!count && !countLight) count++; // if (count !== 2 && countLight === 0) {
-  //     document.getElementById(colorList[count + 1]).style.backgroundColor = "#fff";
-  //     count++;
-  // } else {
-  //     document.getElementById(colorList[count + 1]).style.backgroundColor = "#fff";
-  //     count--;
-  //     if()
-  //     if (count === 0) countLight--;
-  // }
-  // if (count === 2) countLight++;
-  // if (!count) countLight--;
+  if (!count && !countLight) count++;
 }
 
 document.getElementById('changeTrafficLight').addEventListener('click', changeColor);
