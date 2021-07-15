@@ -14,7 +14,8 @@
     margin: 0 auto;
     padding: $default-gap;
 }
-.small-container{
+
+.small-container {
     max-width: $small-container-width;
     margin: 0 auto;
     padding: $default-gap;
@@ -42,7 +43,7 @@ img {
     position: relative;
 }
 
-.button{
+.button {
     border: none;
     font-size: 14px;
     color: $default-color-text;
@@ -54,6 +55,12 @@ img {
     text-align: center;
     font-family: $font-default-name;
     font-weight: 400;
-    background-color:inherit;
+    background-color: inherit;
     border: 1px solid $default-color-text;
+
+    @media screen and (max-width: 900px) {
+        font-size: 12px;
+        padding: 14px 0;
+        min-width: 140px;
+    }
 }

@@ -1,6 +1,18 @@
 .gallery {
     padding: 140px 0;
 
+    @media screen and (max-width: 992px) {
+        padding: 100px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 70px 0;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 40px 0;
+    }
+
     &__title {
         margin-top: 40px;
         margin-bottom: 100px;
@@ -24,6 +36,8 @@
         height: 100%;
         position: relative;
 
+
+
         &_up {
             padding-bottom: 10px;
         }
@@ -37,5 +51,27 @@
         margin: 0 auto;
         margin-top: 60px;
         display: block;
+    }
+
+    @media screen and (max-width: 1200px) {
+        &__row {
+            justify-content: center;
+        }
+        &__title{
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (max-width: 580px) {
+        &__photo {
+            height: 250px;
+            padding: 5px 0px;
+        }
+        &__button{
+            margin-top: 20px;
+        }
+        &__title{
+            margin-bottom: 10px;
+        }
     }
 }

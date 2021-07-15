@@ -26,5 +26,8 @@
         "gulp-watch": "^5.0.0",
         "node-sass": "^5.0.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "jQuery": "^1.7.4",
+        "vue": "^2.6.14"
+    }
 }

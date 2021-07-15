@@ -19,7 +19,7 @@ $color-menu-item: $color-white;
     font-family: $font-default-name;
     font-weight: 400;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     &__list {
         display: flex;
@@ -53,6 +53,15 @@ $color-menu-item: $color-white;
             width: 9px;
             border: 1px solid $color-white;
             border-radius: 50%;
+            @media screen and (max-width: 1115px) {
+                left: 15px;
+            }
+            @media screen and (max-width: 978px) {
+                left: 5px;
+            }
+            @media screen and (max-width: 844px) {
+                left: 5px;
+            }
         }
 
         &:hover {
@@ -60,6 +69,8 @@ $color-menu-item: $color-white;
                 background-color: $color-white;
             }
         }
+
+        
     }
 
     &__link {
@@ -71,53 +82,14 @@ $color-menu-item: $color-white;
         display: inline-block;
         padding: 20px 45px;
         position: relative;
-
-        @media screen and (max-width: 885px) {
-            font-size: 12.9px;
+        @media screen and (max-width: 1115px) {
+            padding: 20px 35px
         }
-
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 75%;
-            left: 50%;
-            top: 75%;
-            border-radius: 25%;
-            transform: translateX(-50%);
-            height: 2px;
-            background-color: $chambray;
-            visibility: hidden;
-            opacity: 0;
-            z-index: 5;
-            transition: opacity .5s ease-in-out;
+        @media screen and (max-width: 978px) {
+            padding: 15px 25px
         }
-
-        &::before {
-            top: 0;
-        }
-
-        &::after {
-            bottom: 0;
-        }
-
-        @media screen and (max-width: 768px) {
-            display: block;
-            padding: 20px;
-            position: relative;
-
-            &::after {
-                content: none;
-            }
-
-            &::before {
-                width: 3px;
-                height: auto;
-                top: 0px;
-                bottom: 0;
-                left: 0;
-            }
+        @media screen and (max-width: 844px) {
+            padding: 15px 20px
         }
     }
 

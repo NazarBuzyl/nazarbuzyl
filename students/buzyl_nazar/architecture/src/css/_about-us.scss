@@ -1,12 +1,29 @@
 .about-us {
     padding: 140px 0;
 
+    @media screen and (max-width: 992px) {
+        padding: 100px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 70px 0;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 40px 0;
+    }
+
     &__first-block {
         margin-bottom: 210px;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 100px;
+        }
     }
 
     &__title {
         margin-bottom: 170px;
+
     }
 
     &__square-photo {
@@ -18,19 +35,31 @@
             width: 585px;
             height: 100%;
             top: -70px;
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
         }
 
         &_left {
             &::before {
                 left: -216px;
                 background-color: $malibu;
+
+                @media screen and (max-width: 768px) {
+                    left: -116px;
+                }
             }
         }
 
         &_right {
             &::before {
-                right: -216px;
+                right: -70px;
                 background-color: $heliotrope;
+
+                @media screen and (max-width: 768px) {
+                    right: -70px;
+                }
             }
         }
     }
@@ -59,12 +88,17 @@
 
     &__button {
         margin-bottom: 60px;
+
+        @media screen and (max-width: 900px) {
+            margin-bottom: 15px;
+        }
     }
 
     &__block-location {
         text-indent: 20px;
         position: relative;
-        &::before{
+
+        &::before {
             content: '';
             position: absolute;
             display: block;
@@ -83,5 +117,93 @@
         color: $default-color-text;
         font-weight: 700;
     }
-}
 
+    @media screen and (max-width: 943px) {
+        &__title {
+            margin-bottom: 100px;
+        }
+
+        &__strong {
+            font-size: 32px;
+        }
+
+        &__title-card {
+            font-size: 16px;
+            margin-top: 0;
+        }
+
+        &__block-location {
+            &::before {
+                top: 25%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+
+        &__title {
+            margin-bottom: 70px;
+        }
+
+        &__strong {
+            font-size: 26px;
+        }
+
+        &__title-card {
+            font-size: 14px;
+            margin-top: 0;
+        }
+
+        &__info {
+            margin-bottom: 20px;
+        }
+
+        &__block-location {
+            &::before {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    @media screen and (max-width: 710px) {
+        &__block-location {
+            &::before {
+                top: 30%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    @media screen and (max-width: 614px) {
+        &__first-block {
+            flex-direction: column-reverse;
+        }
+
+        &__photo {
+            max-height: 300px;
+        }
+
+        &__square-photo {
+            display: flex;
+            justify-content: flex-end;
+
+            &::before {
+                width: 75%;
+                height: 100%;
+                left: 0;
+                transform: translateX(70%);
+            }
+        }
+    }
+    @media screen and (max-width: 500px){
+        &__square-photo {
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

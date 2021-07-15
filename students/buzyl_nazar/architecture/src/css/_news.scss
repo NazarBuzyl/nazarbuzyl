@@ -1,8 +1,21 @@
 .news {
     @include bg-cover("#{$folder-image}bg_news.png");
-    background-image: url("#{$folder-image}bg_news.png"), $news-gardient;
-    
+    background-image: url("#{$folder-image}bg_news.png"),
+    $news-gardient;
+
     padding: 140px 0;
+
+    @media screen and (max-width: 992px) {
+        padding: 100px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 70px 0;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 40px 0;
+    }
 
     &__title {
         margin-top: 40px;

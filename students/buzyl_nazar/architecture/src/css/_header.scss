@@ -2,7 +2,8 @@
     height: 100vh;
     position: relative;
     @include bg-cover("#{$folder-image}bg_hero-block.png");
-    background-image: url("#{$folder-image}bg_hero-block.png"), $header-gardient;
+    background-image: url("#{$folder-image}bg_hero-block.png"),
+    $header-gardient;
 
     &__info-block {
         height: 100%;
@@ -23,11 +24,16 @@
         font-size: 18px;
         text-transform: uppercase;
         font-weight: 400;
+
+        @media screen and (max-width: 870px) {
+            font-size: 14px;
+        }
     }
 
     &__scroll-block {
         position: absolute;
     }
+
 }
 
 .social-media {
@@ -44,6 +50,11 @@
     border-radius: 50%;
     text-align: center;
     position: relative;
+
+    @media screen and (max-width: 916px) {
+        height: 34px;
+        width: 34px;
+    }
 }
 
 .logo-media {
@@ -76,4 +87,20 @@
         border-top: none;
         animation: scroll 1.5s ease infinite;
     }
+}
+
+.header {
+    @media screen and (max-width: 768px) {
+        &__social-media {
+            display: none;
+        }
+    }
+
+    &__info-block {}
+
+    &__title {}
+
+    &__motivation-quotation {}
+
+    &__scroll-block {}
 }
