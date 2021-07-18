@@ -1,0 +1,13 @@
+.footer {
+    @include bg-cover("#{$folder-image}bg_footer.png");
+    background-image: url("#{$folder-image}bg_footer.png"), $header-gardient;
+    padding: 200px 0;
+
+    &__signature {
+        color:#fff;
+    }
+
+    &__signature-span {
+        padding: 0 20px;
+    }
+}

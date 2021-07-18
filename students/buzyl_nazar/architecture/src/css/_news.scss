@@ -1,0 +1,70 @@
+.news {
+    @include bg-cover("#{$folder-image}bg_news.png");
+    background-image: url("#{$folder-image}bg_news.png"),
+    $news-gardient;
+
+    padding: 140px 0;
+
+    @media screen and (max-width: 992px) {
+        padding: 100px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 70px 0;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 40px 0;
+    }
+
+    &__title {
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
+
+    &__card {
+        background-color: #fff;
+    }
+
+    &__photo {
+        display: block;
+    }
+
+    &__info-block {
+        padding: 30px 20px;
+    }
+
+    &__strong {
+        text-transform: uppercase;
+        font-size: 22px;
+        font-family: $font-dafault;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    &__info {
+        color: $river-bed;
+        font-family: $font-secondary;
+        margin-bottom: 40px;
+    }
+
+    &__main-photo {
+        display: inline-block;
+
+    }
+
+    &__main-info {
+        display: inline-block;
+        padding-left: 20px;
+        margin-top: -8px;
+    }
+
+    &__name {
+        text-transform: uppercase;
+    }
+
+    &__date {
+        color: $malibu;
+        font-size: 14px;
+    }
+}
