@@ -36,17 +36,20 @@ function showAllList(shopList) {
       bought.push(item);
     }
   });
-  console.log(notBought, bought);
+  var result = [];
+  result.push(notBought);
+  result.push(bought);
+  return result;
 } // Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, 
 // необходимо увеличивать количество в существующей покупке, а не добавлять новую.
 
 
 function addPtoduct(shopList, productItem) {
-  var check = 0;
+  var check = false;
   shopList.forEach(function (item) {
     if (item.name.toLowerCase() === productItem.toLowerCase()) {
       item.qty++;
-      check = 1;
+      check = true;
     }
   });
   if (!check) shopList.push({
@@ -67,10 +70,10 @@ function buyProduct(shopList, productName) {
   });
 }
 
-showAllList(shoppingList);
 buyProduct(shoppingList, 'orange');
 addPtoduct(shoppingList, 'milk');
 addPtoduct(shoppingList, 'Orange');
+console.log(showAllList(shoppingList));
 console.log(shoppingList); // 2. Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из названия товара, 
 // количества и цены за единицу товара. Написать следующие функции:
 
