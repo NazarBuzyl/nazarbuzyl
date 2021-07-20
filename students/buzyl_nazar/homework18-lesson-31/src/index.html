@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .btn {
+            display: block;
+            min-width: 100px;
+            padding: 15px 20px;
+            background-color: rgb(31, 174, 174);
+            color: #fff;
+            border-radius: 15px;
+            border: none;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 1px solid #000;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body class="page">
+
+    <div id="app">
+
+    </div>
+
+    <div id="modal-area">
+        <button class="btn" id="btnOpen" type="button">Open</button>
+        <div class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <h3 class="modal-title"></h3>
+                    <p class="modal-text"></p>
+                    <button class="btn" id="btnClose" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="traffic-light">
+        <div id="red" class="circle red"></div>
+        <div id="yellow" class="circle yellow"></div>
+        <div id="green" class="circle green"></div>
+        <button type="button" class="btn" id="changeTrafficLight">Change color</button>
+    </div>
+    <script src="js/script-debug.js"></script>
+</body>
+
+</html>
