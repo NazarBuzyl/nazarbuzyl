@@ -6,8 +6,6 @@ $color-menu-item: $color-white;
         position: absolute;
         bottom: 0;
         width: 100%;
-
-        
     }
 
     &__menu-logo {
@@ -35,7 +33,7 @@ $color-menu-item: $color-white;
             left: 0;
             right: 0;
             bottom: calc(100%);
-            height: calc(100vh - 125px);
+            height: calc(100vh - 100px);
             background-color: $dodger-blue;
             transform: translateX(-110%);
             pointer-events: none;
