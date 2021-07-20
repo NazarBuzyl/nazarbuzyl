@@ -83,13 +83,18 @@ var playList = [{
 }];
 
 function getCreateList(arr) {
+  var ol = createElem({
+    tagName: 'ol',
+    classList: 'playlist'
+  });
+  document.getElementById('app').append(ol);
   arr.forEach(function (item) {
     var li = createElem({
       tagName: 'li',
       classList: 'playlist__item',
       content: "".concat(item.song, ": ").concat(item.author, ".")
     });
-    document.getElementById('playlist').append(li);
+    document.getElementsByClassName('.playlist').append(li);
   });
 }
 

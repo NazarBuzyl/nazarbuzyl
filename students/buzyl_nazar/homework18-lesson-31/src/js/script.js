@@ -23,8 +23,8 @@ function addEvents(node, events) {
 
 function addClass(node, classList) {
     if (!classList && !node) return;
-    classList.split(' ').forEach(element => {
-        node.classList.add(element)
+    classList.split(' ').forEach(function (element) {
+        node.classList.add(element);
     });
 }
 
@@ -83,14 +83,20 @@ let playList = [{
 }];
 
 function getCreateList(arr) {
+    let ol = createElem({
+        tagName: 'ol',
+        classList: 'playlist'
+    });
+    document.getElementById('app').append(ol);
     arr.forEach(function (item) {
         let li = createElem({
             tagName: 'li',
             classList: 'playlist__item',
             content: `${item.song}: ${item.author}.`,
         });
-        document.getElementById('playlist').append(li);
+        document.getElementsByClassName('.playlist').append(li);
     });
+    
 }
 
 getCreateList(playList);
@@ -147,7 +153,7 @@ function changeColor() {
     }
     if (countLight) {
         document.getElementById(colorList[count + 1]).style.backgroundColor = "#fff";
-        count-=1;
+        count -= 1;
     }
     if (!count && !countLight) count++;
 }
