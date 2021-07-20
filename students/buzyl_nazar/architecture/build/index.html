@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monticello | International group</title>
+    
+    <link href="path/to/lightbox.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="image/icone-monticello.png" type="image/png">
 </head>
@@ -18,7 +22,7 @@
                     <div class="col-3">
                         <img src="image/logo-monticello.png" alt="logo">
                     </div>
-
+        
                     <div class="col-7 col-md-9">
                         <nav class="menu">
                             <input class="menu__input" type="checkbox" id="burgerMenuBtn">
@@ -41,7 +45,7 @@
                             </ul>
                         </nav>
                     </div>
-
+        
                     <div class="col-2 col-md-0">
                         <div class="social-media header__social-media">
                             <a class="social-media__link link-for-media" href="#">
@@ -134,69 +138,18 @@
                         <h2 class="title-h2 news__title">lates news</h2>
                     </div>
                 </div>
-                <div class="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <div class="news__card">
-                                    <img src="image/news_photo01.jpg" alt="photo 1" class="news__photo">
-                                    <div class="news__info-block">
-                                        <strong class="news__strong">See The Unmatched Beauty Of The Great. </strong>
-                                        <p class="news__info">Free directories: directories are perfect for customers
-                                            that
-                                            are... searching for</p>
-                                        <img src="image/isaac-dunn.png" alt="Isaac Dunn" class="news__main-photo">
-                                        <div class="news__main-info">
-                                            <p class="news__name">Isaac Dunn</p>
-                                            <p class="news__date">09 Feb 2017</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="news__card">
-                                    <img src="image/news_photo01.jpg" alt="photo 1" class="news__photo">
-                                    <div class="news__info-block">
-                                        <strong class="news__strong">See The Unmatched Beauty Of The Great. </strong>
-                                        <p class="news__info">Free directories: directories are perfect for customers
-                                            that
-                                            are... searching for</p>
-                                        <img src="image/isaac-dunn.png" alt="Isaac Dunn" class="news__main-photo">
-                                        <div class="news__main-info">
-                                            <p class="news__name">Isaac Dunn</p>
-                                            <p class="news__date">09 Feb 2017</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="news__card">
-                                    <img src="image/news_photo01.jpg" alt="photo 1" class="news__photo">
-                                    <div class="news__info-block">
-                                        <strong class="news__strong">See The Unmatched Beauty Of The Great. </strong>
-                                        <p class="news__info">Free directories: directories are perfect for customers
-                                            that
-                                            are... searching for</p>
-                                        <img src="image/isaac-dunn.png" alt="Isaac Dunn" class="news__main-photo">
-                                        <div class="news__main-info">
-                                            <p class="news__name">Isaac Dunn</p>
-                                            <p class="news__date">09 Feb 2017</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                <div id="newsList">
+        
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-4">
                         <div class="news__card">
                             <img src="image/news_photo01.jpg" alt="photo 1" class="news__photo">
                             <div class="news__info-block">
-                                <strong class="news__strong">See The Unmatched Beauty Of The Great. </strong>
+                                <strong class="news__strong">See The Unmatched Beauty Of The Great.</strong>
                                 <p class="news__info">Free directories: directories are perfect for customers that
                                     are... searching for</p>
-                                <img src="image/isaac-dunn.png" alt="Isaac Dunn" class="news__main-photo">
+                                <img src="image/news_author01.png" alt="Isaac Dunn" class="news__main-photo">
                                 <div class="news__main-info">
                                     <p class="news__name">Isaac Dunn</p>
                                     <p class="news__date">09 Feb 2017</p>
@@ -211,7 +164,7 @@
                                 <strong class="news__strong">Effective Advertising Pointers.</strong>
                                 <p class="news__info">Having a home based business is a wonderful asset to your life...
                                 </p>
-                                <img src="image/dominic-freeman.png" alt="Dominic Freeman" class="news__main-photo">
+                                <img src="image/news_author02.png" alt="Dominic Freeman" class="news__main-photo">
                                 <div class="news__main-info">
                                     <p class="news__name">Dominic Freeman</p>
                                     <p class="news__date">24 Apr 2017</p>
@@ -225,16 +178,16 @@
                             <div class="news__info-block">
                                 <strong class="news__strong">Hypnotize Yourself Into The Ghost.</strong>
                                 <p class="news__info">There are many things that are important to catalog design....</p>
-                                <img src="image/alice-ward.png" alt="Alice Ward" class="news__main-photo">
+                                <img src="image/news_author03.png" alt="Alice Ward" class="news__main-photo">
                                 <div class="news__main-info">
                                     <p class="news__name">Alice Ward</p>
                                     <p class="news__date">30 Dec 2017</p>
                                 </div>
                             </div>
-                        </div>
+                        </div>  
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
 
         <section class="gallery" id="project">
@@ -255,69 +208,65 @@
                     </div>
                     <div class="col-6 col-xl-12">
                         <div class="row gallery__row">
-                            <a href="image/gallery_photo02.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link">
+                            <a href="image/gallery_photo02.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
                                 <img src="image/gallery_photo02.jpg" alt="photo 2"
                                     class="gallery__photo gallery__photo_up gallery__photo_left">
                             </a>
-                            <a href="image/gallery_photo03.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo03.jpg" alt="photo 3"
-                                    class="gallery__photo gallery__photo_up"></a>
+                            <a href="image/gallery_photo03.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                                <img src="image/gallery_photo03.jpg" alt="photo 3" class="gallery__photo gallery__photo_up">
+                            </a>
                         </div>
                         <div class="row gallery__row">
-                            <a href="image/gallery_photo04.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo04.jpg" alt="photo 4"
-                                    class="gallery__photo gallery__photo_left"></a>
-                            <a href="image/gallery_photo05.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo05.jpg" alt="photo 5"
-                                    class="gallery__photo">
+                            <a href="image/gallery_photo04.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                                <img src="image/gallery_photo04.jpg" alt="photo 4" class="gallery__photo gallery__photo_left">
+                            </a>
+                            <a href="image/gallery_photo05.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                                <img src="image/gallery_photo05.jpg" alt="photo 5" class="gallery__photo">
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="row display-none" id="more-photo">
+                <div class="row" id="more-photo">
+                    <!-- <div class="col-3">
+                        <a href="image/gallery_photo02.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                            <img src="image/gallery_photo02.jpg" alt="photo 2"
+                                class="gallery__photo gallery__photo_up gallery__photo_left">
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="image/gallery_photo03.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                            <img src="image/gallery_photo03.jpg" alt="photo 3" class="gallery__photo gallery__photo_up">
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="image/gallery_photo04.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                            <img src="image/gallery_photo04.jpg" alt="photo 4" class="gallery__photo gallery__photo_left"></a>
+                    </div>
+                    <div class="col-3">
+                        <a href="image/gallery_photo05.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                            <img src="image/gallery_photo05.jpg" alt="photo 5" class="gallery__photo">
+                        </a>
+                    </div>
+        
                     <div class="col-6 col-xl-12">
                         <div class="row gallery__row">
-                            <a href="image/gallery_photo02.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link">
+                            <a href="image/gallery_photo02.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
                                 <img src="image/gallery_photo02.jpg" alt="photo 2"
                                     class="gallery__photo gallery__photo_up gallery__photo_left">
                             </a>
-                            <a href="image/gallery_photo03.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo03.jpg" alt="photo 3"
-                                    class="gallery__photo gallery__photo_up"></a>
-                        </div>
-                        <div class="row gallery__row">
-                            <a href="image/gallery_photo04.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo04.jpg" alt="photo 4"
-                                    class="gallery__photo gallery__photo_left"></a>
-                            <a href="image/gallery_photo05.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo05.jpg" alt="photo 5"
-                                    class="gallery__photo">
+                            <a href="image/gallery_photo03.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                                <img src="image/gallery_photo03.jpg" alt="photo 3" class="gallery__photo gallery__photo_up">
                             </a>
                         </div>
-                    </div>
-                    <div class="col-6 col-xl-12">
                         <div class="row gallery__row">
-                            <a href="image/gallery_photo02.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link">
-                                <img src="image/gallery_photo02.jpg" alt="photo 2"
-                                    class="gallery__photo gallery__photo_up gallery__photo_left">
+                            <a href="image/gallery_photo04.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                                <img src="image/gallery_photo04.jpg" alt="photo 4" class="gallery__photo gallery__photo_left">
                             </a>
-                            <a href="image/gallery_photo03.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo03.jpg" alt="photo 3"
-                                    class="gallery__photo gallery__photo_up"></a>
-                        </div>
-                        <div class="row gallery__row">
-                            <a href="image/gallery_photo04.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo04.jpg" alt="photo 4"
-                                    class="gallery__photo gallery__photo_left"></a>
-                            <a href="image/gallery_photo05.jpg" data-lightbox="gallery-list-photo"
-                                class="gallery__link"><img src="image/gallery_photo05.jpg" alt="photo 5"
-                                    class="gallery__photo">
+                            <a href="image/gallery_photo05.jpg" data-lightbox="gallery-list-photo" class="gallery__link">
+                                <img src="image/gallery_photo05.jpg" alt="photo 5" class="gallery__photo">
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <button class="button gallery__button" id="seeMore">see more</button>
             </div>
@@ -335,8 +284,8 @@
                 <div class="row">
                     <div class="col-6">
                         <a href="" class="contact__address">
-                            <svg width="16px" height="16px"
-                                class="contact__icon svg-inline--fa fa-map-marker-alt fa-w-12" viewBox="0 0 384 512">
+                            <svg width="16px" height="16px" class="contact__icon svg-inline--fa fa-map-marker-alt fa-w-12"
+                                viewBox="0 0 384 512">
                                 <path fill="#7E5AFF"
                                     d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
                                 </path>
@@ -366,8 +315,8 @@
                     <div class="col-6">
                         <form action="get" class="contact__form">
                             <div class="contact__form-group">
-                                <input class="contact__form-element" type="text" autocomplete="off" value=""
-                                    id="fullname" placeholder="Full name">
+                                <input class="contact__form-element" type="text" autocomplete="off" value="" id="fullname"
+                                    placeholder="Full name">
                             </div>
                             <div class="contact__form-group">
                                 <input class="contact__form-element" type="text" autocomplete="off" value="" id="email"
@@ -380,7 +329,6 @@
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="small-container">
             <div class="row">
@@ -389,8 +337,7 @@
                 <div class="col-3">
                     <div class="social-media footer__social-media">
                         <a class="footer__link link-for-media" href="#">
-                            <svg width="19px" height="19px" viewBox="0 0 24 24"
-                                class="footer__logo-facebook logo-media">
+                            <svg width="19px" height="19px" viewBox="0 0 24 24" class="footer__logo-facebook logo-media">
                                 <path
                                     d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                             </svg>
@@ -402,8 +349,7 @@
                             </svg>
                         </a>
                         <a class="footer__link link-for-media" href="#">
-                            <svg width="19px" height="19px" viewBox="0 0 24 24"
-                                class="footer__logo-instagram logo-media">
+                            <svg width="19px" height="19px" viewBox="0 0 24 24" class="footer__logo-instagram logo-media">
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
@@ -417,23 +363,25 @@
             </p>
         </div>
     </footer>
+    
+    <script src="js/script.js"></script>
+    <!-- Google map -->
     <script>
-       
         function initMap() {
             const map = new google.maps.Map(document.getElementById('map'), {
                 center: {
                     lat: 40.65810706897487,
                     lng: -73.91623361130749
                 },
-                zoom: 14.5,
-                mapID: '2087a0a5c6592ba4'
+                zoom: 14.,
+                mapId: '2087a0a5c6592ba4',
             });
         };
     </script>
-    <script src="js/script.js"></script>
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACLJtDT9ST1Zt0A7rKuWancGIsrIuJIwE&callback=initMap">
     </script>
+    <!-- |||||||||||||||||||||||||||||||||||||||||||| -->
 </body>
 
 </html>
