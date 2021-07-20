@@ -12,4 +12,7 @@ Lesson22 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_n
 Lesson23 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework14-lesson-23/build/index.html)
 Lesson25 - [Task 1-10](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework15-lesson-25/build/index.html)
 Lesson27 - [Object](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework16-lesson-27/build/index.html)
+Lesson28 - [Object](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework17-lesson-28/build/index.html)
+Lesson31 - [Object](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework18-lesson-31/build/index.html)
 [Examination](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/examination_html-css/build/index.html)
+[Monticello | International group](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/architecture/build/index.html)
