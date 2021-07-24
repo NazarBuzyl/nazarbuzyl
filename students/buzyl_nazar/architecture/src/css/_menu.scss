@@ -1,9 +1,16 @@
 $color-menu-item: $color-white;
 
+.index-logo{
+    position: relative;
+    z-index: 20;
+}
+.index-menu{
+    z-index: 19;
+}
 .header {
 
     &__menu {
-        position: absolute;
+        position: relative;
         top: 0;
         width: 100%;
         z-index: 11;
@@ -20,7 +27,7 @@ $color-menu-item: $color-white;
     font-weight: 400;
     display: flex;
     justify-content: flex-end;
-    
+
 
     &__list {
         display: flex;
@@ -31,14 +38,12 @@ $color-menu-item: $color-white;
             display: block;
             left: 0;
             right: 0;
-            top: 100px;
+            top: 0;
             height: calc(100vh);
             transform: translateX(-110%);
             pointer-events: none;
             transition: transform .5s ease-in-out;
-            padding-bottom: 80px;
             overflow-y: auto;
-
         }
     }
 
@@ -56,17 +61,36 @@ $color-menu-item: $color-white;
             width: 9px;
             border: 1px solid $color-white;
             border-radius: 50%;
+
             @media screen and (max-width: 1115px) {
                 left: 15px;
             }
+
             @media screen and (max-width: 978px) {
                 left: 5px;
             }
+
             @media screen and (max-width: 844px) {
                 left: 5px;
             }
-            @media screen and (max-width: 768px){
+
+            @media screen and (max-width: 768px) {
                 display: none;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            &:first-child{
+                padding-top: 100px;
+            }
+            &::after{
+                content: '';
+                width: 50%;
+                height: 1px;
+                position: absolute;
+                left: 20px;
+                right: 0;
+                bottom: 0;
+                background-color: #fff;
             }
         }
 
@@ -76,7 +100,14 @@ $color-menu-item: $color-white;
             }
         }
 
-        
+
+    }
+    &__social-media{
+        display: none;
+        @media screen and (max-width: 768px){
+            display: block;
+            padding: 10px 20px;
+        }
     }
 
     &__link {
@@ -88,12 +119,15 @@ $color-menu-item: $color-white;
         display: inline-block;
         padding: 20px 45px;
         position: relative;
+
         @media screen and (max-width: 1115px) {
             padding: 20px 35px
         }
+
         @media screen and (max-width: 978px) {
             padding: 15px 25px
         }
+
         @media screen and (max-width: 844px) {
             padding: 15px 20px
         }
@@ -148,6 +182,7 @@ $color-menu-item: $color-white;
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 19;
 
     @media screen and (max-width: 768px) {
         display: flex;
@@ -180,8 +215,4 @@ $color-menu-item: $color-white;
             bottom: -8px;
         }
     }
-}
-.malibu{
-    background-color: $malibu;
-    transition: background-color 0.7s ease-in-out;
 }

@@ -2,9 +2,7 @@ import $ from 'jquery';
 import '../../node_modules/lightbox2/dist/js/lightbox-plus-jquery';
 import './slider';
 
-
 // see more
-// function 
 const htmlGallery = `
 <div class="col-6 col-xl-12">
     <div class="row gallery__row">
@@ -33,17 +31,55 @@ seeMore.addEventListener("click", function () {
     // document.getElementById('seeMore').classList.add('display-none');
 });
 
-
-
 // btn burger
 let btn = document.querySelector('#burgerMenuBtnItem');
 btn.addEventListener('click', function () {
     document.documentElement.classList.toggle('menu-open');
-    document.querySelector('#menu').classList.toggle('malibu');
 });
 
-// scroll
-let scroll = document.querySelector('#scroll');
-scroll.addEventListener('click', function () {
+//scroll
+function scrollNav() {
+    $('.menu__link').click(function () {
+        $('html').removeClass("menu-open");
+        $('#burgerMenuBtn').prop('checked', false);
 
-});
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        $('html, body').stop().animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 2000);
+        return false;
+    });
+}
+
+function btnScroll() {
+    $('.scroll-block').click(function () {
+        $('html, body').stop().animate({
+            scrollTop: $('#about-us').offset().top
+        }, 1000);
+        return false;
+    });
+}
+
+function scrollTop() {
+    $('.link-to-top').click(function () {
+        $('html, body').stop().animate({
+            scrollTop: $('#top').offset().top
+        }, 1000);
+        return false;
+    });
+}
+
+function showTopScroll() {
+    if (pageYOffset > 900) {
+        document.getElementById('showScroll').classList.add('scroll-active');
+    }
+    else {
+        document.getElementById('showScroll').classList.remove('scroll-active');
+    }
+}
+
+btnScroll();
+scrollNav();
+scrollTop();
+setInterval(showTopScroll, 100);

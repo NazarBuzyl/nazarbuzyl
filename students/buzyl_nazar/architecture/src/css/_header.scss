@@ -6,12 +6,13 @@
     $header-gardient;
 
     &__info-block {
-        height: 100%;
+        height: calc(100% - 120px);
         position: relative;
         text-align: center;
         color: $color-white;
         z-index: 10;
-        padding-top: 40vh;
+        // padding-top: 18vh;
+        padding-top: 20vh;
         font-family: $font-default-name;
         font-weight: 700;
     }
@@ -21,6 +22,7 @@
     }
 
     &__motivation-quotation {
+        margin-top: 7px;
         font-size: 18px;
         text-transform: uppercase;
         font-weight: 400;
@@ -107,6 +109,14 @@
 
 .fixed {
     background: $header-gardient;
-    
+
     position: fixed;
 }
+
+// .menu__item {
+//     &.active {
+//         &::before {
+//             background-color: #fff;
+//         }
+//     }
+// }

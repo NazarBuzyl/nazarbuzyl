@@ -1713,6 +1713,45 @@ for (var COLLECTION_NAME in DOMIterables) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/web.timers.js":
+/*!****************************************************!*\
+  !*** ./node_modules/core-js/modules/web.timers.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
+
+var slice = [].slice;
+var MSIE = /MSIE .\./.test(userAgent); // <- dirty ie9- check
+
+var wrap = function (scheduler) {
+  return function (handler, timeout /* , ...arguments */) {
+    var boundArgs = arguments.length > 2;
+    var args = boundArgs ? slice.call(arguments, 2) : undefined;
+    return scheduler(boundArgs ? function () {
+      // eslint-disable-next-line no-new-func -- spec requirement
+      (typeof handler == 'function' ? handler : Function(handler)).apply(this, args);
+    } : handler, timeout);
+  };
+};
+
+// ie9- setTimeout & setInterval additional parameters fix
+// https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers
+$({ global: true, bind: true, forced: MSIE }, {
+  // `setTimeout` method
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout
+  setTimeout: wrap(global.setTimeout),
+  // `setInterval` method
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval
+  setInterval: wrap(global.setInterval)
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -26898,30 +26937,72 @@ var newsList = [{
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/lightbox2/dist/js/lightbox-plus-jquery */ "./node_modules/lightbox2/dist/js/lightbox-plus-jquery.js");
-/* harmony import */ var _node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./slider */ "./src/js/slider.js");
+/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.timers.js */ "./node_modules/core-js/modules/web.timers.js");
+/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/lightbox2/dist/js/lightbox-plus-jquery */ "./node_modules/lightbox2/dist/js/lightbox-plus-jquery.js");
+/* harmony import */ var _node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slider */ "./src/js/slider.js");
+
 
 
  // see more
-// function 
 
 var htmlGallery = "\n<div class=\"col-6 col-xl-12\">\n    <div class=\"row gallery__row\">\n        <a href=\"image/gallery_photo04.jpg\" data-lightbox=\"gallery-list-photo\" class=\"gallery__link\">\n            <img src=\"image/gallery_photo02.jpg\" alt=\"photo 2\" class=\"gallery__photo gallery__photo_left\">\n        </a>\n        <a href=\"image/gallery_photo05.jpg\" data-lightbox=\"gallery-list-photo\" class=\"gallery__link\">\n            <img src=\"image/gallery_photo03.jpg\" alt=\"photo 3\" class=\"gallery__photo\">\n        </a>\n    </div>\n</div>\n<div class=\"col-6 col-xl-12\">\n    <div class=\"row gallery__row\">\n        <a href=\"image/gallery_photo04.jpg\" data-lightbox=\"gallery-list-photo\" class=\"gallery__link\">\n            <img src=\"image/gallery_photo04.jpg\" alt=\"photo 4\" class=\"gallery__photo gallery__photo_left\">\n        </a>\n        <a href=\"image/gallery_photo05.jpg\" data-lightbox=\"gallery-list-photo\" class=\"gallery__link\">\n            <img src=\"image/gallery_photo05.jpg\" alt=\"photo 5\" class=\"gallery__photo\">\n        </a>\n    </div>\n</div>\n";
 seeMore.addEventListener("click", function () {
   document.getElementById('more-photo').classList.add('active-flex');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#more-photo').append(htmlGallery); // document.getElementById('seeMore').classList.add('display-none');
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('#more-photo').append(htmlGallery); // document.getElementById('seeMore').classList.add('display-none');
 }); // btn burger
 
 var btn = document.querySelector('#burgerMenuBtnItem');
 btn.addEventListener('click', function () {
   document.documentElement.classList.toggle('menu-open');
-  document.querySelector('#menu').classList.toggle('malibu');
-}); // scroll
+}); //scroll
 
-var scroll = document.querySelector('#scroll');
-scroll.addEventListener('click', function () {});
+function scrollNav() {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.menu__link').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()('html').removeClass("menu-open");
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()('#burgerMenuBtn').prop('checked', false);
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()(".active").removeClass("active");
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).addClass("active");
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()('html, body').stop().animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_1___default()(jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).attr('href')).offset().top
+    }, 2000);
+    return false;
+  });
+}
+
+function btnScroll() {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.scroll-block').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()('html, body').stop().animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_1___default()('#about-us').offset().top
+    }, 1000);
+    return false;
+  });
+}
+
+function scrollTop() {
+  jquery__WEBPACK_IMPORTED_MODULE_1___default()('.link-to-top').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()('html, body').stop().animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_1___default()('#top').offset().top
+    }, 1000);
+    return false;
+  });
+}
+
+function showTopScroll() {
+  if (pageYOffset > 900) {
+    document.getElementById('showScroll').classList.add('scroll-active');
+  } else {
+    document.getElementById('showScroll').classList.remove('scroll-active');
+  }
+}
+
+btnScroll();
+scrollNav();
+scrollTop();
+setInterval(showTopScroll, 100);
 
 /***/ }),
 
@@ -26955,15 +27036,15 @@ var slider = jquery__WEBPACK_IMPORTED_MODULE_3___default()('#newsList');
 var newsItemHtml = '';
 
 function getNewsHtml(item) {
-  var newsHtml = "\n    <div class=\"col-12\">\n        <div class=\"news__card\">\n            <a href=\"image/".concat(item.img, "\" data-lightbox=\"news").concat(item.id, "\">\n                <img src=\"image/").concat(item.img, "\" alt=\"photo ").concat(item.id, "\" class=\"news__photo\">\n            </a>\n            <div class=\"news__info-block\">\n                <strong class=\"news__strong\">").concat(item.title, "</strong>\n                <p class=\"news__info\">").concat(item.info, "</p>\n                <div class=\"row\">\n                    <img src=\"image/").concat(item.authorImg, "\" alt=\"").concat(item.authorName, "\" class=\"news__main-photo\">\n                    <div class=\"news__main-info\">\n                        <p class=\"news__name\">").concat(item.authorName, "</p>\n                        <p class=\"news__date\">").concat(item.date, "</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    ");
+  var newsHtml = "\n    <div class=\"news__container-card\">\n        <div class=\"news__card\">\n            <a href=\"image/".concat(item.img, "\" data-lightbox=\"news").concat(item.id, "\">\n                <img src=\"image/").concat(item.img, "\" alt=\"photo ").concat(item.id, "\" class=\"news__photo\">\n            </a>\n            <div class=\"news__info-block\">\n                <strong class=\"news__strong\">").concat(item.title, "</strong>\n                <p class=\"news__info\">").concat(item.info, "</p>\n                <div class=\"row\">\n                    <img src=\"image/").concat(item.authorImg, "\" alt=\"").concat(item.authorName, "\" class=\"news__main-photo\">\n                    <div class=\"news__main-info\">\n                        <p class=\"news__name\">").concat(item.authorName, "</p>\n                        <p class=\"news__date\">").concat(item.date, "</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    ");
   return newsHtml;
 }
 
 ;
 _lib_createNews__WEBPACK_IMPORTED_MODULE_5__["default"].forEach(function (item) {
   newsItemHtml += getNewsHtml(item);
-});
-console.log(newsItemHtml);
+}); // console.log(newsItemHtml);
+
 slider.append(newsItemHtml);
 slider.slick({
   infinite: true,
@@ -26971,19 +27052,19 @@ slider.slick({
   slidesToScroll: 1,
   dots: true,
   responsive: [{
-    breakpoint: 967,
+    breakpoint: 1105,
     settings: {
       slidesToShow: 2
     }
   }, {
-    breakpoint: 767,
+    breakpoint: 768,
     settings: {
       slidesToShow: 1,
       arrows: false
     }
   }]
-});
-console.log(slider); // slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+}); // console.log(slider);
+// slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 //     $('.price-box').html(slick.$slides.eq(nextSlide).find('.slider__item').data('price'))
 // });
 // $('.go').on('click', function () {

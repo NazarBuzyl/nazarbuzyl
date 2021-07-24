@@ -13,7 +13,14 @@
         padding: 40px 0;
     }
 
+    &__row {
+    }
+
     &__title {}
+
+    &__link {
+        display: block;
+    }
 
     &__photo-360 {
         position: relative;
@@ -31,9 +38,7 @@
     &__photo {
         display: block;
         height: 100%;
-        position: relative;
-
-
+        width: 100%;
 
         &_up {
             padding-bottom: 10px;
@@ -46,7 +51,7 @@
 
     &__photo {
         transition: opacity 0.35s, transform 0.35s;
-        transform: translate3d(-40px, 0, 0);
+        // transform: translate3d(-40px, 0, 0);
     }
 
     &__none-photo {

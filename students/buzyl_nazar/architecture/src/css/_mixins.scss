@@ -48,7 +48,7 @@
 }
 @mixin grid($count: 12) {
     @for $i from 1 through $count {
-        $width: 100% / 12 * $i;
+        $width: (100% / 12 * $i);
 
         .col-#{$i} {
             max-width: $width;

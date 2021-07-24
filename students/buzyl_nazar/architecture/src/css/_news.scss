@@ -2,6 +2,7 @@
     @include bg-cover("#{$folder-image}bg_news.png");
     background-image: url("#{$folder-image}bg_news.png"),
     $news-gardient;
+    overflow: hidden;
 
     padding: 140px 0;
 
@@ -21,10 +22,19 @@
     @media screen and (max-width: 576px) {
         padding: 40px 0;
     }
-
-    &__dots &__title {
-        margin-top: 40px;
-        margin-bottom: 100px;
+    &__container-card{
+        padding: 15px;
+        @media screen and (max-width: 1220px) {
+            padding: 15px 10px;
+        }
+        @media screen and (max-width: 1104px) {
+            padding: 15px;
+        }
+    }
+    &__title {
+        @media screen and (max-width: 768px){
+            margin-bottom: 30px;
+        }
     }
 
     &__card {
@@ -103,10 +113,15 @@
     opacity: .75;
     color: #ffffff;
 }
-
+.slick-next {
+    z-index: 15;
+}
+.slick-prev {
+    z-index: 16
+}
 .slick-next:hover::before,
 .slick-prev:hover::before {
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color: #ffffff80;
 }
 
 .slick-next::before {
@@ -136,5 +151,49 @@
 
     .slick-prev::before {
         right: -20px;
+    }
+}
+@media screen and (max-width: 1220px) {
+    .slick-next::before {
+        left: -40px;
+        background-color: hsla(0, 0%, 50%, 0.5);
+    }
+
+    .slick-prev::before {
+        right: -40px;
+        background-color: hsla(0, 0%, 50%, 0.5);
+    }
+}
+
+@media screen and (max-width: 1104px) {
+    .slick-list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .slick-next::before {
+        left: -50px;
+        background-color: #ffffff00;
+    }
+
+    .slick-prev::before {
+        right: -50px;
+        background-color: #ffffff00;
+    }
+}
+@media screen and (max-width: 890px) {
+    .slick-next::before {
+        left: -40px;
+        background-color: hsla(0, 0%, 50%, 0.5);
+    }
+
+    .slick-prev::before {
+        right: -40px;
+        background-color: hsla(0, 0%, 50%, 0.5);
+    }
+}
+@media screen and (max-width: 767px) {
+    .slick-list {
+        max-width: 400px;
     }
 }

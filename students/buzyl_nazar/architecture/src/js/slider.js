@@ -7,7 +7,7 @@ let newsItemHtml = '';
 
 function getNewsHtml(item) {
     let newsHtml = `
-    <div class="col-12">
+    <div class="news__container-card">
         <div class="news__card">
             <a href="image/${item.img}" data-lightbox="news${item.id}">
                 <img src="image/${item.img}" alt="photo ${item.id}" class="news__photo">
@@ -32,7 +32,7 @@ function getNewsHtml(item) {
 newsList.forEach(function (item) {
     newsItemHtml += getNewsHtml(item);
 });
-console.log(newsItemHtml);
+// console.log(newsItemHtml);
 
 slider.append(newsItemHtml);
 slider.slick({
@@ -42,21 +42,21 @@ slider.slick({
     dots: true,
     responsive: [
         {
-            breakpoint: 967,
+            breakpoint: 1105,
             settings: {
                 slidesToShow: 2,
             }
         },
         {
-            breakpoint: 767,
+            breakpoint: 768,
             settings: {
                 slidesToShow: 1,
                 arrows: false,
             }
-        }
-    ]
+        },
+    ],
 });
-console.log(slider);
+// console.log(slider);
 
 // slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 //     $('.price-box').html(slick.$slides.eq(nextSlide).find('.slider__item').data('price'))
