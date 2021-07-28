@@ -79,7 +79,16 @@ function showTopScroll() {
     }
 }
 
+function showHeaderMenu() {
+    if (pageYOffset > 200) {
+        document.getElementById('menu').classList.add('menu-active');
+    }
+    else {
+        document.getElementById('menu').classList.remove('menu-active');
+    }
+}
 btnScroll();
 scrollNav();
 scrollTop();
 setInterval(showTopScroll, 100);
+setInterval(showHeaderMenu, 100);

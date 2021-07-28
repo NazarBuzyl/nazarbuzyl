@@ -13,25 +13,27 @@
         padding: 40px 0;
     }
 
-    &__row {
-    }
+    &__row {}
 
     &__title {}
 
     &__link {
-        display: block;
-    }
-
-    &__photo-360 {
         position: relative;
-
+        display: block;
         &::after {
             content: '';
             @include position-center;
             display: block;
             width: 80px;
             height: 80px;
-            @include bg-cover('#{$folder-image}360.png');
+            @include bg-cover('#{$folder-image}gallery_360.png');
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        &:hover {
+            &::after{
+                opacity: 1;
+            }
         }
     }
 

@@ -16,7 +16,11 @@ $color-menu-item: $color-white;
         z-index: 11;
     }
 }
-
+.menu-active{
+    transition: background-color 0.3s ease-in-out ;
+    position: fixed;
+    background-color: $heliotrope;
+}
 .menu-open {
     overflow: hidden;
     position: fixed;

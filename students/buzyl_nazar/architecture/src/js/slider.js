@@ -3,13 +3,14 @@ import 'slick-carousel';
 import newsList from './lib/createNews';
 
 const slider = $('#newsList');
+const sliderTitle = $('#titleBlock');
 let newsItemHtml = '';
 
 function getNewsHtml(item) {
     let newsHtml = `
     <div class="news__container-card">
         <div class="news__card">
-            <a href="image/${item.img}" data-lightbox="news${item.id}">
+            <a  class="news__link" href="image/${item.img}" data-lightbox="news${item.id}">
                 <img src="image/${item.img}" alt="photo ${item.id}" class="news__photo">
             </a>
             <div class="news__info-block">
@@ -40,8 +41,7 @@ slider.slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: true,
-    responsive: [
-        {
+    responsive: [{
             breakpoint: 1105,
             settings: {
                 slidesToShow: 2,
@@ -56,12 +56,14 @@ slider.slick({
         },
     ],
 });
-// console.log(slider);
 
-// slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-//     $('.price-box').html(slick.$slides.eq(nextSlide).find('.slider__item').data('price'))
-// });
-
-// $('.go').on('click', function () {
-//     slider.slick('slickGoTo', 3);
-// })
+sliderTitle.slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false,
+    vertical: true,
+    verticalSwiping: true,
+    dotsClass: "vertical-dots",
+});

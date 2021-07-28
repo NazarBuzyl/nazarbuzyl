@@ -26865,16 +26865,6 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function getNewsHtml(item) {
-  var newsHtml = "\n    <div class=\"col-4\">\n        <div class=\"news__card\">\n            <img src=\"image/".concat(item.img, "\" alt=\"photo ").concat(item.id, "\" class=\"news__photo\">\n            <div class=\"news__info-block\">\n                <strong class=\"news__strong\">").concat(item.title, "</strong>\n                <p class=\"news__info\">").concat(item.info, "</p>\n                <img src=\"image/").concat(item.authorImg, "\" alt=\"").concat(authorName, "\" class=\"news__main-photo\">\n                <div class=\"news__main-info\">\n                    <p class=\"news__name\">").concat(authorName, "</p>\n                    <p class=\"news__date\">").concat(item.date, "</p>\n                </div>\n            </div>\n        </div>\n    </div>\n    ");
-  return newsHtml;
-}
-
-;
 var newsList = [{
   id: 1,
   title: 'See The Unmatched Beauty Of The Great.',
@@ -26924,7 +26914,7 @@ var newsList = [{
   authorName: 'Alice Ward',
   date: '30 Dec 2017'
 }];
-/* harmony default export */ __webpack_exports__["default"] = (newsList); //  export default getNewsHtml(item);
+/* harmony default export */ __webpack_exports__["default"] = (newsList);
 
 /***/ }),
 
@@ -26999,10 +26989,19 @@ function showTopScroll() {
   }
 }
 
+function showHeaderMenu() {
+  if (pageYOffset > 200) {
+    document.getElementById('menu').classList.add('menu-active');
+  } else {
+    document.getElementById('menu').classList.remove('menu-active');
+  }
+}
+
 btnScroll();
 scrollNav();
 scrollTop();
 setInterval(showTopScroll, 100);
+setInterval(showHeaderMenu, 100);
 
 /***/ }),
 
@@ -27033,10 +27032,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var slider = jquery__WEBPACK_IMPORTED_MODULE_3___default()('#newsList');
+var sliderTitle = jquery__WEBPACK_IMPORTED_MODULE_3___default()('#titleBlock');
 var newsItemHtml = '';
 
 function getNewsHtml(item) {
-  var newsHtml = "\n    <div class=\"news__container-card\">\n        <div class=\"news__card\">\n            <a href=\"image/".concat(item.img, "\" data-lightbox=\"news").concat(item.id, "\">\n                <img src=\"image/").concat(item.img, "\" alt=\"photo ").concat(item.id, "\" class=\"news__photo\">\n            </a>\n            <div class=\"news__info-block\">\n                <strong class=\"news__strong\">").concat(item.title, "</strong>\n                <p class=\"news__info\">").concat(item.info, "</p>\n                <div class=\"row\">\n                    <img src=\"image/").concat(item.authorImg, "\" alt=\"").concat(item.authorName, "\" class=\"news__main-photo\">\n                    <div class=\"news__main-info\">\n                        <p class=\"news__name\">").concat(item.authorName, "</p>\n                        <p class=\"news__date\">").concat(item.date, "</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    ");
+  var newsHtml = "\n    <div class=\"news__container-card\">\n        <div class=\"news__card\">\n            <a  class=\"news__link\" href=\"image/".concat(item.img, "\" data-lightbox=\"news").concat(item.id, "\">\n                <img src=\"image/").concat(item.img, "\" alt=\"photo ").concat(item.id, "\" class=\"news__photo\">\n            </a>\n            <div class=\"news__info-block\">\n                <strong class=\"news__strong\">").concat(item.title, "</strong>\n                <p class=\"news__info\">").concat(item.info, "</p>\n                <div class=\"row\">\n                    <img src=\"image/").concat(item.authorImg, "\" alt=\"").concat(item.authorName, "\" class=\"news__main-photo\">\n                    <div class=\"news__main-info\">\n                        <p class=\"news__name\">").concat(item.authorName, "</p>\n                        <p class=\"news__date\">").concat(item.date, "</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    ");
   return newsHtml;
 }
 
@@ -27063,13 +27063,17 @@ slider.slick({
       arrows: false
     }
   }]
-}); // console.log(slider);
-// slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-//     $('.price-box').html(slick.$slides.eq(nextSlide).find('.slider__item').data('price'))
-// });
-// $('.go').on('click', function () {
-//     slider.slick('slickGoTo', 3);
-// })
+});
+sliderTitle.slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: true,
+  arrows: false,
+  vertical: true,
+  verticalSwiping: true,
+  dotsClass: "vertical-dots"
+});
 
 /***/ }),
 

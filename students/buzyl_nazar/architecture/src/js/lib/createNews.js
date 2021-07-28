@@ -1,25 +1,4 @@
-function getNewsHtml(item) {
-    let newsHtml = `
-    <div class="col-4">
-        <div class="news__card">
-            <img src="image/${item.img}" alt="photo ${item.id}" class="news__photo">
-            <div class="news__info-block">
-                <strong class="news__strong">${item.title}</strong>
-                <p class="news__info">${item.info}</p>
-                <img src="image/${item.authorImg}" alt="${authorName}" class="news__main-photo">
-                <div class="news__main-info">
-                    <p class="news__name">${authorName}</p>
-                    <p class="news__date">${item.date}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    `;
-    return newsHtml;
-};
-
-const newsList = [
-    {
+const newsList = [{
         id: 1,
         title: 'See The Unmatched Beauty Of The Great.',
         img: 'news_photo1.jpg',
@@ -74,5 +53,6 @@ const newsList = [
         date: '30 Dec 2017',
     },
 ];
- export default newsList;
-//  export default getNewsHtml(item);
+
+export default newsList;
+ 

@@ -22,23 +22,49 @@
     @media screen and (max-width: 576px) {
         padding: 40px 0;
     }
-    &__container-card{
+
+    &__container-card {
         padding: 15px;
+
         @media screen and (max-width: 1220px) {
             padding: 15px 10px;
         }
+
         @media screen and (max-width: 1104px) {
             padding: 15px;
         }
     }
+
     &__title {
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 768px) {
             margin-bottom: 30px;
         }
     }
 
     &__card {
         background-color: #fff;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+
+        &::after {
+            content: '';
+            @include position-center;
+            display: block;
+            width: 80px;
+            height: 80px;
+            @include bg-cover('#{$folder-image}news_hover.png');
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
     }
 
     &__photo {
@@ -113,12 +139,15 @@
     opacity: .75;
     color: #ffffff;
 }
+
 .slick-next {
     z-index: 15;
 }
+
 .slick-prev {
     z-index: 16
 }
+
 .slick-next:hover::before,
 .slick-prev:hover::before {
     background-color: #ffffff80;
@@ -153,6 +182,7 @@
         right: -20px;
     }
 }
+
 @media screen and (max-width: 1220px) {
     .slick-next::before {
         left: -40px;
@@ -181,6 +211,7 @@
         background-color: #ffffff00;
     }
 }
+
 @media screen and (max-width: 890px) {
     .slick-next::before {
         left: -40px;
@@ -192,6 +223,7 @@
         background-color: hsla(0, 0%, 50%, 0.5);
     }
 }
+
 @media screen and (max-width: 767px) {
     .slick-list {
         max-width: 400px;
