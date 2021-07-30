@@ -14,10 +14,16 @@
         padding-top: 25vh;
         font-family: $font-default-name;
         font-weight: 700;
+        @media screen and (max-width: 768px) {
+            padding-top: 15vh;
+        }
     }
 
     &__title {
         margin-bottom: 0;
+        @media screen and (max-width: 400px) {
+            letter-spacing: 1px;
+        }
     }
 
     &__motivation-quotation {

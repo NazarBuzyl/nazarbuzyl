@@ -43,6 +43,12 @@ img {
     position: relative;
 }
 
+@media screen and (max-width: 768px) {
+    .col-display-none {
+        display: none;
+    }
+}
+
 .button {
     border: none;
     font-size: 14px;
@@ -57,11 +63,13 @@ img {
     font-weight: 400;
     background-color: inherit;
     border: 1px solid $default-color-text;
-    &:hover{
+
+    &:hover {
         transition: all 0.5s ease-in-out;
         background-color: $default-color-text;
         color: #fff;
     }
+
     @media screen and (max-width: 900px) {
         font-size: 12px;
         padding: 14px 0;

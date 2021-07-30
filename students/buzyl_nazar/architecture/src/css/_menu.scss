@@ -20,6 +20,9 @@ $color-menu-item: $color-white;
     transition: background-color 0.3s ease-in-out ;
     position: fixed;
     background-color: $heliotrope;
+    .menu-container{
+        padding: 0 15px;
+    }
 }
 .menu-open {
     overflow: hidden;

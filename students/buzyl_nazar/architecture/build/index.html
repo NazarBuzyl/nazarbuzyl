@@ -27,7 +27,7 @@
     <a id="top"></a>
     <header class="header">
         <div class="header__menu" id="menu" data-margin-top="20" data-sticky-for="1023" data-sticky-class="is-sticky">
-            <div class="container">
+            <div class="container menu-container">
                 <div class="row">
                     <div class="col-3 col-md-6">
                         <img class="index-logo" src="image/logo-monticello.png" alt="logo">
@@ -81,7 +81,7 @@
                         </nav>
                     </div>
         
-                    <div class="col-2 col-md-0">
+                    <div class="col-2 col-display-none">
                         <div class="social-media header__social-media">
                             <a class="social-media__link link-for-media" href="#">
                                 <svg width="19px" height="19px" viewBox="0 0 24 24"
@@ -326,11 +326,11 @@
                         <div class="contact__container">
                             <form action="get" class="contact__form">
                                 <div class="contact__form-group">
-                                    <input class="contact__form-element" type="text" autocomplete="off" value="" id="fullname"
+                                    <input class="contact__form-element" type="text" autocomplete="off" id="fullname"
                                         placeholder="Full name">
                                 </div>
                                 <div class="contact__form-group">
-                                    <input class="contact__form-element" type="text" autocomplete="off" value="" id="email"
+                                    <input class="contact__form-element" type="text" autocomplete="off" id="email" pattern="[^ @]*@[^ @]*"
                                         placeholder="Email">
                                 </div>
                                 <button class="button contact__button">submit</button>
@@ -344,9 +344,9 @@
     <footer class="footer">
         <div class="small-container">
             <div class="row">
-                <div class="col-9 col-sm-8">
+                <div class="col-9 col-sm-8 ">
                     <img src="image/logo-monticello.png" alt="logo" class="logo footer__logo"></div>
-                <div class="col-3 col-sm-4">
+                <div class="col-3 col-sm-4 footer__social-media-row">
                     <div class="social-media footer__social-media">
                         <a class="footer__link link-for-media" href="#">
                             <svg width="19px" height="19px" viewBox="0 0 24 24" class="footer__logo-facebook logo-media">
