@@ -1,19 +1,15 @@
 .weather {
     min-height: 100vh;
     background: linear-gradient(180deg, rgb(125, 184, 201, 1) 0%, rgb(125, 184, 201, 0.5) 100%);
-
-    &__we-search-by-city {}
-
-    &__section {}
 }
 
 .we-search-by-city {
+    font-family: $font-dafault;
+
     &__title {
         font-size: 24px;
         margin-bottom: 25px;
     }
-
-    &__search-block {}
 
     &__text {
         padding-left: 10px;
@@ -27,9 +23,14 @@
         padding: 0 15px;
         border-radius: 20px;
         margin-bottom: 12px;
-    }
+        font-family: $font-dafault;
 
-    &__btn-block {}
+        &:focus,
+        &:hover {
+            transition: box-shadow 0.5s ease-in-out;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        }
+    }
 
     &__btn {
         border: none;
@@ -40,5 +41,10 @@
         padding: 0 15px;
         min-width: 150px;
         color: #fff;
+
+        &:hover {
+            transition: box-shadow 0.5s ease-in-out;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+        }
     }
 }

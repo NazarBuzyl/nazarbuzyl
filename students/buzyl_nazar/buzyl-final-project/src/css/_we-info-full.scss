@@ -6,12 +6,14 @@
 
 .we-info-full {
     padding: 0;
+    font-family: $font-dafault;
+
     &__title {
         padding: 15px;
     }
 
     &__temperature-block {
-        padding: 0 15px 15px ;
+        padding: 0 15px;
     }
 
     &__feel-temperature {
@@ -20,8 +22,58 @@
         margin-bottom: -10px;
     }
 
-    &__descr {
+    &__descr {}
+
+    &__sun-row {
+        justify-content: space-between;
+        padding: 0px 15px 15px;
     }
+
+    &__sun-pos {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    &__semicircle {
+        width: 80px;
+        height: 40px;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #e87538;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__sun-rise-set-block {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__sunrise,
+    &__sunset {
+        display: flex;
+    }
+
+    &__sun-icon {
+        width: 24px;
+        height: 24px;
+        fill: #febc11;
+    }
+
+    &__sun-text {}
+
 
     &__row {}
 
@@ -30,7 +82,6 @@
         padding: 10px 16px;
         border-top: 1px solid rgba(43, 43, 43, 0.5);
         width: calc(50% - 7px);
-        font-family: Arial, Helvetica, sans-serif;
     }
 
     &__card:nth-child(2n-1) {
