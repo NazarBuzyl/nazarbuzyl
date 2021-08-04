@@ -2,12 +2,13 @@ import $ from 'jquery';
 import FetchWeather from './fetchWeather';
 import FetchCity from './fetchCity';
 import WeatherHtml from './weatherHtml';
+import WeatherFullHtml from './weatherFullHtml';
 //inst classes//
 
 const ftWe = new FetchWeather();
 const ftCity = new FetchCity();
 const weHtml = new WeatherHtml();
-
+const weFullHtml = new WeatherFullHtml();
 
 // console.log(ftCity.getCurrent());
 
@@ -25,13 +26,11 @@ btnWeather.addEventListener("click", () => {
 			lat: data.coord.lat,
 			lng: data.coord.lon
 		};
-	
 		initMap(cordsCity);
-
-		//call a UI method//
 		weHtml.populateUI(data);
-		//call saveToLS
 		weHtml.saveToLS(data);
+		weFullHtml.populateUI(data);
+		weFullHtml.saveToLS(data);
 	});
 });
 
@@ -40,4 +39,5 @@ btnWeather.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
 	const dataSaved = weHtml.getFromLS();
 	weHtml.populateUI(dataSaved);
+	weFullHtml.populateUI(dataSaved);
 });
