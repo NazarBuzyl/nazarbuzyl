@@ -15260,10 +15260,98 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./src/js/fetch.js":
-/*!*************************!*\
-  !*** ./src/js/fetch.js ***!
-  \*************************/
+/***/ "./src/js/fetchCity.js":
+/*!*****************************!*\
+  !*** ./src/js/fetchCity.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! regenerator-runtime/runtime.js */ "./node_modules/regenerator-runtime/runtime.js");
+/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var FetchCity = /*#__PURE__*/function () {
+  function FetchCity() {
+    _classCallCheck(this, FetchCity);
+  }
+
+  _createClass(FetchCity, [{
+    key: "getCurrent",
+    value: function () {
+      var _getCurrent = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var response, data;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch("https://andruxnet-world-cities-v1.p.rapidapi.com/?query=paris&searchby=city");
+
+              case 2:
+                response = _context.sent;
+                _context.next = 5;
+                return response.json();
+
+              case 5:
+                data = _context.sent;
+                console.log(data);
+                return _context.abrupt("return", data);
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function getCurrent() {
+        return _getCurrent.apply(this, arguments);
+      }
+
+      return getCurrent;
+    }()
+  }]);
+
+  return FetchCity;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (FetchCity); // , {
+//     "method": "GET",
+//     "headers": {
+//         "x-rapidapi-key": "a363042794mshc61dbcfa085f4dfp12d85djsn66a5a41f14bf",
+//         "x-rapidapi-host": "andruxnet-world-cities-v1.p.rapidapi.com"
+//     }
+// }
+
+/***/ }),
+
+/***/ "./src/js/fetchWeather.js":
+/*!********************************!*\
+  !*** ./src/js/fetchWeather.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15295,35 +15383,36 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Fetch = /*#__PURE__*/function () {
-  function Fetch() {
-    _classCallCheck(this, Fetch);
+var FetchWeather = /*#__PURE__*/function () {
+  function FetchWeather() {
+    _classCallCheck(this, FetchWeather);
   }
 
-  _createClass(Fetch, [{
+  _createClass(FetchWeather, [{
     key: "getCurrent",
     value: function () {
       var _getCurrent = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(input) {
-        var myKey, response, data;
+        var myKey, urlWeather, response, data;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 myKey = "735e51cf1b3946c9b78111ece9d6caae";
-                _context.next = 3;
-                return fetch("https://api.openweathermap.org/data/2.5/weather?q=".concat(input, "&appid=").concat(myKey));
+                urlWeather = "pro.openweathermap.org/data/2.5/forecast/hourly?q=";
+                _context.next = 4;
+                return fetch("https://api.openweathermap.org/data/2.5/weather?q=".concat(input, "&units=metric&appid=").concat(myKey));
 
-              case 3:
+              case 4:
                 response = _context.sent;
-                _context.next = 6;
+                _context.next = 7;
                 return response.json();
 
-              case 6:
+              case 7:
                 data = _context.sent;
                 console.log(data);
                 return _context.abrupt("return", data);
 
-              case 9:
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -15339,10 +15428,10 @@ var Fetch = /*#__PURE__*/function () {
     }()
   }]);
 
-  return Fetch;
+  return FetchWeather;
 }();
 
-/* harmony default export */ __webpack_exports__["default"] = (Fetch);
+/* harmony default export */ __webpack_exports__["default"] = (FetchWeather);
 
 /***/ }),
 
@@ -15357,59 +15446,48 @@ var Fetch = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetch */ "./src/js/fetch.js");
-/* harmony import */ var _ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui */ "./src/js/ui.js");
+/* harmony import */ var _fetchWeather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetchWeather */ "./src/js/fetchWeather.js");
+/* harmony import */ var _fetchCity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fetchCity */ "./src/js/fetchCity.js");
+/* harmony import */ var _weatherHtml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./weatherHtml */ "./src/js/weatherHtml.js");
+
 
 
  //inst classes//
 
-var ft = new _fetch__WEBPACK_IMPORTED_MODULE_1__["default"]();
-var ui = new _ui__WEBPACK_IMPORTED_MODULE_2__["default"](); //add event listeners//
+var ftWe = new _fetchWeather__WEBPACK_IMPORTED_MODULE_1__["default"]();
+var ftCity = new _fetchCity__WEBPACK_IMPORTED_MODULE_2__["default"]();
+var weHtml = new _weatherHtml__WEBPACK_IMPORTED_MODULE_3__["default"](); // console.log(ftCity.getCurrent());
+//add event listeners//
 
-var search = document.getElementById("searchUser");
-var button = document.getElementById("submit");
-button.addEventListener("click", function () {
-  var currentVal = search.value;
-  ft.getCurrent(currentVal).then(function (data) {
-    console.log(data, currentVal); //call a UI method//
+var searchWeather = document.getElementById("searchCityWeather");
+var btnWeather = document.getElementById("submitWeather");
+btnWeather.addEventListener("click", function () {
+  var currentVal = searchWeather.value;
+  ftWe.getCurrent(currentVal).then(function (data) {
+    console.log(data, currentVal);
+    var cordsCity = {
+      lat: data.coord.lat,
+      lng: data.coord.lon
+    };
+    initMap(cordsCity); //call a UI method//
 
-    ui.populateUI(data); //call saveToLS
+    weHtml.populateUI(data); //call saveToLS
 
-    ui.saveToLS(data);
+    weHtml.saveToLS(data);
   });
 }); //event listener for local storage
 
 window.addEventListener("DOMContentLoaded", function () {
-  var dataSaved = ui.getFromLS();
-  ui.populateUI(dataSaved);
-}); // const button = document.querySelector('.btn-search');
-// const inputValue = document.querySelector('.input-value');
-// const name = document.querySelector('.name');
-// const desc = document.querySelector('.desc');
-// const temp = document.querySelector('.temp');
-// const settings = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://api.ambeedata.com/latest/by-city?city=Bengaluru",
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-api-key": "API_KEY",
-// 		"Content-type": "application/json"
-// 	}
-// };
-// button.addEventListener('click', function () {
-// 	fetch('https://api.ambeedata.com/latest/by-city?city=' + inputValue.value)
-// 		.then(response => response.json())
-// 		.then(data => console.log(data))
-// 		.catch(err => console.log("Wrong city!"));	
-// });
+  var dataSaved = weHtml.getFromLS();
+  weHtml.populateUI(dataSaved);
+});
 
 /***/ }),
 
-/***/ "./src/js/ui.js":
-/*!**********************!*\
-  !*** ./src/js/ui.js ***!
-  \**********************/
+/***/ "./src/js/weatherFullHtml.js":
+/*!***********************************!*\
+  !*** ./src/js/weatherFullHtml.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15437,19 +15515,19 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var UI = /*#__PURE__*/function () {
-  function UI() {
-    _classCallCheck(this, UI);
+var WeatherFullHtml = /*#__PURE__*/function () {
+  function WeatherFullHtml() {
+    _classCallCheck(this, WeatherFullHtml);
 
-    this.uiContainer = document.getElementById("content");
+    this.uiContainer = document.getElementById("weatherInfo");
     this.city;
-    this.defaultCity = "London";
+    this.defaultCity = "Kyiv";
   }
 
-  _createClass(UI, [{
+  _createClass(WeatherFullHtml, [{
     key: "populateUI",
     value: function populateUI(data) {
-      this.uiContainer.innerHTML = "\n        \n        <div class=\"card mx-auto mt-5\" style=\"width: 18rem;\">\n            <div class=\"card-body justify-content-center\">\n                <h5 class=\"card-title\">".concat(data.name, "</h5>\n                <h6 class=\"card-subtitle mb-2 text-muted\">Highs of ").concat(data.main.temp_max, ". Lows of ").concat(data.main.temp_min, "</h6>\n                <p class=\"card-text \">Weather conditions are described as: ").concat(data.weather[0].description, "</p>\n            </div>\n        </div>\n        ");
+      this.uiContainer.innerHTML = "\n      <h2 class=\"we-info__title title-h2\">Weather - ".concat(data.name, "</h2>\n      <p class=\"we-info__time\">As of 12:00 EEST</p>\n      <div class=\"we-info__temperature-block row\">\n          <div class=\"we-info__now-temperature-block\">\n              <p class=\"we-info__now-temperature\">").concat(~~data.main.temp, " \xB0</p>\n              <p class=\"we-info__descr\">").concat(data.weather[0].description, "</p>\n          </div>\n          <div class=\"we-info__min-max-temperature-block\">\n              <img class=\"we-info__min-max-icon\" src=\"\" alt=\"\">\n              <p class=\"we-info__min-max-temperature\">").concat(~~data.main.temp_max, " \xB0/").concat(~~data.main.temp_min, " \xB0</p>\n          </div>\n      </div>\n          ");
     }
   }, {
     key: "clearUI",
@@ -15479,23 +15557,105 @@ var UI = /*#__PURE__*/function () {
     }
   }]);
 
-  return UI;
+  return WeatherFullHtml;
 }();
 
-/* harmony default export */ __webpack_exports__["default"] = (UI);
+/* harmony default export */ __webpack_exports__["default"] = (WeatherFullHtml);
+
+/***/ }),
+
+/***/ "./src/js/weatherHtml.js":
+/*!*******************************!*\
+  !*** ./src/js/weatherHtml.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.symbol.js */ "./node_modules/core-js/modules/es.symbol.js");
+/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.symbol.description.js */ "./node_modules/core-js/modules/es.symbol.description.js");
+/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var WeatherHtml = /*#__PURE__*/function () {
+  function WeatherHtml() {
+    _classCallCheck(this, WeatherHtml);
+
+    this.uiContainer = document.getElementById("weatherInfo");
+    this.city;
+    this.defaultCity = "Kyiv";
+  }
+
+  _createClass(WeatherHtml, [{
+    key: "populateUI",
+    value: function populateUI(data) {
+      this.uiContainer.innerHTML = "\n    <h2 class=\"we-info__title title-h2\">Weather - ".concat(data.name, "</h2>\n    <p class=\"we-info__time\">As of 12:00 EEST</p>\n    <div class=\"we-info__temperature-block row\">\n        <div class=\"we-info__now-temperature-block\">\n            <p class=\"we-info__now-temperature\">").concat(~~data.main.temp, " \xB0</p>\n            <p class=\"we-info__descr\">").concat(data.weather[0].description, "</p>\n        </div>\n        <div class=\"we-info__min-max-temperature-block\">\n            <img class=\"we-info__min-max-icon\" src=\"\" alt=\"\">\n            <p class=\"we-info__min-max-temperature\">").concat(~~data.main.temp_max, " \xB0/").concat(~~data.main.temp_min, " \xB0</p>\n        </div>\n    </div>\n        ");
+    }
+  }, {
+    key: "clearUI",
+    value: function clearUI() {
+      uiContainer.innerHTML = "";
+    }
+  }, {
+    key: "saveToLS",
+    value: function saveToLS(data) {
+      localStorage.setItem("city", JSON.stringify(data));
+    }
+  }, {
+    key: "getFromLS",
+    value: function getFromLS() {
+      if (localStorage.getItem("city" == null)) {
+        return this.defaultCity;
+      } else {
+        this.city = JSON.parse(localStorage.getItem("city"));
+      }
+
+      return this.city;
+    }
+  }, {
+    key: "clearLS",
+    value: function clearLS() {
+      localStorage.clear();
+    }
+  }]);
+
+  return WeatherHtml;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (WeatherHtml);
 
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************!*\
-  !*** multi ./src/js/fetch.js ./src/js/script.js ./src/js/ui.js ***!
-  \*****************************************************************/
+/*!***********************************************************************************************************************************!*\
+  !*** multi ./src/js/fetchCity.js ./src/js/fetchWeather.js ./src/js/script.js ./src/js/weatherFullHtml.js ./src/js/weatherHtml.js ***!
+  \***********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetch.js */"./src/js/fetch.js");
+__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchCity.js */"./src/js/fetchCity.js");
+__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchWeather.js */"./src/js/fetchWeather.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\script.js */"./src/js/script.js");
-module.exports = __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\ui.js */"./src/js/ui.js");
+__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\weatherFullHtml.js */"./src/js/weatherFullHtml.js");
+module.exports = __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\weatherHtml.js */"./src/js/weatherHtml.js");
 
 
 /***/ })

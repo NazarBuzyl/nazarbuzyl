@@ -5,36 +5,140 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" />
+    <title>What do you want today?</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" /> -->
 </head>
 
-<body>
-    <nav class="navbar navbar-dark bg-primary mb-3">
-        <div class="container">
-            <a href="#" class="navbar-brand">Weather.JS</a>
-        </div>
-    </nav>
-    <div class="container searchContainer">
-        <div class="search card card-body">
-            <h1>Get The Weather For a Location</h1>
-            <p class="lead">Enter Your Location</p>
-            <input type="text" id="searchUser" class="form-control" placeholder="Location">
-        </div>
-        <br>
-        <div id="profile"></div>
-    </div>
-    <div class="container text-center mt-2">
-        <button class="btn btn-primary" id="submit">Submit</button>
-    </div>
+<body class="page">
+    <header class="header">
 
-    <div id="content">
-
-    </div>
-    <footer class="mt-5 p-3 text-center bg-light">
-        Weather.js &copy;
+    </header>
+    <main class="main">
+        <!-- <section class="info-block">
+            <div class="container">
+                <h1 class="info-block__title">What do you want today?</h1>
+                <div class="row">
+                    <div class="col-6">
+                        <a class="info-block__link" href="">
+                            <div class="info-block__link-block link-block">
+                                <h2 class="link-block__title"></h2>
+                                <img class="link-block__image" src="" alt="Weather forecast">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a class="info-block__link" href="">
+                            <div class="info-block__link-block link-block">
+                                <h2 class="link-block__title"></h2>
+                                <img class="link-block__image" src="" alt="Funny image and gifs">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a class="info-block__link" href="">
+                            <div class="info-block__link-block link-block">
+                                <h2 class="link-block__title"></h2>
+                                <img class="link-block__image" src="" alt="Currency Converter">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a class="info-block__link" href="">
+                            <div class="info-block__link-block link-block">
+                                <h2 class="link-block__title"></h2>
+                                <img class="link-block__image" src="" alt="News">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="weather">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <!-- Weather search block -->
+                        <div class="weather__we-search-by-city we-search-by-city weather__section">
+                            <h1 class="we-search-by-city__title">Get The Weather For a Location</h1>
+                            <div class="we-search-by-city__search-block">
+                                <p class="we-search-by-city__text">Enter Your Location</p>
+                                <div class="we-search-by-city__wrap-input" data-validate="Enter password">
+                                    <input type="text" id="searchCityWeather" class="we-search-by-city__input"
+                                        placeholder="Search by sity name">
+                                    <span class="we-search-by-city__focus-input"
+                                        data-placeholder="Enter Your Location"></span>
+                                </div>
+                            </div>
+                            <div class="we-search-by-city__btn-block">
+                                <button class="we-search-by-city__btn" id="submitWeather">Submit</button>
+                            </div>
+                        </div>
+                        <!-- Weather - City -->
+                        <div class="weather__we-info we-info weather__section" id="weatherInfo">
+                            <h2 class="we-info__title title-h2">Weather - Kiev</h2>
+                            <p class="we-info__time">As of 12:00 EEST</p>
+                            <div class="we-info__temperature-block row">
+                                <div class="we-info__now-temperature-block">
+                                    <p class="we-info__now-temperature">24 °</p>
+                                    <p class="we-info__descr">Clear</p>
+                                </div>
+                                <div class="we-info__min-max-temperature-block">
+                                    <img class="we-info__min-max-icon" src="" alt="">
+                                    <p class="we-info__min-max-temperature">26 °/15 °</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Weather in City for today -->
+                        //= _we-info-full.html
+                        <!-- Weather map -->
+                        <div class="weather__we-map we-map weather__section">
+                            <h2 class="we-map_title title-h2">Weather Map</h2>
+                            <div id="mapWeather" class="we-map__map-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        //= _footer.html
     </footer>
     <script src="js/script.js"></script>
+    <script>
+        function initMap(coords) {
+            let cordsCity = {
+                lat: JSON.parse(localStorage.getItem("city")).coord.lat,
+                lng: JSON.parse(localStorage.getItem("city")).coord.lon
+            };
+            if (coords) cordsCity = coords;
+            console.log(cordsCity);
+
+            const map = new google.maps.Map(document.getElementById('mapWeather'), {
+                center: cordsCity,
+                zoom: 10,
+            });
+            // const marker = new google.maps.Marker({
+            //     position: cordsMarker,
+            //     map: map,
+            //     icon: 'image/Pin.png'
+            // });
+            //const contentString = '<div id="content">';
+            //const infowindow = new google.maps.InfoWindow({
+            //    content: contentString,
+            //});
+            //marker.addListener("click", () => {
+            //    infowindow.open({
+            //        anchor: marker,
+            //        map,
+            //        shouldFocus: false,
+            //    });
+        };
+    </script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACLJtDT9ST1Zt0A7rKuWancGIsrIuJIwE&callback=initMap">
+    </script>
 </body>
 
 </html>

@@ -5,36 +5,268 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" />
+    <title>What do you want today?</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" /> -->
 </head>
 
-<body>
-    <nav class="navbar navbar-dark bg-primary mb-3">
-        <div class="container">
-            <a href="#" class="navbar-brand">Weather.JS</a>
-        </div>
-    </nav>
-    <div class="container searchContainer">
-        <div class="search card card-body">
-            <h1>Get The Weather For a Location</h1>
-            <p class="lead">Enter Your Location</p>
-            <input type="text" id="searchUser" class="form-control" placeholder="Location">
-        </div>
-        <br>
-        <div id="profile"></div>
-    </div>
-    <div class="container text-center mt-2">
-        <button class="btn btn-primary" id="submit">Submit</button>
-    </div>
+<body class="page">
+    <header class="header">
 
-    <div id="content">
-
-    </div>
-    <footer class="mt-5 p-3 text-center bg-light">
-        Weather.js &copy;
+    </header>
+    <main class="main">
+        <!-- <section class="info-block">
+            <div class="container">
+                <h1 class="info-block__title">What do you want today?</h1>
+                <div class="row">
+                    <div class="col-6">
+                        <a class="info-block__link" href="">
+                            <div class="info-block__link-block link-block">
+                                <h2 class="link-block__title"></h2>
+                                <img class="link-block__image" src="" alt="Weather forecast">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a class="info-block__link" href="">
+                            <div class="info-block__link-block link-block">
+                                <h2 class="link-block__title"></h2>
+                                <img class="link-block__image" src="" alt="Funny image and gifs">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a class="info-block__link" href="">
+                            <div class="info-block__link-block link-block">
+                                <h2 class="link-block__title"></h2>
+                                <img class="link-block__image" src="" alt="Currency Converter">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a class="info-block__link" href="">
+                            <div class="info-block__link-block link-block">
+                                <h2 class="link-block__title"></h2>
+                                <img class="link-block__image" src="" alt="News">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="weather">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <!-- Weather search block -->
+                        <div class="weather__we-search-by-city we-search-by-city weather__section">
+                            <h1 class="we-search-by-city__title">Get The Weather For a Location</h1>
+                            <div class="we-search-by-city__search-block">
+                                <p class="we-search-by-city__text">Enter Your Location</p>
+                                <div class="we-search-by-city__wrap-input" data-validate="Enter password">
+                                    <input type="text" id="searchCityWeather" class="we-search-by-city__input"
+                                        placeholder="Search by sity name">
+                                    <span class="we-search-by-city__focus-input"
+                                        data-placeholder="Enter Your Location"></span>
+                                </div>
+                            </div>
+                            <div class="we-search-by-city__btn-block">
+                                <button class="we-search-by-city__btn" id="submitWeather">Submit</button>
+                            </div>
+                        </div>
+                        <!-- Weather - City -->
+                        <div class="weather__we-info we-info weather__section" id="weatherInfo">
+                            <h2 class="we-info__title title-h2">Weather - Kiev</h2>
+                            <p class="we-info__time">As of 12:00 EEST</p>
+                            <div class="we-info__temperature-block row">
+                                <div class="we-info__now-temperature-block">
+                                    <p class="we-info__now-temperature">24 °</p>
+                                    <p class="we-info__descr">Clear</p>
+                                </div>
+                                <div class="we-info__min-max-temperature-block">
+                                    <img class="we-info__min-max-icon" src="" alt="">
+                                    <p class="we-info__min-max-temperature">26 °/15 °</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Weather in City for today -->
+                        <div class="weather__we-info-full we-info-full weather__section" id="weatherInfoFull">
+                            <h2 class="we-info-full__title title-h2">Weather in Kiev for today</h2>
+                            <div class="we-info-full__temperature-block">
+                                <div class="we-info-full__temperature-block">
+                                    <p class="we-info-full__feel-temperature">24 °</p>
+                                    <p class="we-info-full__descr">Feels like</p>
+                                </div>
+                                <div class="row we-info-full__row">
+                                    <div class="we-info-full__card">
+                                        <svg class="we-info-full__icon" viewBox="0 0 24 24">
+                                            <title>Temperature</title>
+                                            <path
+                                                d="M10.333 15.48v.321c.971.357 1.667 1.322 1.667 2.456 0 1.438-1.12 2.604-2.5 2.604S7 19.695 7 18.257c0-1.134.696-2.099 1.667-2.456v-.322a2.084 2.084 0 0 1-1.25-1.91V5.583a2.083 2.083 0 1 1 4.166 0v7.986c0 .855-.514 1.589-1.25 1.91zM15.8 8.1a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6zm0-1.85a1 1 0 1 0 0-2 1 1 0 0 0 0 2z">
+                                            </path>
+                                        </svg>
+                                        <div class="we-info-full__icon-desription">
+                                            High / low
+                                        </div>
+                                        <div class="we-info-full__info-text"><span>26 °</span> / <span>15 °</span>
+                                        </div>
+                                    </div>
+                                    <div class="we-info-full__card">
+                                        <svg class="we-info-full__icon" viewBox="0 0 24 24">
+                                            <title>Wind</title>
+                                            <path
+                                                d="M6 8.67h5.354c1.457 0 2.234-1.158 2.234-2.222S12.687 4.4 11.354 4.4c-.564 0-1.023.208-1.366.488M3 11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4 18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153 2.153 0 0 1-1.63-.742"
+                                                stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
+                                            </path>
+                                        </svg>
+                                        <div class="we-info-full__icon-desription">
+                                            Wind
+                                        </div>
+                                        <div class="we-info-full__info-text">
+                                            <span>
+                                                <svg class="we-info-full__info-text-icon" viewBox="0 0 24 24">
+                                                    <title>Wind Direction</title>
+                                                    <path stroke="currentColor" fill="none"
+                                                        d="M18.467 4.482l-5.738 5.738a1.005 1.005 0 0 1-1.417 0L5.575 4.482l6.446 16.44 6.446-16.44z">
+                                                    </path>
+                                                </svg>14 km / year
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="we-info-full__card">
+                                        <svg class="we-info-full__icon" viewBox="0 0 24 24">
+                                            <title>Humidity</title>
+                                            <path fill-rule="evenodd"
+                                                d="M11.743 17.912a4.182 4.182 0 0 1-2.928-1.182 3.972 3.972 0 0 1-.614-4.962.743.743 0 0 1 .646-.349c.234 0 .476.095.66.275l4.467 4.355c.385.376.39.998-.076 1.275a4.216 4.216 0 0 1-2.155.588M11.855 4c.316 0 .61.14.828.395.171.2.36.416.562.647 1.857 2.126 4.965 5.684 4.965 8.73 0 3.416-2.85 6.195-6.353 6.195-3.505 0-6.357-2.78-6.357-6.195 0-3.082 2.921-6.406 4.854-8.605.242-.275.47-.535.673-.772A1.08 1.08 0 0 1 11.855 4">
+                                            </path>
+                                        </svg>
+                                        <div class="we-info-full__icon-desription">Humidity
+                                        </div>
+                                        <div class="we-info-full__info-text">
+                                            <span>48%
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="we-info-full__card" class="">
+                                        <svg class="we-info-full__icon" viewBox="0 0 24 24">
+                                            <title>Pressure</title>
+                                            <path
+                                                d="M8.462 18.293l-.29-.002c-.6-.004-1.043-.007-1.259-.007-1.119 0-1.182-1.015-.34-1.734l.196-.164.508-.425 1.543-1.292c1.014-.846 1.74-1.45 2.073-1.723.735-.601 1.305-.596 2.033.022.387.329.959.805 2.207 1.841a377.936 377.936 0 0 1 2.18 1.816c.796.67.742 1.66-.295 1.66h-2.382v1.77c0 .83-.393 1.223-1.258 1.223h-2.994c-.809 0-1.258-.42-1.258-1.207v-1.773l-.664-.005zm0-12.807l-.29.002c-.6.004-1.043.006-1.259.006-1.119 0-1.182 1.016-.34 1.734l.196.164.508.426 1.543 1.29a348.68 348.68 0 0 0 2.073 1.724c.735.601 1.305.596 2.033-.022.387-.328.959-.805 2.207-1.84a377.937 377.937 0 0 0 2.18-1.817c.796-.67.742-1.659-.295-1.659h-2.382v-1.77c0-.832-.393-1.224-1.258-1.224h-2.994c-.809 0-1.258.42-1.258 1.207V5.48l-.664.005z">
+                                            </path>
+                                        </svg>
+                                        <div class="we-info-full__icon-desription">Pressure
+                                        </div>
+                                        <div class="we-info-full__info-text">
+                                            <span>
+                                                <svg class="we-info-full__info-text-icon" viewBox="0 0 24 24">
+                                                    <title>Arrow Up</title>
+                                                    <path d="M11 2.5a1 1 0 0 1 2 0v19a1 1 0 0 1-2 0v-19z"></path>
+                                                    <path
+                                                        d="M12 3.914l-7.293 7.293a1 1 0 1 1-1.414-1.414l8-8a1 1 0 0 1 1.414 0l8 8a1 1 0 1 1-1.414 1.414L12 3.914z">
+                                                    </path>
+                                                </svg>1015.2 mbar
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="we-info-full__card">
+                                        <svg class="we-info-full__icon" viewBox="0 0 1024 1024">
+                                            <title>Visibility</title>
+                                            <path
+                                                d="M491.856 879.808c-60.48-5.056-110.848-25.184-171.328-55.424-120.96-55.424-216.704-146.112-292.256-256.96-25.248-40.352-30.24-80.64 0-126.016 80.608-115.872 186.464-211.68 317.472-272.096 110.816-50.4 226.752-50.4 337.664 0 136 60.48 241.824 156.224 317.44 282.208 15.104 25.216 25.12 65.504 10.048 85.728-105.792 191.424-256.992 367.84-519.04 342.56zm292.256-377.92c0-151.168-120.96-272.064-272.096-272.064-146.144 0-272.128 126.016-272.128 272.064 0 151.232 120.96 277.216 272.128 277.216 151.104-.032 272.096-125.984 272.096-277.216z">
+                                            </path>
+                                            <path
+                                                d="M789.808 500.416c0 156.896-125.472 287.52-282.336 282.336-156.864 0-282.336-130.656-282.336-287.488 0-146.4 130.656-277.12 282.336-277.12 156.896-.032 287.584 125.376 282.336 282.272zM512.752 348.832c-83.68 0-151.584 67.968-151.584 151.584 0 88.864 67.968 156.896 151.584 156.896 83.648 0 156.832-73.216 156.832-156.896-5.184-83.648-73.152-151.584-156.832-151.584z">
+                                            </path>
+                                        </svg>
+                                        <div class="we-info-full__icon-desription">Visibility
+                                        </div>
+                                        <div class="we-info-full__info-text">
+                                            <span>9.66 km
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Weather map -->
+                        <div class="weather__we-map we-map weather__section">
+                            <h2 class="we-map_title title-h2">Weather Map</h2>
+                            <div id="mapWeather" class="we-map__map-block"></div>
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 information">
+                        <h6 class="footer-titleinformation__title">Information</h6>
+                        <a href="./index.html" class="footer-link information__link">Home</a>
+                        <a href="./weather.html" class="footer-link information__link">Weather</a>
+                    </div>
+                    <div class="col-3 contact">
+                        <h6 class="footer-title contact__title">Contact</h6>
+                        <a href="" class="footer-link contact__link">Git <span>Nazar Buzyl</span></a>
+                        <a href="" class="footer-link contact__link">Linkedin <span>Nazar Buzyl</span></a>
+                        <a href="" class="footer-link contact__link">Facebook <span>Nazar Buzyl</span></a>
+                        <a href="" class="footer-link contact__link">Email <span>Nazar Buzyl</span></a>
+                    </div>
+                    <div class="col-3 project">
+                        <h6 class="project__title">Project</h6>
+                        <a href="" class="footer-link project__link">Monticello</a>
+                        <a href="" class="footer-link project__link">Bhromaon</a>
+                    </div>
+                    <div class="col-3 apis">
+                        <h6 class="footer-title apis__title">I used APIs</h6>
+                        <a href="https://openweathermap.org" class="footer-link apis__link">OpenWeather</a>
+                    </div>
+                </div>
+                <div class="profile">
+                    <p class="profile__text">&#169; funny website was created by
+                        <a class="profile__my-link" href="mailto:nazarbuzyl@gmail.com"> Nazar Buzyl </a>2021-{{nowDateYear}}
+                    </p>
+                </div>
+            </div>
+        </footer>
     </footer>
     <script src="js/script.js"></script>
+    <script>
+        function initMap(coords) {
+            let cordsCity = {
+                lat: JSON.parse(localStorage.getItem("city")).coord.lat,
+                lng: JSON.parse(localStorage.getItem("city")).coord.lon
+            };
+            if (coords) cordsCity = coords;
+            console.log(cordsCity);
+
+            const map = new google.maps.Map(document.getElementById('mapWeather'), {
+                center: cordsCity,
+                zoom: 10,
+            });
+            // const marker = new google.maps.Marker({
+            //     position: cordsMarker,
+            //     map: map,
+            //     icon: 'image/Pin.png'
+            // });
+            //const contentString = '<div id="content">';
+            //const infowindow = new google.maps.InfoWindow({
+            //    content: contentString,
+            //});
+            //marker.addListener("click", () => {
+            //    infowindow.open({
+            //        anchor: marker,
+            //        map,
+            //        shouldFocus: false,
+            //    });
+        };
+    </script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACLJtDT9ST1Zt0A7rKuWancGIsrIuJIwE&callback=initMap">
+    </script>
 </body>
 
 </html>

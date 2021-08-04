@@ -1,0 +1,62 @@
+.weather {
+    &__we-info-full {}
+
+    &__section {}
+}
+
+.we-info-full {
+    padding: 0;
+    &__title {
+        padding: 15px;
+    }
+
+    &__temperature-block {
+        padding: 0 15px 15px ;
+    }
+
+    &__feel-temperature {
+        font-size: 56px;
+        font-weight: 600;
+        margin-bottom: -10px;
+    }
+
+    &__descr {
+    }
+
+    &__row {}
+
+    &__card {
+        display: flex;
+        padding: 10px 16px;
+        border-top: 1px solid rgba(43, 43, 43, 0.5);
+        width: calc(50% - 7px);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    &__card:nth-child(2n-1) {
+        margin-right: 6px;
+    }
+
+    &__card:nth-child(2n) {
+        margin-left: 6px;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        fill: #2b2b2b;
+    }
+
+    &__icon-desription {
+        flex-grow: 1;
+        padding: 0 10px;
+    }
+
+    &__info-text {}
+
+    &__info-text-icon {
+        fill: #2b2b2b;
+        width: 15px;
+        height: 15px;
+    }
+}

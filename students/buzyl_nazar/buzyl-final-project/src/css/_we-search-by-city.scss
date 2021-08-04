@@ -1,0 +1,44 @@
+.weather {
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgb(125, 184, 201, 1) 0%, rgb(125, 184, 201, 0.5) 100%);
+
+    &__we-search-by-city {}
+
+    &__section {}
+}
+
+.we-search-by-city {
+    &__title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    &__search-block {}
+
+    &__text {
+        padding-left: 10px;
+        margin-bottom: 12px;
+    }
+
+    &__input {
+        width: 50%;
+        line-height: 35px;
+        border: none;
+        padding: 0 15px;
+        border-radius: 20px;
+        margin-bottom: 12px;
+    }
+
+    &__btn-block {}
+
+    &__btn {
+        border: none;
+        border-radius: 20px;
+        background-color: #054195;
+        box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%);
+        line-height: 40px;
+        padding: 0 15px;
+        min-width: 150px;
+        color: #fff;
+    }
+}
