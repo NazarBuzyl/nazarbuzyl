@@ -1,0 +1,34 @@
+.cocktail {
+    &__co-search {
+        // background-color: #363636;
+        padding: 15px;
+    }
+}
+.co-search {
+    &__search-block {
+        max-width: 250px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        background-color: #fff;
+    }
+    &__input {
+        display: block;
+        border: none;
+        line-height: 41px;
+        font-size: 14px;
+        &:focus{
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        }
+        padding: 0 10px;
+    }
+    &__btn {
+        display: block;
+        border: none;
+    }
+    &__icon {
+        width: 40px;
+        height: 40px;
+        background-color: initial;
+    }
+}

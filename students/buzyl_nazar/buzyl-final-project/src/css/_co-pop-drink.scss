@@ -1,0 +1,69 @@
+.cocktail {
+    background-color: #fff;
+
+    &__co-info {}
+}
+
+.co-pop-drink {
+    font-family: $font-secondary;
+
+    &__list {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        margin: 10px;
+        width: 300px;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+        background-color: #fff;
+    }
+
+    &__visibility-part {}
+
+    &__image-area {
+        position: relative;
+    }
+
+    &__hover-info {}
+}
+
+.visibility-part {
+    &__img {
+        display: block;
+        width: 300px;
+    }
+
+    &__name {
+        font-size: 14px;
+        display: block;
+        line-height: 41px;
+        padding: 10px 15px;
+    }
+}
+
+.co-pop-drink__image-area:hover .co-pop-drink__hover-info {
+    opacity: 1;
+}
+
+.hover-info {
+    position: absolute;
+    background-color: rgba(49, 49, 49, 0.816);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 23px 25px;
+
+    &__item {}
+
+    &__icon {}
+
+    &__text {}
+
+    &__btn-block {}
+
+    &__btn {}
+}

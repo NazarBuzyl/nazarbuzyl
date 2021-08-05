@@ -73,24 +73,74 @@
     
         </header>
         <main class="main cocktail">
-            <div class="container">
-                <!-- coather search block -->
-                <section class="cocktail__co-search-by-city co-search-by-city cocktail__section">
-                    <h1 class="co-search-by-city__title">Welcome to TheCocktail</h1>
-                    <div class="co-search-by-city__search-block">
-                        <input type="text" id="searchCocktail" class="co-search-by-city__input" placeholder="Search for a Cocktail">
+            <!-- Cocktail search block -->
+            <section class="cocktail__co-search co-search">
+                <div class="co-search__search-block">
+                    <input type="text" id="searchCocktail" class="co-search__input" placeholder="Search for a Cocktail">
+                    <button class="co-search__btn" id="submitCocktail">
+    
+                    </button>
+                </div>
+            </section>
+            <section class="cocktail__co-catalog co-catalog">
+                <div class="container">
+                    <div class="row co-catalog__list" id="cocktailCatalog">
+                        <!-- <div class="col-3 co-catalog__item">
+                                <div class="co-catalog__visibility-part visibility-part">
+                                    <img src="" alt="" class="visibility-part__img">
+                                    <h3 class="visibility-part__name"></h3>
+                                </div>
+                                <div class="co-catalog__hover-info hover-info">
+                                    <div class="hover-info__item">
+                                        <img class="hover-info__icon" src="" alt="">
+                                        <p class="hover-info__text"></p>
+                                    </div>
+                                    <div class="hover-info__item">
+                                        <img class="hover-info__icon" src="" alt="">
+                                        <p class="hover-info__text"></p>
+                                    </div>
+                                    <div class="hover-info__btn-block">
+                                        <button class="hover-info__btn">see recipe</button>
+                                    </div>
+                                </div>
+                            </div> -->
                     </div>
-                    <div class="co-search-by-city__btn-block">
-                        <button class="co-search-by-city__btn" id="submitCocktail">Submit</button>
+                </div>
+            </section>
+            
+            <!-- Popular drink -->
+            <section class="cocktail__co-info co-pop-drink ">
+                <div class="container">
+                    <h2 class="co-pop-drink__title">You may like this</h2>
+                    <div class="co-pop-drink__list" id="cocktailPoDrink">
+                        <!-- <div class="co-pop-drink__item">
+                                <div class="co-pop-drink__visibility-part visibility-part">
+                                    <img src="" alt="" class="visibility-part__img">
+                                    <h3 class="visibility-part__name"></h3>
+                                </div>
+                                <div class="co-pop-drink__hover-info hover-info">
+                                    <div class="hover-info__item">
+                                        <img class="hover-info__icon" src="" alt="">
+                                        <p class="hover-info__text"></p>
+                                    </div>
+                                    <div class="hover-info__item">
+                                        <img class="hover-info__icon" src="" alt="">
+                                        <p class="hover-info__text"></p>
+                                    </div>
+                                    <div class="hover-info__btn-block">
+                                        <button class="hover-info__btn">see recipe</button>
+                                    </div>
+                                </div>
+                            </div> -->
                     </div>
-                </section>
-                <!-- Popular drink -->
-                <section class="cocktail__co-info co-info cocktail__section" id="cocktailPoDrink">
-                </section>
-                <!-- Popular Ingredients -->
-                <section class="cocktail__co-info-full co-info-full cocktail__section" id="cocktailPoIng">
-                </section>
-            </div>
+                </div>
+            </section>
+            <!-- Popular Ingredients -->
+            <section class="cocktail__co-pop-ing co-pop-ing" id="cocktailPoIng">
+                <div class="container">
+    
+                </div>
+            </section>
         </main>
         <footer class="footer">
             <footer class="footer" id="footer">

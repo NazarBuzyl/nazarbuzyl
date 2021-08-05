@@ -154,6 +154,30 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/array-for-each.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/internals/array-for-each.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $forEach = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").forEach;
+var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "./node_modules/core-js/internals/array-method-is-strict.js");
+
+var STRICT_METHOD = arrayMethodIsStrict('forEach');
+
+// `Array.prototype.forEach` method implementation
+// https://tc39.es/ecma262/#sec-array.prototype.foreach
+module.exports = !STRICT_METHOD ? function forEach(callbackfn /* , thisArg */) {
+  return $forEach(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+// eslint-disable-next-line es/no-array-prototype-foreach -- safe
+} : [].forEach;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/array-includes.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/internals/array-includes.js ***!
@@ -304,6 +328,28 @@ module.exports = function (METHOD_NAME) {
       return { foo: 1 };
     };
     return array[METHOD_NAME](Boolean).foo !== 1;
+  });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/array-method-is-strict.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/internals/array-method-is-strict.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+
+module.exports = function (METHOD_NAME, argument) {
+  var method = [][METHOD_NAME];
+  return !!method && fails(function () {
+    // eslint-disable-next-line no-useless-call,no-throw-literal -- required for testing
+    method.call(null, argument || function () { throw 1; }, 1);
   });
 };
 
@@ -604,6 +650,52 @@ var EXISTS = isObject(document) && isObject(document.createElement);
 
 module.exports = function (it) {
   return EXISTS ? document.createElement(it) : {};
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/dom-iterables.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/internals/dom-iterables.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// iterable DOM collections
+// flag - `iterable` interface - 'entries', 'keys', 'values', 'forEach' methods
+module.exports = {
+  CSSRuleList: 0,
+  CSSStyleDeclaration: 0,
+  CSSValueList: 0,
+  ClientRectList: 0,
+  DOMRectList: 0,
+  DOMStringList: 0,
+  DOMTokenList: 1,
+  DataTransferItemList: 0,
+  FileList: 0,
+  HTMLAllCollection: 0,
+  HTMLCollection: 0,
+  HTMLFormElement: 0,
+  HTMLSelectElement: 0,
+  MediaList: 0,
+  MimeTypeArray: 0,
+  NamedNodeMap: 0,
+  NodeList: 1,
+  PaintRequestList: 0,
+  Plugin: 0,
+  PluginArray: 0,
+  SVGLengthList: 0,
+  SVGNumberList: 0,
+  SVGPathSegList: 0,
+  SVGPointList: 0,
+  SVGStringList: 0,
+  SVGTransformList: 0,
+  SourceBufferList: 0,
+  StyleSheetList: 0,
+  TextTrackCueList: 0,
+  TextTrackList: 0,
+  TouchList: 0
 };
 
 
@@ -2713,6 +2805,28 @@ $({ target: 'Array', proto: true, forced: FORCED }, {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.for-each.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.for-each.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var forEach = __webpack_require__(/*! ../internals/array-for-each */ "./node_modules/core-js/internals/array-for-each.js");
+
+// `Array.prototype.forEach` method
+// https://tc39.es/ecma262/#sec-array.prototype.foreach
+// eslint-disable-next-line es/no-array-prototype-foreach -- safe
+$({ target: 'Array', proto: true, forced: [].forEach != forEach }, {
+  forEach: forEach
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.date.to-string.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/modules/es.date.to-string.js ***!
@@ -3599,6 +3713,32 @@ hiddenKeys[HIDDEN] = true;
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/web.dom-collections.for-each.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/core-js/modules/web.dom-collections.for-each.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var DOMIterables = __webpack_require__(/*! ../internals/dom-iterables */ "./node_modules/core-js/internals/dom-iterables.js");
+var forEach = __webpack_require__(/*! ../internals/array-for-each */ "./node_modules/core-js/internals/array-for-each.js");
+var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
+
+for (var COLLECTION_NAME in DOMIterables) {
+  var Collection = global[COLLECTION_NAME];
+  var CollectionPrototype = Collection && Collection.prototype;
+  // some Chrome versions have non-configurable methods on DOMTokenList
+  if (CollectionPrototype && CollectionPrototype.forEach !== forEach) try {
+    createNonEnumerableProperty(CollectionPrototype, 'forEach', forEach);
+  } catch (error) {
+    CollectionPrototype.forEach = forEach;
+  }
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/regenerator-runtime/runtime.js":
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
@@ -4395,6 +4535,109 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/js/coCatalogHtml.js":
+/*!*********************************!*\
+  !*** ./src/js/coCatalogHtml.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each.js */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CoCatalogHtml = /*#__PURE__*/function () {
+  function CoCatalogHtml() {
+    _classCallCheck(this, CoCatalogHtml);
+
+    this.uiContainerCoCatalog = document.getElementById("cocktailCatalog");
+    this.uiContainerCoPopDrink = document.getElementById("cocktailPoDrink");
+    this.cocktail;
+  }
+
+  _createClass(CoCatalogHtml, [{
+    key: "populateUI",
+    value: function populateUI(data) {
+      var _this = this;
+
+      console.log(data);
+      data.drinks.forEach(function (elem, index) {
+        _this.uiContainerCoCatalog.innerHTML += "\n            <div class=\"col-3 co-catalog__item\">\n                <div class=\"co-catalog__visibility-part visibility-part\">\n                    <img src=\"\" alt=\"\" class=\"visibility-part__img\">\n                    <h3 class=\"visibility-part__name\">".concat(elem.strDrink, "</h3>\n                </div>\n                <div class=\"co-catalog__hover-info hover-info\">\n                    <div class=\"hover-info__item\">\n                        <img class=\"hover-info__icon\" src=\"\" alt=\"\">\n                        <p class=\"hover-info__text\"></p>\n                    </div>\n                    <div class=\"hover-info__item\">\n                        <img class=\"hover-info__icon\" src=\"\" alt=\"\">\n                        <p class=\"hover-info__text\"></p>\n                    </div>\n                    <div class=\"hover-info__btn-block\">\n                        <button class=\"hover-info__btn\">see recipe</button>\n                    </div>\n                </div>\n            </div>\n       ");
+        console.log(elem);
+      });
+    }
+  }, {
+    key: "clearUI",
+    value: function clearUI() {
+      uiContainerCoCatalog.innerHTML = "";
+    }
+  }]);
+
+  return CoCatalogHtml;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (CoCatalogHtml);
+
+/***/ }),
+
+/***/ "./src/js/coPopDrinksHtml.js":
+/*!***********************************!*\
+  !*** ./src/js/coPopDrinksHtml.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CoPopDrinksHtml = /*#__PURE__*/function () {
+  function CoPopDrinksHtml() {
+    _classCallCheck(this, CoPopDrinksHtml);
+
+    this.uiContainerCoPopDrink = document.getElementById("cocktailPoDrink");
+    this.cocktail;
+  }
+
+  _createClass(CoPopDrinksHtml, [{
+    key: "populateUI",
+    value: function populateUI(data) {
+      this.uiContainerCoPopDrink.innerHTML += "\n             <div class=\"co-pop-drink__item\">\n                <div class=\"co-pop-drink__visibility-part visibility-part\">\n                    <div class=\"co-pop-drink__image-area\">\n                        <img src=\"".concat(data.drinks[0].strDrinkThumb, "\" alt=\"").concat(data.drinks[0].strDrink, "\" class=\"visibility-part__img\">\n                        <div class=\"co-pop-drink__hover-info hover-info\">\n                            <div class=\"hover-info__item\">\n                                <img class=\"hover-info__icon\" src=\"\" alt=\"\">\n                                <p class=\"hover-info__text\">").concat(data.drinks[0].strAlcoholic, "</p>\n                            </div>\n                            <div class=\"hover-info__item\">\n                                <img class=\"hover-info__icon\" src=\"\" alt=\"\">\n                                <p class=\"hover-info__text\">").concat(data.drinks[0].strGlass, "</p>\n                            </div>\n                            <div class=\"hover-info__btn-block\">\n                                <button class=\"hover-info__btn\">see recipe</button>\n                            </div>\n                        </div>\n                    </div>    \n                    <h3 class=\"visibility-part__name\">").concat(data.drinks[0].strDrink, "</h3>\n                </div>\n            </div>\n        ");
+    }
+  }]);
+
+  return CoPopDrinksHtml;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (CoPopDrinksHtml);
+
+/***/ }),
+
 /***/ "./src/js/cocktail.js":
 /*!****************************!*\
   !*** ./src/js/cocktail.js ***!
@@ -4404,15 +4647,34 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _fetchCocktail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetchCocktail */ "./src/js/fetchCocktail.js");
-/* harmony import */ var _weatherHtml__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weatherHtml */ "./src/js/weatherHtml.js");
+/* harmony import */ var core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each.js */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fetchCocktail__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetchCocktail */ "./src/js/fetchCocktail.js");
+/* harmony import */ var _fetchCocktailById__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fetchCocktailById */ "./src/js/fetchCocktailById.js");
+/* harmony import */ var _coPopDrinksHtml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./coPopDrinksHtml */ "./src/js/coPopDrinksHtml.js");
+/* harmony import */ var _coCatalogHtml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./coCatalogHtml */ "./src/js/coCatalogHtml.js");
+
+
+
 
  // Cocktail
 // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-var ftCocktail = new _fetchCocktail__WEBPACK_IMPORTED_MODULE_0__["default"]();
+var ftCocktail = new _fetchCocktail__WEBPACK_IMPORTED_MODULE_1__["default"]();
+var ftCocktailById = new _fetchCocktailById__WEBPACK_IMPORTED_MODULE_2__["default"]();
+var htmlPopCocktail = new _coPopDrinksHtml__WEBPACK_IMPORTED_MODULE_3__["default"]();
+var htmlCoCatalog = new _coCatalogHtml__WEBPACK_IMPORTED_MODULE_4__["default"]();
 var searchCocktail = document.getElementById("searchCocktail");
 var btnCocktail = document.getElementById("submitCocktail");
+var popCocktailId = [11000, 11007, 17196];
+var popCocktailData = [];
+popCocktailId.forEach(function (elem, index) {
+  ftCocktailById.getCurrent(popCocktailId[index]).then(function (data) {
+    popCocktailData.push(data);
+    htmlPopCocktail.populateUI(data);
+  });
+});
+console.log(popCocktailData);
 searchCocktail.addEventListener("keyup", function (e) {
   if (e.keyCode === 13) getInfoCocktail();
 });
@@ -4420,59 +4682,12 @@ btnCocktail.addEventListener("click", getInfoCocktail);
 
 function getInfoCocktail() {
   var currentVal = searchCocktail.value;
-  ftCocktail.getCurrent(currentVal).then(function (data) {// initMap(cordsCity);
-    // weHtml.populateUI(data);
-    // weHtml.saveToLS(data);
+  ftCocktail.getCurrent(currentVal).then(function (data) {
+    htmlCoCatalog.populateUI(data);
+    htmlCoCatalog.clearUI();
   });
   searchCocktail.value = '';
 } // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-/***/ }),
-
-/***/ "./src/js/cocktailHtml.js":
-/*!********************************!*\
-  !*** ./src/js/cocktailHtml.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// class WeatherHtml {
-//     constructor() {
-//         this.uiContainerWe = document.getElementById("weatherInfo");
-//         this.city;
-//         this.defaultCity = "Kyiv";
-//     }
-//     populateUI(data) {
-//         this.uiContainerCocktail.innerHTML = `
-//               `;
-//     }
-//     clearUI() {
-//         uiContainerWe.innerHTML = "";
-//         uiContainerWeFull.innerHTML = "";
-//     }
-//     saveToLS(data) {
-//         localStorage.setItem("city", JSON.stringify(data));
-//     }
-//     getFromLS() {
-//         if (localStorage.getItem("city" == null)) {
-//             return this.defaultCity;
-//         } else {
-//             this.city = JSON.parse(localStorage.getItem("city"));
-//         }
-//         return this.city;
-//     }
-//     clearLS() {
-//         localStorage.clear();
-//     }
-//     getTimeForm(data) {
-//         const time = new Date(data * 1000);
-//         const hours = (time.getHours() < 10) ? "0" + time.getHours() : time.getHours();
-//         const minutes = (time.getMinutes() < 10) ? "0" + time.getMinutes() : time.getMinutes();
-//         const dateForm = hours + ':' + minutes;
-//         return dateForm;
-//     }
-// }
-// export default WeatherHtml;
 
 /***/ }),
 
@@ -4555,6 +4770,87 @@ var FetchCocktail = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (FetchCocktail);
+
+/***/ }),
+
+/***/ "./src/js/fetchCocktailById.js":
+/*!*************************************!*\
+  !*** ./src/js/fetchCocktailById.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! regenerator-runtime/runtime.js */ "./node_modules/regenerator-runtime/runtime.js");
+/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var FetchCocktailById = /*#__PURE__*/function () {
+  function FetchCocktailById() {
+    _classCallCheck(this, FetchCocktailById);
+  }
+
+  _createClass(FetchCocktailById, [{
+    key: "getCurrent",
+    value: function () {
+      var _getCurrent = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(id) {
+        var response, data;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=".concat(id));
+
+              case 2:
+                response = _context.sent;
+                _context.next = 5;
+                return response.json();
+
+              case 5:
+                data = _context.sent;
+                return _context.abrupt("return", data);
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function getCurrent(_x) {
+        return _getCurrent.apply(this, arguments);
+      }
+
+      return getCurrent;
+    }()
+  }]);
+
+  return FetchCocktailById;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (FetchCocktailById);
 
 /***/ }),
 
@@ -6121,15 +6417,17 @@ var WeatherHtml = /*#__PURE__*/function () {
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/cocktail.js ./src/js/cocktailHtml.js ./src/js/fetchCocktail.js ./src/js/fetchWeather.js ./src/js/script.js ./src/js/weather.js ./src/js/weatherHtml.js ***!
-  \*****************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/coCatalogHtml.js ./src/js/cocktail.js ./src/js/coPopDrinksHtml.js ./src/js/fetchCocktail.js ./src/js/fetchCocktailById.js ./src/js/fetchWeather.js ./src/js/script.js ./src/js/weather.js ./src/js/weatherHtml.js ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\coCatalogHtml.js */"./src/js/coCatalogHtml.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\cocktail.js */"./src/js/cocktail.js");
-__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\cocktailHtml.js */"./src/js/cocktailHtml.js");
+__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\coPopDrinksHtml.js */"./src/js/coPopDrinksHtml.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchCocktail.js */"./src/js/fetchCocktail.js");
+__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchCocktailById.js */"./src/js/fetchCocktailById.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchWeather.js */"./src/js/fetchWeather.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\script.js */"./src/js/script.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\weather.js */"./src/js/weather.js");
