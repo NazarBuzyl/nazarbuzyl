@@ -1,0 +1,26 @@
+.cocktail {
+    &__co-catalog {}
+}
+
+.co-catalog {
+    font-family: $font-secondary;
+
+    &__list {
+    }
+
+    &__item {
+        background-color: #fff;
+    }
+
+    &__visibility-part {}
+
+    &__image-area {
+        position: relative;
+    }
+
+    &__hover-info {}
+}
+
+.co-catalog__image-area:hover .co-catalog__hover-info {
+    opacity: 1;
+}

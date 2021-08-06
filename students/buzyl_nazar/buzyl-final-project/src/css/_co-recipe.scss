@@ -1,0 +1,152 @@
+$co-color-underline: #434351;
+$co-border-radius: 5px;
+
+.co-recipe {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3 ease-in-out;
+
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &__container {
+        background-color: transparent;
+        width: 900px;
+        padding: 25px;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: $co-border-radius;
+    }
+
+    &__info-container {
+        position: relative;
+        padding: 25px 0px 0px;
+        display: flex;
+        flex-direction: row;
+        color: #363636;
+
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 1.5px;
+        //     display: block;
+        //     background-color: $co-color-underline;
+        //     left: 0;
+        //     top: 0;
+        // }
+    }
+
+    &__img {
+        box-shadow: 0 0 12 0 #fff;
+        display: block;
+        max-width: 40%;
+        border-radius: $co-border-radius;
+        cursor: pointer;
+    }
+
+    &__info-block {
+        display: flex;
+        flex-direction: column;
+        // border: 1.5px solid $co-color-underline;
+        padding: 15px 25px 25px;
+        margin-left: 15px;
+        border-radius: $co-border-radius;
+        background-color: $color-white;
+        flex-grow: 1;
+    }
+
+    &__name {
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: $co-border-radius;
+        background-color: $color-white;
+        color: #363636;
+    }
+
+    &__ing-block {
+        position: relative;
+        padding-bottom: 15px;
+        width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            display: block;
+            background-color: $co-color-underline;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__ing-qty {}
+
+    &__instruction-block {
+        padding-top: 15px;
+    }
+
+    &__title {
+        font-size: 35px;
+        text-transform: uppercase;
+    }
+
+    &__instruction,
+    &__ing {
+        font-size: 21px;
+    }
+
+    &__close-btn {
+        position: absolute;
+        border-radius: $co-border-radius;
+        background-color: $color-white;
+        border: none;
+        cursor: pointer;
+        width: 23px;
+        height: 23px;
+        right: 30px;
+        top: 40px;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background-color: $co-color-underline;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.visible-recipe {
+    display: block;
+    opacity: 1;
+}
+.recipe-open{
+    // overflow-y: scroll;
+    overflow: hidden;
+}

@@ -18,7 +18,10 @@ function getInfoByName() {
     const currentVal = searchWeather.value;
 
     ftWe.getCurrent(currentVal).then((data) => {
-        // if (data.cod !== 200) return;
+        if (data.cod !== 200) {
+            return;
+        }
+
         let cordsCity = {
             lat: data.coord.lat,
             lng: data.coord.lon
