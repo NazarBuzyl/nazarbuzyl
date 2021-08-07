@@ -14,7 +14,7 @@ const htmlCoCatalog = new CoCatalogHtml();
 const searchCocktail = document.getElementById("searchCocktail");
 const btnCocktail = document.getElementById("submitCocktail");
 
-const popCocktailId = [11000, 11007, , 17196];
+const popCocktailId = [11000, 11007, 17196];
 const defaultOpenBtnRecipe = 'openBtnRecipe';
 const defaultCloseBtnRecipe = 'closeBtnRecipe';
 const defaultIdRecipe = 'coRecipeContainer';
@@ -32,6 +32,7 @@ function getInfoCocktail() {
 
     ftCocktail.getCurrent(currentVal).then((data) => {
         console.log(data);
+        if (!data.drinks) return;
         htmlCoCatalog.clearUI();
         htmlCoCatalog.populateUI(data);
         addEventBtnRecipe(data, defaultOpenBtnRecipe, defaultIdRecipe, defaultCloseBtnRecipe);
@@ -49,7 +50,8 @@ popCocktailId.forEach((elem, index) => {
 // Cards Cocktail
 function addEventBtnRecipe(data, openBtnId, containerId, closeBtnId) {
     // console.log(data);
-    data.drinks.forEach((elem, index) => {
+    data.drinks.forEach((elem) => {
+        // console.log('dsf');
         // console.log(elem, data, `#${openBtnId}${elem.idDrink}`, `#${containerId}${elem.idDrink}`, `#${closeBtnId}${elem.idDrink}`);
         $(`#${openBtnId}${elem.idDrink}`).click(function () {
             $(`#${containerId}${elem.idDrink}`).addClass('visible-recipe');
@@ -63,6 +65,7 @@ function addEventBtnRecipe(data, openBtnId, containerId, closeBtnId) {
 
             console.log('close');
         });
+        
     });
     // console.log(data);
 }

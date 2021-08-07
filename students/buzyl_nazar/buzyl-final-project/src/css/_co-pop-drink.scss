@@ -1,7 +1,29 @@
 $co-btn-color: #ef6a40;
 
 .cocktail {
+    &__h2 {
+        text-align: center;
+        padding: 5px 0;
+        border-top: 1px solid #ebbf6f;
+        border-bottom: 1px solid #ebbf6f;
+        font-size: 30px;
+        text-transform: uppercase;
+        position: relative;
+        margin: 0 auto;
+        display:table;
+        margin-bottom: 35px;
 
+        &::after {
+            position: absolute;
+            top: -5px;
+            right: 20px;
+            bottom: -5px;
+            left: 20px;
+            border-top: 1px solid #ebbf6f;
+            border-bottom: 1px solid #ebbf6f;
+            content: '';
+        }
+    }
 
     &__co-info {}
 }

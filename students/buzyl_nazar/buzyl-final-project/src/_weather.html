@@ -57,18 +57,17 @@
     <!-- <script src="js/script.js"></script> -->
     <script>
         function initMap(coords) {
-            let cordsCity = {
+            if(!coords) coords = {
                 lat: JSON.parse(localStorage.getItem("city")).coord.lat,
-                lng: JSON.parse(localStorage.getItem("city")).coord.lon
+                lng: JSON.parse(localStorage.getItem("city")).coord.lon,
             };
-            if (coords) cordsCity = coords;
 
             const map = new google.maps.Map(document.getElementById('mapWeather'), {
-                center: cordsCity,
+                center: coords,
                 zoom: 12,
             });
              const marker = new google.maps.Marker({
-                 position: cordsCity,
+                 position: coords,
                  map: map,
                  icon: 'image/Pin.png'
              });

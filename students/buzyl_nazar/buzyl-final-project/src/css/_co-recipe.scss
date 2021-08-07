@@ -33,7 +33,7 @@ $co-border-radius: 5px;
         padding: 25px 0px 0px;
         display: flex;
         flex-direction: row;
-        color: #363636;
+        color: $mine-shaft;
 
         // &::before {
         //     content: '';
@@ -73,7 +73,7 @@ $co-border-radius: 5px;
         text-transform: uppercase;
         border-radius: $co-border-radius;
         background-color: $color-white;
-        color: #363636;
+        color: $mine-shaft;
     }
 
     &__ing-block {
@@ -100,13 +100,27 @@ $co-border-radius: 5px;
     }
 
     &__title {
-        font-size: 35px;
+        font-size: 30px;
         text-transform: uppercase;
+    }
+
+    &__ing-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     &__instruction,
     &__ing {
-        font-size: 21px;
+        font-size: 16px;
+    }
+    &__ing{
+        display: block;
+        // width: 50%;
+    }
+    &__instruction{
+        max-height: 220px;
+        overflow-y: scroll;
     }
 
     &__close-btn {
@@ -146,7 +160,8 @@ $co-border-radius: 5px;
     display: block;
     opacity: 1;
 }
-.recipe-open{
+
+.recipe-open {
     // overflow-y: scroll;
     overflow: hidden;
 }

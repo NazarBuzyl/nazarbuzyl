@@ -3,10 +3,11 @@ class WeatherHtml {
     this.uiContainerWe = document.getElementById("weatherInfo");
     this.uiContainerWeFull = document.getElementById("weatherInfoFull");
     this.city;
-    this.defaultCity = "Kyiv";
+    this.defaultCity = "Kiev";
   }
 
   populateUI(data) {
+      this.saveToLS(data);
     this.uiContainerWe.innerHTML = `
     <h2 class="we-info__title title-h2">Weather - ${data.name}</h2>
     <p class="we-info__time">As of ${this.getTimeForm(data.dt)} EEST</p>
@@ -159,7 +160,7 @@ class WeatherHtml {
     localStorage.setItem("city", JSON.stringify(data));
   }
   getFromLS() {
-    if (localStorage.getItem("city" == null)) {
+    if (!localStorage.getItem("city")) {
       return this.defaultCity;
     } else {
       this.city = JSON.parse(localStorage.getItem("city"));

@@ -1,7 +1,8 @@
 .footer {
     padding: 30px 0;
+    background-color: $mine-shaft;
+    color: #fff;
 }
-
 .footer-title {
     font-size: 18px;
 }
@@ -9,7 +10,7 @@
 .footer-link {
     text-decoration: none;
     font-size: 16px;
-    color: #2b2b2b;
+    color: #919191;
     display: block;
     padding: 10px 0;
     position: relative;
@@ -21,12 +22,12 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background-color: #2b2b2b;
+        // background-color: #fff;
         opacity: 0.3;
     }
     &:hover{
         transition: color 0.3s ease-in-out;
-        color: rgba(43, 43, 43, 0.5);
+        text-decoration: underline;
     }
 }
 
@@ -40,7 +41,10 @@
 
     &__my-link {
         text-decoration: none;
-        color: rgb(0, 51, 255);
+        color: #919191;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 
@@ -56,7 +60,7 @@
         height: 28px;
 
         &:hover {
-            box-shadow: 0 0 2px 0 #000;
+            box-shadow: 0 0 2px 0 rgb(255, 255, 255);
         }
     }
 }

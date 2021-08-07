@@ -5,6 +5,11 @@ class CoCatalogHtml {
         this.cocktail;
     }
     populateUI(data) {
+        this.uiContainerCoCatalog.innerHTML += `
+        <div class="col-12">
+            <h2 class="co-catalog__title cocktail__h2">Catalog by request</h2>
+        </div>
+        `
         data.drinks.forEach((elem, index) => {
             this.uiContainerCoCatalog.innerHTML += `
             <div class="col-3 co-catalog__item">
@@ -86,12 +91,12 @@ class CoCatalogHtml {
             if (data[`strIngredient${i}`] === null) return
 
             uiContainerRecipe.innerHTML += `
-                    <li class="co-recipe__ing">
-                        <span class="co-recipe__ing-qty">
-                            ${data[`strMeasure${i}`]}
-                        </span>${data[`strIngredient${i}`]}
-                    </li>
-                     `;
+                <li class="co-recipe__ing">
+                    <span class="co-recipe__ing-qty">
+                        ${data[`strMeasure${i}`]}
+                    </span>${data[`strIngredient${i}`]}
+                </li>
+            `;
         }
     }
 }

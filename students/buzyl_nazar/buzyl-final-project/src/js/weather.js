@@ -10,13 +10,14 @@ const searchWeather = document.getElementById("searchCityWeather");
 const btnWeather = document.getElementById("submitWeather");
 
 searchWeather.addEventListener("keyup", (e) => {
-    if (e.keyCode === 13) getInfoByName();
+    if (e.keyCode === 13) getInfoByName(searchWeather.value);
 });
-btnWeather.addEventListener("click", getInfoByName);
+btnWeather.addEventListener("click", () => {
+    getInfoByName(searchWeather.value)
+});
 
-function getInfoByName() {
-    const currentVal = searchWeather.value;
-
+function getInfoByName(valueSearch) {
+    const currentVal = valueSearch;
     ftWe.getCurrent(currentVal).then((data) => {
         if (data.cod !== 200) {
             return;
@@ -26,20 +27,21 @@ function getInfoByName() {
             lat: data.coord.lat,
             lng: data.coord.lon
         };
-
         initMap(cordsCity);
+
         weHtml.populateUI(data);
-        weHtml.saveToLS(data);
     });
     searchWeather.value = '';
 }
 
 window.addEventListener("DOMContentLoaded", () => {
     const dataSaved = weHtml.getFromLS();
-    // ftWe.getCurrent(dataSaved.name).then((data) => {
-    // 	weHtml.populateUI(data);
-    // 	weHtml.saveToLS(data);
-    // });
+
+    if (dataSaved === weHtml.defaultCity) {
+        getInfoByName(dataSaved);
+        return;
+    }
+    
     weHtml.populateUI(dataSaved);
 });
 // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
