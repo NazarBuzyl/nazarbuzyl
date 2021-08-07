@@ -40,19 +40,25 @@ function getInfoCocktail() {
     searchCocktail.value = '';
 }
 
+// Pop cocktail
 popCocktailId.forEach((elem, index) => {
     ftCocktailById.getCurrent(popCocktailId[index]).then((data) => {
         htmlPopCocktail.populateUI(data);
+    });
+})
+popCocktailId.forEach((elem, index) => {
+    ftCocktailById.getCurrent(popCocktailId[index]).then((data) => {
         addEventBtnRecipe(data, `${defaultOpenBtnRecipe}Pop`, `${defaultIdRecipe}Pop`, `${defaultCloseBtnRecipe}Pop`);
     });
 })
 
-// Cards Cocktail
+// Recipe Cocktail
 function addEventBtnRecipe(data, openBtnId, containerId, closeBtnId) {
-    // console.log(data);
     data.drinks.forEach((elem) => {
         // console.log('dsf');
+        // const id = elem.idDrink;
         // console.log(elem, data, `#${openBtnId}${elem.idDrink}`, `#${containerId}${elem.idDrink}`, `#${closeBtnId}${elem.idDrink}`);
+        // console.log($(`#${openBtnId}${elem.idDrink}`), $(`#${containerId}${elem.idDrink}`),$(`#${closeBtnId}${elem.idDrink}`));
         $(`#${openBtnId}${elem.idDrink}`).click(function () {
             $(`#${containerId}${elem.idDrink}`).addClass('visible-recipe');
             $(document.body).addClass('recipe-open');
@@ -65,7 +71,7 @@ function addEventBtnRecipe(data, openBtnId, containerId, closeBtnId) {
 
             console.log('close');
         });
-        
+
     });
     // console.log(data);
 }

@@ -7,7 +7,7 @@ class CoCatalogHtml {
     populateUI(data) {
         this.uiContainerCoCatalog.innerHTML += `
         <div class="col-12">
-            <h2 class="co-catalog__title cocktail__h2">Catalog by request</h2>
+            <h2 class="co-catalog__title cocktail__h2">Catalog on request</h2>
         </div>
         `
         data.drinks.forEach((elem, index) => {
