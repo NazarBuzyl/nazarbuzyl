@@ -14,12 +14,19 @@
 
     &__temperature-block {
         padding: 0 15px;
+        @media screen and (max-width: 319px) {
+            padding: 0 10px;
+        }
     }
 
     &__feel-temperature {
         font-size: 56px;
         font-weight: 600;
         margin-bottom: -10px;
+        @media screen and (max-width: 319px) {
+         font-size: 48px;
+         margin-bottom: 0;   
+        }
     }
 
     &__descr {}
@@ -77,19 +84,24 @@
 
     &__row {}
 
-    &__card {
-        display: flex;
-        padding: 10px 16px;
-        border-top: 1px solid rgba(43, 43, 43, 0.5);
-        width: calc(50% - 7px);
-    }
-
     &__card:nth-child(2n-1) {
         margin-right: 6px;
     }
 
     &__card:nth-child(2n) {
         margin-left: 6px;
+    }
+
+    &__card {
+        display: flex;
+        padding: 10px 16px;
+        border-top: 1px solid rgba(43, 43, 43, 0.5);
+        width: calc(50% - 7px);
+
+        @media screen and (max-width: 514px) {
+            width: calc(100% - 7px);
+            margin: 0 6px;
+        }
     }
 
     &__icon {

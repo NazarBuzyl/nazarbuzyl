@@ -111,28 +111,11 @@ $co-btn-color: #ef6a40;
         margin-top: 26px;
         margin-left: 10px;
         border: 2px solid $co-btn-color;
-        background-color: transparent;
         color: $co-btn-color;
-        padding: 0 25px 0 10px;
-        line-height: 32px;
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-        font-size: 14px;
-        position: relative;
-        min-width: 105px;
-        text-transform: uppercase;
-        font-weight: normal;
 
         &:hover {
             background-color: $co-btn-color;
             color: #fff;
-        }
-
-        &::after {
-            content: '»';
-            position: absolute;
-            right: 10px;
-            top: -1px;
         }
     }
 }

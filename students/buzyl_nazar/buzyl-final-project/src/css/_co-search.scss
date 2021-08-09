@@ -1,12 +1,12 @@
 .cocktail {
     &__co-search {
-        // background-color: #363636;
-        padding: 15px;
+        background-color: #e2a432;
+        padding: 10px 15px;
     }
 }
 .co-search {
     &__search-block {
-        max-width: 250px;
+        max-width: 400px;
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
@@ -15,20 +15,25 @@
     &__input {
         display: block;
         border: none;
-        line-height: 41px;
+        line-height: 38px;
         font-size: 14px;
         &:focus{
             box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
         }
         padding: 0 10px;
+        flex-grow: 1;
     }
     &__btn {
         display: block;
         border: none;
+        background-color: #fff;
+        cursor: pointer;
+        padding: 3px 10px;
     }
     &__icon {
-        width: 40px;
-        height: 40px;
-        background-color: initial;
+        width: 28px;
+        height: 28px;
+        background-color: #fff;
+        fill: #757575;
     }
 }

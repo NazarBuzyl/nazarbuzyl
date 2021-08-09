@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather for today</title>
+    <title>Forecast - Weather</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="page">
+<body class="page" id="forecastWeather">
     <header class="header">
 
     </header>
     <main class="main weather">
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-8 col-md-12">
                     <!-- Weather search block -->
                     <section class="weather__we-search-by-city we-search-by-city weather__section">
                         <h1 class="we-search-by-city__title">Get The Weather For a Location</h1>
@@ -45,19 +45,18 @@
                         <div id="mapWeather" class="we-map__map-block"></div>
                     </section>
                 </div>
-                <div class="col-4">
-
+                <div class="col-4 col-md-12 ">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6"></div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="footer">
-        //= _footer.html
-    </footer>
-    <!-- <script src="js/script.js"></script> -->
+    //= _footer.html
+    <script src="js/script.js"></script>
     <script>
         function initMap(coords) {
-            if(!coords) coords = {
+            if (!coords) coords = {
                 lat: JSON.parse(localStorage.getItem("city")).coord.lat,
                 lng: JSON.parse(localStorage.getItem("city")).coord.lon,
             };
@@ -66,11 +65,11 @@
                 center: coords,
                 zoom: 12,
             });
-             const marker = new google.maps.Marker({
-                 position: coords,
-                 map: map,
-                 icon: 'image/Pin.png'
-             });
+            const marker = new google.maps.Marker({
+                position: coords,
+                map: map,
+                icon: 'image/Pin.png'
+            });
             //const contentString = '<div id="content">';
             //const infowindow = new google.maps.InfoWindow({
             //    content: contentString,

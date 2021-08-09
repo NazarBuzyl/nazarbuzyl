@@ -9,6 +9,9 @@
     &__title {
         font-size: 24px;
         margin-bottom: 25px;
+        @media screen and (max-width: 427px) {
+            margin-bottom: 30px;
+        }
     }
 
     &__text {
@@ -29,6 +32,15 @@
         &:hover {
             transition: box-shadow 0.5s ease-in-out;
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        }
+        @media screen and (max-width: 600px) {
+            width: 60%;
+        }
+        @media screen and (max-width: 514px) {
+            width: 80%;
+        }
+        @media screen and (max-width: 427px) {
+            width: 100%;
         }
     }
 

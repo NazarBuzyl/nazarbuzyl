@@ -1,31 +1,31 @@
 class WeatherHtml {
-  constructor() {
-    this.uiContainerWe = document.getElementById("weatherInfo");
-    this.uiContainerWeFull = document.getElementById("weatherInfoFull");
-    this.city;
-    this.defaultCity = "Kiev";
-  }
+    constructor() {
+        this.uiContainerWe = document.getElementById("weatherInfo");
+        this.uiContainerWeFull = document.getElementById("weatherInfoFull");
+        this.city;
+        this.defaultCity = "Kiev";
+    }
 
-  populateUI(data) {
-      this.saveToLS(data);
-    this.uiContainerWe.innerHTML = `
-    <h2 class="we-info__title title-h2">Weather - ${data.name}</h2>
-    <p class="we-info__time">As of ${this.getTimeForm(data.dt)} EEST</p>
-    <div class="we-info__temperature-block row">
-        <div class="we-info__now-temperature-block">
-            <p class="we-info__now-temperature">${~~data.main.temp} °</p>
-            <p class="we-info__descr">${data.weather[0].description}</p>
-        </div>
-        <div class="we-info__min-max-temperature-block">
-            <div class="we-info__img-block">
-              <img class="we-info__img" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"
-              alt="${data.weather[0].description}">
+    populateUI(data) {
+        this.saveToLS(data);
+        this.uiContainerWe.innerHTML = `
+            <h2 class="we-info__title title-h2">Weather - ${data.name}</h2>
+            <p class="we-info__time">As of ${this.getTimeForm(data.dt)} EEST</p>
+            <div class="we-info__temperature-block row">
+                <div class="we-info__now-temperature-block">
+                    <p class="we-info__now-temperature">${~~data.main.temp} °</p>
+                    <p class="we-info__descr">${data.weather[0].description}</p>
+                </div>
+                <div class="we-info__min-max-temperature-block">
+                    <div class="we-info__img-block">
+                    <img class="we-info__img" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"
+                    alt="${data.weather[0].description}">
+                    </div>
+                    <p class="we-info__min-max-temperature">${~~data.main.temp_max} °/${~~data.main.temp_min} °</p>
+                </div>
             </div>
-            <p class="we-info__min-max-temperature">${~~data.main.temp_max} °/${~~data.main.temp_min} °</p>
-        </div>
-    </div>
         `;
-    this.uiContainerWeFull.innerHTML = `
+        this.uiContainerWeFull.innerHTML = `
         <h2 class="we-info-full__title title-h2">Weather in ${data.name} for today</h2>
       <div class="we-info-full__temperature-block">
           <div class="row we-info-full__sun-row">
@@ -150,36 +150,36 @@ class WeatherHtml {
           </div>
       </div>
             `;
-  }
-
-  clearUI() {
-    uiContainerWe.innerHTML = "";
-    uiContainerWeFull.innerHTML = "";
-  }
-  saveToLS(data) {
-    localStorage.setItem("city", JSON.stringify(data));
-  }
-  getFromLS() {
-    if (!localStorage.getItem("city")) {
-      return this.defaultCity;
-    } else {
-      this.city = JSON.parse(localStorage.getItem("city"));
     }
 
-    return this.city;
-  }
-  clearLS() {
-    localStorage.clear();
-  }
+    clearUI() {
+        uiContainerWe.innerHTML = "";
+        uiContainerWeFull.innerHTML = "";
+    }
+    saveToLS(data) {
+        localStorage.setItem("city", JSON.stringify(data));
+    }
+    getFromLS() {
+        if (!localStorage.getItem("city")) {
+            return this.defaultCity;
+        } else {
+            this.city = JSON.parse(localStorage.getItem("city"));
+        }
 
-  getTimeForm(data) {
-    const time = new Date(data * 1000);
-    const hours = (time.getHours() < 10) ? "0" + time.getHours() : time.getHours();
-    const minutes = (time.getMinutes() < 10) ? "0" + time.getMinutes() : time.getMinutes();
+        return this.city;
+    }
+    clearLS() {
+        localStorage.clear();
+    }
 
-    const dateForm = hours + ':' + minutes;
-    return dateForm;
-  }
+    getTimeForm(data) {
+        const time = new Date(data * 1000);
+        const hours = (time.getHours() < 10) ? "0" + time.getHours() : time.getHours();
+        const minutes = (time.getMinutes() < 10) ? "0" + time.getMinutes() : time.getMinutes();
+
+        const dateForm = hours + ':' + minutes;
+        return dateForm;
+    }
 }
 
 export default WeatherHtml;

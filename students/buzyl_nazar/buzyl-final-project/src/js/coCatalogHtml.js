@@ -50,7 +50,7 @@ class CoCatalogHtml {
                                 </p>
                             </div>
                             <div class="hover-info__btn-block">
-                                <button id="openBtnRecipe${elem.idDrink}" class="hover-info__btn">see recipe</button>
+                                <button id="openBtnRecipe${elem.idDrink}" class="hover-info__btn recipe-btn">see recipe</button>
                             </div>
                         </div>
                     </div>

@@ -114,11 +114,13 @@ $co-border-radius: 5px;
     &__ing {
         font-size: 16px;
     }
-    &__ing{
+
+    &__ing {
         display: block;
         // width: 50%;
     }
-    &__instruction{
+
+    &__instruction {
         max-height: 220px;
         overflow-y: scroll;
     }
@@ -153,6 +155,25 @@ $co-border-radius: 5px;
         &::after {
             transform: rotate(45deg);
         }
+    }
+}
+
+.recipe-btn {
+    background-color: transparent;
+    padding: 0 25px 0 10px;
+    line-height: 32px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    min-width: 105px;
+    text-transform: uppercase;
+    font-weight: normal;
+    &::after {
+        content: '»';
+        position: absolute;
+        right: 10px;
+        top: -1px;
     }
 }
 
