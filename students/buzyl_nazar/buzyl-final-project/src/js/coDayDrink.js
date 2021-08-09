@@ -15,7 +15,7 @@ class CoDayDrinks {
         data.drinks.forEach((elem) => {
             this.dayCocktailId.push(elem.idDrink);
             this.uiContainerCoDayDrink.innerHTML += `
-            <div class="day-drink__item col-6">
+            <div class="day-drink__item col-6 col-sm-12">
                 <img src="${elem.strDrinkThumb}" alt="${elem.strDrink}" class="day-drink__img">
                 <div class="day-drink__info-wrapper">
                     <h2 class="cocktail__h2 day-drink__title">special drink</h2>
@@ -52,12 +52,12 @@ class CoDayDrinks {
         });
     }
 
-    saveToCookie(data, index) {
+    saveToLS(data, index) {
         console.log(data, index, 'SaveToLs');
         localStorage.setItem(`dayCocktails${index}`, JSON.stringify(data));
     }
 
-    getFromCookie(qty) {
+    getFromLS(qty) {
         console.log('start');
         for (let i = 1; i <= qty; i++) {
             if (!localStorage.getItem(`dayCocktails${i}`)) {
@@ -75,7 +75,7 @@ class CoDayDrinks {
     getCocktailData(index) {
         ftCocktailRan.getCurrent().then((data) => {
             this.dayCocktail = data;
-            this.saveToCookie(data, index);
+            this.saveToLS(data, index);
             this.populateUI(data, index);
         })
     }

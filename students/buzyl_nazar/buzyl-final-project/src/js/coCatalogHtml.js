@@ -12,7 +12,7 @@ class CoCatalogHtml {
         `
         data.drinks.forEach((elem, index) => {
             this.uiContainerCoCatalog.innerHTML += `
-            <div class="col-3 co-catalog__item">
+            <div class="col-3 col-lg-4 col-sm-6 col-vsm-12 co-catalog__item">
                 <div class="co-catalog__visibility-part visibility-part">
                     <div class="co-catalog__image-area">
                         <img src="${elem.strDrinkThumb}" alt="${elem.strDrink}"

@@ -1,5 +1,5 @@
 $co-color-underline: #434351;
-$co-border-radius: 5px;
+$co-border-radius: 2px;
 
 .co-recipe {
     display: none;
@@ -19,32 +19,37 @@ $co-border-radius: 5px;
     &__container {
         background-color: transparent;
         width: 900px;
-        padding: 25px;
         margin: 0 auto;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: $co-border-radius;
+        background: $co-gardient;
+
+        @media screen and (max-width: 920px) {
+            max-width: 700px;
+        }
+
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+        }
     }
 
     &__info-container {
         position: relative;
-        padding: 25px 0px 0px;
+        padding: 15px;
         display: flex;
         flex-direction: row;
         color: $mine-shaft;
 
-        // &::before {
-        //     content: '';
-        //     position: absolute;
-        //     width: 100%;
-        //     height: 1.5px;
-        //     display: block;
-        //     background-color: $co-color-underline;
-        //     left: 0;
-        //     top: 0;
-        // }
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            flex-direction: column;
+            padding: 30px;
+        }
     }
 
     &__img {
@@ -53,17 +58,38 @@ $co-border-radius: 5px;
         max-width: 40%;
         border-radius: $co-border-radius;
         cursor: pointer;
+
+        @media screen and (max-width: 720px) {
+            max-width: 50%;
+        }
+
+        @media screen and (max-width: 480px) {
+            max-width: 70%;
+        }
+        @media screen and (max-width: 350px) {
+            max-width: 90%;
+        }
     }
 
     &__info-block {
         display: flex;
         flex-direction: column;
-        // border: 1.5px solid $co-color-underline;
-        padding: 15px 25px 25px;
-        margin-left: 15px;
+        padding-left: 25px;
+        padding-right: 10px;
         border-radius: $co-border-radius;
-        background-color: $color-white;
         flex-grow: 1;
+        max-height: 400px;
+
+        @media screen and (max-width: 920px) {
+            max-height: 300px;
+        }
+
+        @media screen and (max-width: 720px) {
+            max-height: 50vh;
+            padding: 0;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 
     &__name {
@@ -71,15 +97,15 @@ $co-border-radius: 5px;
         font-size: 50px;
         font-weight: 700;
         text-transform: uppercase;
-        border-radius: $co-border-radius;
-        background-color: $color-white;
         color: $mine-shaft;
+        border-bottom: 1px solid $co-color-underline;
     }
 
     &__ing-block {
         position: relative;
         padding-bottom: 15px;
         width: 100%;
+        height: 50%;
 
         &::before {
             content: '';
@@ -97,6 +123,8 @@ $co-border-radius: 5px;
 
     &__instruction-block {
         padding-top: 15px;
+        flex-grow: 1;
+        height: 50%;
     }
 
     &__title {
@@ -106,8 +134,20 @@ $co-border-radius: 5px;
 
     &__ing-list {
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
+        max-height: calc(100% - 44px);
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            border-radius: 20px;
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $color-white;
+            border-radius: 20px;
+        }
     }
 
     &__instruction,
@@ -117,24 +157,40 @@ $co-border-radius: 5px;
 
     &__ing {
         display: block;
-        // width: 50%;
     }
 
     &__instruction {
-        max-height: 220px;
+        padding-right: 10px;
+        max-height: calc(100% - 44px);
         overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            border-radius: 20px;
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $color-white;
+            border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+            border-radius: 20px;
+        }
     }
 
     &__close-btn {
         position: absolute;
         border-radius: $co-border-radius;
-        background-color: $color-white;
+        background-color: transparent;
         border: none;
         cursor: pointer;
         width: 23px;
         height: 23px;
-        right: 30px;
-        top: 40px;
+        right: 10px;
+        top: 10px;
 
         &::before,
         &::after {
@@ -144,7 +200,7 @@ $co-border-radius: 5px;
             height: 1.5px;
             background-color: $co-color-underline;
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 0;
         }
 
@@ -169,6 +225,11 @@ $co-border-radius: 5px;
     min-width: 105px;
     text-transform: uppercase;
     font-weight: normal;
+
+    @media screen and (max-width: 800px) {
+        line-height: 26px;
+    }
+
     &::after {
         content: '»';
         position: absolute;

@@ -1,5 +1,9 @@
 $co-btn-color: #ef6a40;
-
+#CocktailSite{
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+}
 .cocktail {
     &__h2 {
         text-align: center;
@@ -10,8 +14,20 @@ $co-btn-color: #ef6a40;
         text-transform: uppercase;
         position: relative;
         margin: 0 auto;
-        display:table;
+        display: table;
         margin-bottom: 35px;
+
+        @media screen and (max-width: 373px) {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        @media screen and (max-width: 351px) {
+            font-size: 26px;
+        }
+        @media screen and (max-width: 331px) {
+            font-size: 24px;
+        }
 
         &::after {
             position: absolute;
@@ -34,11 +50,15 @@ $co-btn-color: #ef6a40;
     &__list {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     &__item {
         margin: 10px;
         width: 300px;
+        // @media screen and (max-width: 1000px) {
+        //     width: calc(50% - 20px);
+        // }
     }
 
     &__visibility-part {}
@@ -47,7 +67,9 @@ $co-btn-color: #ef6a40;
         position: relative;
     }
 
-    &__hover-info {}
+    &__hover-info {
+        padding: 20px !important;
+    }
 }
 
 .visibility-part {
@@ -64,6 +86,10 @@ $co-btn-color: #ef6a40;
         display: block;
         line-height: 41px;
         padding: 10px 15px;
+
+        @media screen and (max-width: 769px) {
+            line-height: 25px;
+        }
     }
 }
 
@@ -76,12 +102,29 @@ $co-btn-color: #ef6a40;
     left: 0;
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
-    padding: 23px 25px;
+    padding: 20px;
+
+    @media screen and (max-width: 769px) {
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 20px;
+    }
+
 
     &__item {
         display: flex;
-        padding: 10px 0px;
+        padding: 10px 0;
         color: #fff;
+
+        @media screen and (max-width: 660px) {
+            padding: 5px 0;
+        }
+
+        @media screen and (max-width: 576px) {
+            padding: 10px 0;
+        }
     }
 
     &__icon {
@@ -112,6 +155,12 @@ $co-btn-color: #ef6a40;
         margin-left: 10px;
         border: 2px solid $co-btn-color;
         color: $co-btn-color;
+
+        @media screen and (max-width: 769px) {
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 576px) {}
 
         &:hover {
             background-color: $co-btn-color;

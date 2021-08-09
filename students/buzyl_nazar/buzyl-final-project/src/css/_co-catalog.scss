@@ -10,9 +10,21 @@
 
     &__item {
         background-color: #fff;
+        
+        @media screen and (max-width: 480px) {
+            display: flex;
+            justify-content: center;
+        }
     }
 
-    &__visibility-part {}
+    &__visibility-part {
+        @media screen and (max-width: 480px) {
+            width: 65%;
+        }
+        @media screen and (max-width: 380px) {
+            width: 80%;
+        }
+    }
 
     &__image-area {
         position: relative;

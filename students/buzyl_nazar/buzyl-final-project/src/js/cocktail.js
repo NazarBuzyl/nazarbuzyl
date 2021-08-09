@@ -32,7 +32,7 @@ if (cocktail !== null) {
     if (!getCookie('dayCocktailTime')) {
         coDayDrinks.clearLS();
     }
-    coDayDrinks.getFromCookie(qtyDayDrinks);
+    coDayDrinks.getFromLS(qtyDayDrinks);
 
     // Search
     searchCocktail.addEventListener("keyup", (e) => {

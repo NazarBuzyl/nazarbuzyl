@@ -7,6 +7,9 @@ $grey: #bababa;
 $orange: #ff6033;
 $brown: #a52a2a;
 $mine-shaft: #363636;
+$fire-bash: #E2A432;
+
+$co-gardient: linear-gradient(135deg, rgba(226,164,50,1) 0%, rgba(226,147,50,1) 25%, rgba(226,164,50,1) 50%, rgba(226,147,50,1) 75%, rgba(226,164,50,1) 100%);
 
 $input-border-color: $grey;
 $default-border-radius: 5px;
@@ -43,4 +46,5 @@ $default-color-text: $color-black;
 $breack-points: ("xl": 1200px,
     "lg": 992px,
     "md": 769px,
-    "sm": 576px);
+    "sm": 576px,
+    "vsm": 480px);

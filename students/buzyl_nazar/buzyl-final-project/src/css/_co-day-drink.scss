@@ -6,6 +6,8 @@ $co-day-btn-color: $color-white;
 
 .day-drink {
 
+    overflow: hidden;
+
     &__content {
         color: $color-white;
         display: flex;
@@ -17,6 +19,21 @@ $co-day-btn-color: $color-white;
         position: relative;
         max-height: 500px;
         overflow: hidden;
+
+        @media screen and (max-width: 1200px) {
+            max-height: 400px;
+        }
+
+        @media screen and (max-width: 800px) {
+            max-height: 350px;
+        }
+
+        @media screen and (max-width: 700px) {
+            max-height: 300px;
+        }
+        @media screen and (max-width: 576px) {
+            max-height: 50vh;
+        }
 
         &::before {
             content: '';
@@ -41,6 +58,7 @@ $co-day-btn-color: $color-white;
         @include position-center;
         text-align: center;
         cursor: default;
+        width: 100%;
     }
 
     &__title {
@@ -51,6 +69,11 @@ $co-day-btn-color: $color-white;
         padding: 15px;
         margin-bottom: 10px;
 
+        // @media screen and (max-width: 800px) {
+        //     font-size: 16px;
+        //     padding: 10px;
+        // }
+
         &::after {
             border-color: $co-day-btn-color;
             border-top: none;
@@ -60,6 +83,10 @@ $co-day-btn-color: $color-white;
     &__name {
         font-size: 25px;
         margin-bottom: 10px;
+
+        // @media screen and (max-width: 800px) {
+        //     font-size: 20px;
+        // }
     }
 
     &__btn {
