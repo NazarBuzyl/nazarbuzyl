@@ -37,6 +37,35 @@ btn.addEventListener('click', function () {
     document.documentElement.classList.toggle('menu-open');
 });
 
+// menu scroll blocks
+let positions = [];
+let currentActive = null;
+let links = $('.scroll-to');
+
+$(".anchor").each(function () {
+    positions.push({
+        top: $(this).position().top - 100,
+        a: links.filter('[href="#' + $(this).attr('id') + '"]')
+    });
+});
+
+positions = positions.reverse();
+
+$(window).on('scroll', function () {
+    let winTop = $(window).scrollTop();
+    // console.log(winTop);
+    for (var i = 0; i < positions.length; i++) {
+        if (positions[i].top < winTop) {
+            if (currentActive !== i) {
+                currentActive = i;
+                links.removeClass('active');
+                positions[i].a.addClass("active");
+            }
+            break;
+        }
+    }
+});
+
 //scroll
 function scrollNav() {
     $('.menu__link').click(function () {
@@ -47,7 +76,7 @@ function scrollNav() {
         $(this).addClass("active");
         $('html, body').stop().animate({
             scrollTop: $($(this).attr('href')).offset().top
-        }, 2000);
+        }, 1000);
         return false;
     });
 }
@@ -55,7 +84,7 @@ function scrollNav() {
 function btnScroll() {
     $('.scroll-block').click(function () {
         $('html, body').stop().animate({
-            scrollTop: $('#about-us').offset().top
+            scrollTop: $('#project').offset().top
         }, 1000);
         return false;
     });

@@ -2285,6 +2285,33 @@ $({ target: 'Array', proto: true, forced: FORCED }, {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.filter.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.filter.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var $filter = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").filter;
+var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js/internals/array-method-has-species-support.js");
+
+var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('filter');
+
+// `Array.prototype.filter` method
+// https://tc39.es/ecma262/#sec-array.prototype.filter
+// with adding support of @@species
+$({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
+  filter: function filter(callbackfn /* , thisArg */) {
+    return $filter(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.array.for-each.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/modules/es.array.for-each.js ***!
@@ -2302,6 +2329,36 @@ var forEach = __webpack_require__(/*! ../internals/array-for-each */ "./node_mod
 // eslint-disable-next-line es/no-array-prototype-foreach -- safe
 $({ target: 'Array', proto: true, forced: [].forEach != forEach }, {
   forEach: forEach
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.array.reverse.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.reverse.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js/internals/is-array.js");
+
+var nativeReverse = [].reverse;
+var test = [1, 2];
+
+// `Array.prototype.reverse` method
+// https://tc39.es/ecma262/#sec-array.prototype.reverse
+// fix for Safari 12.0 bug
+// https://bugs.webkit.org/show_bug.cgi?id=188794
+$({ target: 'Array', proto: true, forced: String(test) === String(test.reverse()) }, {
+  reverse: function reverse() {
+    // eslint-disable-next-line no-self-assign -- dirty hack
+    if (isArray(this)) this.length = this.length;
+    return nativeReverse.call(this);
+  }
 });
 
 
@@ -27648,19 +27705,25 @@ var newsList = [{
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.timers.js */ "./node_modules/core-js/modules/web.timers.js");
-/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.string.match.js */ "./node_modules/core-js/modules/es.string.match.js");
-/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.trim.js */ "./node_modules/core-js/modules/es.string.trim.js");
-/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../node_modules/lightbox2/dist/js/lightbox-plus-jquery */ "./node_modules/lightbox2/dist/js/lightbox-plus-jquery.js");
-/* harmony import */ var _node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./slider */ "./src/js/slider.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
+/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_array_reverse_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.reverse.js */ "./node_modules/core-js/modules/es.array.reverse.js");
+/* harmony import */ var core_js_modules_es_array_reverse_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_reverse_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.timers.js */ "./node_modules/core-js/modules/web.timers.js");
+/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.match.js */ "./node_modules/core-js/modules/es.string.match.js");
+/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.string.trim.js */ "./node_modules/core-js/modules/es.string.trim.js");
+/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../node_modules/lightbox2/dist/js/lightbox-plus-jquery */ "./node_modules/lightbox2/dist/js/lightbox-plus-jquery.js");
+/* harmony import */ var _node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_node_modules_lightbox2_dist_js_lightbox_plus_jquery__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./slider */ "./src/js/slider.js");
+
+
 
 
 
@@ -27672,40 +27735,66 @@ __webpack_require__.r(__webpack_exports__);
 var htmlGallery = "\n<div class=\"col-6 col-xl-12\">\n    <div class=\"row gallery__row\">\n        <a href=\"image/gallery_photo04.jpg\" data-lightbox=\"gallery-list-photo\" class=\"gallery__link\">\n            <img src=\"image/gallery_photo02.jpg\" alt=\"photo 2\" class=\"gallery__photo gallery__photo_left\">\n        </a>\n        <a href=\"image/gallery_photo05.jpg\" data-lightbox=\"gallery-list-photo\" class=\"gallery__link\">\n            <img src=\"image/gallery_photo03.jpg\" alt=\"photo 3\" class=\"gallery__photo\">\n        </a>\n    </div>\n</div>\n<div class=\"col-6 col-xl-12\">\n    <div class=\"row gallery__row\">\n        <a href=\"image/gallery_photo04.jpg\" data-lightbox=\"gallery-list-photo\" class=\"gallery__link\">\n            <img src=\"image/gallery_photo04.jpg\" alt=\"photo 4\" class=\"gallery__photo gallery__photo_left\">\n        </a>\n        <a href=\"image/gallery_photo05.jpg\" data-lightbox=\"gallery-list-photo\" class=\"gallery__link\">\n            <img src=\"image/gallery_photo05.jpg\" alt=\"photo 5\" class=\"gallery__photo\">\n        </a>\n    </div>\n</div>\n";
 seeMore.addEventListener("click", function () {
   document.getElementById('more-photo').classList.add('active-flex');
-  jquery__WEBPACK_IMPORTED_MODULE_4___default()('#more-photo').append(htmlGallery); // document.getElementById('seeMore').classList.add('display-none');
+  jquery__WEBPACK_IMPORTED_MODULE_6___default()('#more-photo').append(htmlGallery); // document.getElementById('seeMore').classList.add('display-none');
 }); // btn burger
 
 var btn = document.querySelector('#burgerMenuBtnItem');
 btn.addEventListener('click', function () {
   document.documentElement.classList.toggle('menu-open');
+}); // menu scroll blocks
+
+var positions = [];
+var currentActive = null;
+var links = jquery__WEBPACK_IMPORTED_MODULE_6___default()('.scroll-to');
+jquery__WEBPACK_IMPORTED_MODULE_6___default()(".anchor").each(function () {
+  positions.push({
+    top: jquery__WEBPACK_IMPORTED_MODULE_6___default()(this).position().top - 100,
+    a: links.filter('[href="#' + jquery__WEBPACK_IMPORTED_MODULE_6___default()(this).attr('id') + '"]')
+  });
+});
+positions = positions.reverse();
+jquery__WEBPACK_IMPORTED_MODULE_6___default()(window).on('scroll', function () {
+  var winTop = jquery__WEBPACK_IMPORTED_MODULE_6___default()(window).scrollTop(); // console.log(winTop);
+
+  for (var i = 0; i < positions.length; i++) {
+    if (positions[i].top < winTop) {
+      if (currentActive !== i) {
+        currentActive = i;
+        links.removeClass('active');
+        positions[i].a.addClass("active");
+      }
+
+      break;
+    }
+  }
 }); //scroll
 
 function scrollNav() {
-  jquery__WEBPACK_IMPORTED_MODULE_4___default()('.menu__link').click(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('html').removeClass("menu-open");
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('#burgerMenuBtn').prop('checked', false);
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()(".active").removeClass("active");
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()(this).addClass("active");
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('html, body').stop().animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_4___default()(jquery__WEBPACK_IMPORTED_MODULE_4___default()(this).attr('href')).offset().top
-    }, 2000);
+  jquery__WEBPACK_IMPORTED_MODULE_6___default()('.menu__link').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('html').removeClass("menu-open");
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#burgerMenuBtn').prop('checked', false);
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()(".active").removeClass("active");
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()(this).addClass("active");
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('html, body').stop().animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_6___default()(jquery__WEBPACK_IMPORTED_MODULE_6___default()(this).attr('href')).offset().top
+    }, 1000);
     return false;
   });
 }
 
 function btnScroll() {
-  jquery__WEBPACK_IMPORTED_MODULE_4___default()('.scroll-block').click(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('html, body').stop().animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_4___default()('#about-us').offset().top
+  jquery__WEBPACK_IMPORTED_MODULE_6___default()('.scroll-block').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('html, body').stop().animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_6___default()('#project').offset().top
     }, 1000);
     return false;
   });
 }
 
 function scrollTop() {
-  jquery__WEBPACK_IMPORTED_MODULE_4___default()('.link-to-top').click(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('html, body').stop().animate({
-      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_4___default()('#top').offset().top
+  jquery__WEBPACK_IMPORTED_MODULE_6___default()('.link-to-top').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('html, body').stop().animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_6___default()('#top').offset().top
     }, 1000);
     return false;
   });
@@ -27741,19 +27830,19 @@ function validateForm() {
   var checker = 1;
 
   if (!username) {
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('#fullname').addClass('alert-validate');
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#fullname').addClass('alert-validate');
   }
 
   if (username) {
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('#fullname').removeClass('alert-validate');
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#fullname').removeClass('alert-validate');
   }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_4___default()('#email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('#email').addClass('alert-validate');
+  if (!jquery__WEBPACK_IMPORTED_MODULE_6___default()('#email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#email').addClass('alert-validate');
   }
 
-  if (jquery__WEBPACK_IMPORTED_MODULE_4___default()('#email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()('#email').removeClass('alert-validate');
+  if (jquery__WEBPACK_IMPORTED_MODULE_6___default()('#email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
+    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#email').removeClass('alert-validate');
   }
 }
 

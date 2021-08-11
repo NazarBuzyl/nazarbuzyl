@@ -1,12 +1,14 @@
 $color-menu-item: $color-white;
 
-.index-logo{
+.index-logo {
     position: relative;
     z-index: 20;
 }
-.index-menu{
+
+.index-menu {
     z-index: 19;
 }
+
 .header {
 
     &__menu {
@@ -16,14 +18,17 @@ $color-menu-item: $color-white;
         z-index: 11;
     }
 }
-.menu-active{
-    transition: background-color 0.3s ease-in-out ;
+
+.menu-active {
+    transition: background-color 0.3s ease-in-out;
     position: fixed;
     background-color: $heliotrope;
-    .menu-container{
+
+    .menu-container {
         padding: 0 15px;
     }
 }
+
 .menu-open {
     overflow: hidden;
     position: fixed;
@@ -58,6 +63,42 @@ $color-menu-item: $color-white;
         position: relative;
         z-index: 1;
 
+        
+
+
+    }
+
+    &__social-media {
+        display: none;
+
+        @media screen and (max-width: 768px) {
+            display: block;
+            padding: 10px 20px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        color: $color-menu-item;
+        display: inline-block;
+        padding: 20px 45px;
+        position: relative;
+
+        @media screen and (max-width: 1115px) {
+            padding: 20px 35px
+        }
+
+        @media screen and (max-width: 978px) {
+            padding: 15px 25px
+        }
+
+        @media screen and (max-width: 844px) {
+            padding: 15px 20px
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -85,11 +126,13 @@ $color-menu-item: $color-white;
                 display: none;
             }
         }
+
         @media screen and (max-width: 768px) {
-            &:first-child{
+            &:first-child {
                 padding-top: 100px;
             }
-            &::after{
+
+            &::after {
                 content: '';
                 width: 50%;
                 height: 1px;
@@ -105,38 +148,6 @@ $color-menu-item: $color-white;
             &::before {
                 background-color: $color-white;
             }
-        }
-
-
-    }
-    &__social-media{
-        display: none;
-        @media screen and (max-width: 768px){
-            display: block;
-            padding: 10px 20px;
-        }
-    }
-
-    &__link {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 14px;
-        color: $color-menu-item;
-        display: inline-block;
-        padding: 20px 45px;
-        position: relative;
-
-        @media screen and (max-width: 1115px) {
-            padding: 20px 35px
-        }
-
-        @media screen and (max-width: 978px) {
-            padding: 15px 25px
-        }
-
-        @media screen and (max-width: 844px) {
-            padding: 15px 20px
         }
     }
 
@@ -221,5 +232,11 @@ $color-menu-item: $color-white;
         &::after {
             bottom: -8px;
         }
+    }
+}
+
+.active {
+    &::before {
+        background-color: $color-white;
     }
 }

@@ -41,16 +41,16 @@
                             </label>
                             <ul class="menu__list">
                                 <li class="menu__item">
-                                    <a href="#about-us" class="menu__link">about us</a>
+                                    <a href="#about-us" class="menu__link scroll-to active">about us</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#project" class="menu__link">project</a>
+                                    <a href="#project" class="menu__link scroll-to">project</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#news" class="menu__link">news</a>
+                                    <a href="#news" class="menu__link scroll-to">news</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#contact" class="menu__link">contact</a>
+                                    <a href="#contact" class="menu__link scroll-to">contact</a>
                                 </li>
                                 <li class="menu__social-media">
                                     <div class="">
@@ -110,8 +110,8 @@
             </div>
         </div>
 
-        <div class="header__info-block">
-            <div c>
+        <div class="header__info-block anchor" id="about-us">
+            <div>
                 <div id="titleBlock">
                     <div class="title-block__container-slide">
                         <h1 class="title-h1 header__title">Simple &#38; mordern</h1>
@@ -142,7 +142,7 @@
     </header>
 
     <main class="main">
-        <section class="about-us" id="about-us">
+        <section class="about-us anchor" id="project">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -152,8 +152,7 @@
                 <div class="row about-us__block">
                     <div class="col-7 col-md-6 col-res-12">
                         <div class="about-us__square-photo">
-                            <img src="image/about-us_photo01.jpg" alt="trade center"
-                                class="about-us__photo">
+                            <img src="image/about-us_photo01.jpg" alt="trade center" class="about-us__photo">
                         </div>
                     </div>
                     <div class="col-5 col-md-6 col-res-12">
@@ -169,8 +168,8 @@
                 </div>
                 <div class="row about-us__block">
                     <div class="col-7 col-md-6 col-res-12">
-                        <div class="about-us__square-photo"><img
-                                src="image/about-us_photo02.jpg" alt="commerce centre" class="about-us__photo">
+                        <div class="about-us__square-photo"><img src="image/about-us_photo02.jpg" alt="commerce centre"
+                                class="about-us__photo">
                         </div>
                     </div>
                     <div class="col-5 col-md-6 col-res-12">
@@ -186,7 +185,7 @@
             </div>
         </section>
 
-        <section class="news" id="news">
+        <section class="news anchor" id="news">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -198,7 +197,7 @@
                 </div>
         </section>
 
-        <section class="gallery" id="project">
+        <section class="gallery" id="gallery">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -280,10 +279,10 @@
             </div>
         </section>
 
-        <section class="contact">
+        <section class="contact anchor" id="contact">
             <div class="contact__google-map" id="map">
             </div>
-            <div class="contact__info-card" id="contact">
+            <div class="contact__info-card">
                 <div class="row">
                     <div class="col-12">
                         <h2 class="title-h2 contact__title">get in touch</h2>
@@ -326,12 +325,12 @@
                         <div class="contact__container">
                             <form class="validate-form contact__form" id="contactForm">
                                 <div class="contact__form-group">
-                                    <input data-validate="None name" class="contact__form-element" type="text" autocomplete="off" id="fullname"
-                                        placeholder="Full name">
+                                    <input data-validate="None name" class="contact__form-element" type="text"
+                                        autocomplete="off" id="fullname" placeholder="Full name">
                                 </div>
                                 <div class="contact__form-group">
-                                    <input data-validate="Valid email is: a@b.c" class="contact__form-element" type="text" autocomplete="off" id="email" 
-                                        placeholder="Email">
+                                    <input data-validate="Valid email is: a@b.c" class="contact__form-element" type="text"
+                                        autocomplete="off" id="email" placeholder="Email">
                                 </div>
                                 <button type="button" class="button contact__button" id="submitContact">submit</button>
                             </form>
