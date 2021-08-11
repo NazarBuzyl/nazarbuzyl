@@ -16777,6 +16777,92 @@ if (cocktail !== null) {
 
 /***/ }),
 
+/***/ "./src/js/fetchAirPollution.js":
+/*!*************************************!*\
+  !*** ./src/js/fetchAirPollution.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! regenerator-runtime/runtime.js */ "./node_modules/regenerator-runtime/runtime.js");
+/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var FetchAirPollution = /*#__PURE__*/function () {
+  function FetchAirPollution() {
+    _classCallCheck(this, FetchAirPollution);
+  }
+
+  _createClass(FetchAirPollution, [{
+    key: "getCurrent",
+    value: function () {
+      var _getCurrent = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(lat, lon) {
+        var myKey, response, data;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                myKey = "735e51cf1b3946c9b78111ece9d6caae";
+                _context.next = 3;
+                return fetch("http://api.openweathermap.org/data/2.5/air_pollution?lat=".concat(lat, "&lon=").concat(lon, "&appid=").concat(myKey));
+
+              case 3:
+                response = _context.sent;
+                _context.next = 6;
+                return response.json();
+
+              case 6:
+                data = _context.sent;
+                console.log(data);
+                return _context.abrupt("return", data);
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function getCurrent(_x, _x2) {
+        return _getCurrent.apply(this, arguments);
+      }
+
+      return getCurrent;
+    }()
+  }]);
+
+  return FetchAirPollution;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (FetchAirPollution);
+
+/***/ }),
+
 /***/ "./src/js/fetchCocktail.js":
 /*!*********************************!*\
   !*** ./src/js/fetchCocktail.js ***!
@@ -17135,11 +17221,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fetchWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetchWeather */ "./src/js/fetchWeather.js");
-/* harmony import */ var _weatherHtml__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weatherHtml */ "./src/js/weatherHtml.js");
+/* harmony import */ var _fetchAirPollution__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetchAirPollution */ "./src/js/fetchAirPollution.js");
+/* harmony import */ var _weatherHtml__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./weatherHtml */ "./src/js/weatherHtml.js");
 
 
-var weather = document.getElementById('forecastWeather');
-console.log(weather);
+
+var weather = document.getElementById('forecastWeather'); // console.log(weather);
 
 if (weather !== null) {
   var getInfoByName = function getInfoByName(valueSearch) {
@@ -17154,7 +17241,11 @@ if (weather !== null) {
         lng: data.coord.lon
       };
       initMap(cordsCity);
+      weHtml.clearUI();
       weHtml.populateUI(data);
+      ftAirPollution.getCurrent(cordsCity.lat, cordsCity.lng).then(function (data) {
+        weHtml.populateAirPollutionUI(data.list[0].components, data.list[0].main.aqi);
+      });
     });
     searchWeather.value = '';
   };
@@ -17162,7 +17253,8 @@ if (weather !== null) {
   // Weather
   // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
   var ftWe = new _fetchWeather__WEBPACK_IMPORTED_MODULE_0__["default"]();
-  var weHtml = new _weatherHtml__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  var ftAirPollution = new _fetchAirPollution__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  var weHtml = new _weatherHtml__WEBPACK_IMPORTED_MODULE_2__["default"]();
   var searchWeather = document.getElementById("searchCityWeather");
   var btnWeather = document.getElementById("submitWeather");
   searchWeather.addEventListener("keyup", function (e) {
@@ -17173,15 +17265,9 @@ if (weather !== null) {
   });
   window.addEventListener("DOMContentLoaded", function () {
     var dataSaved = weHtml.getFromLS();
-
-    if (dataSaved === weHtml.defaultCity) {
-      getInfoByName(dataSaved);
-      return;
-    }
-
-    weHtml.populateUI(dataSaved);
-  }); // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-}
+    getInfoByName(dataSaved);
+  });
+} // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 /***/ }),
 
@@ -17194,10 +17280,10 @@ if (weather !== null) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.symbol.js */ "./node_modules/core-js/modules/es.symbol.js");
 /* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.symbol.description.js */ "./node_modules/core-js/modules/es.symbol.description.js");
@@ -17225,22 +17311,117 @@ var WeatherHtml = /*#__PURE__*/function () {
 
     this.uiContainerWe = document.getElementById("weatherInfo");
     this.uiContainerWeFull = document.getElementById("weatherInfoFull");
+    this.uiContainerAirPollution = document.getElementById("airPollutionContainer");
     this.city;
     this.defaultCity = "Kiev";
+    this.airPollutionNameElem = '';
+    this.diagramValue = 0;
+    this.diagramWidth = 0;
+    this.diagramColor = '';
   }
 
   _createClass(WeatherHtml, [{
     key: "populateUI",
     value: function populateUI(data) {
-      this.saveToLS(data);
+      this.saveToLS(data.name);
       this.uiContainerWe.innerHTML = "\n            <h2 class=\"we-info__title title-h2\">Weather - ".concat(data.name, "</h2>\n            <p class=\"we-info__time\">As of ").concat(this.getTimeForm(data.dt), " EEST</p>\n            <div class=\"we-info__temperature-block row\">\n                <div class=\"we-info__now-temperature-block\">\n                    <p class=\"we-info__now-temperature\">").concat(~~data.main.temp, " \xB0</p>\n                    <p class=\"we-info__descr\">").concat(data.weather[0].description, "</p>\n                </div>\n                <div class=\"we-info__min-max-temperature-block\">\n                    <div class=\"we-info__img-block\">\n                    <img class=\"we-info__img\" src=\"http://openweathermap.org/img/wn/").concat(data.weather[0].icon, "@2x.png\"\n                    alt=\"").concat(data.weather[0].description, "\">\n                    </div>\n                    <p class=\"we-info__min-max-temperature\">").concat(~~data.main.temp_max, " \xB0/").concat(~~data.main.temp_min, " \xB0</p>\n                </div>\n            </div>\n        ");
       this.uiContainerWeFull.innerHTML = "\n        <h2 class=\"we-info-full__title title-h2\">Weather in ".concat(data.name, " for today</h2>\n      <div class=\"we-info-full__temperature-block\">\n          <div class=\"row we-info-full__sun-row\">\n              <div class=\"we-info-full__temperature-block \">\n                  <p class=\"we-info-full__feel-temperature\">").concat(~~data.main.feels_like, " \xB0</p>\n                  <p class=\"we-info-full__descr\">Feels like</p>\n              </div>\n              <div class=\"we-info-full__sun-pos\">\n                  <div class=\"we-info-full__semicircle\">\n                  </div>\n                  <div class=\"we-info-full__sun-rise-set-block\">\n                      <div class=\"we-info-full__sunrise\">\n                          <svg class=\"we-info-full__sun-icon\" viewBox=\"0 0 24 24\">\n                              <title>Sun Rise</title>\n                              <path\n                                  d=\"M10.862 6.052v5.329a.75.75 0 0 0 1.5 0V6.036l1.772 1.534a.75.75 0 0 0 .982-1.134l-3.003-2.601a.75.75 0 0 0-.982 0L8.128 6.436A.75.75 0 0 0 9.11 7.57l1.752-1.518zM21 19.128a.75.75 0 0 0 0-1.5H3.167a.75.75 0 1 0 0 1.5H21z\">\n                              </path>\n                          </svg>\n                          <p class=\"we-info-full__sun-text\">").concat(this.getTimeForm(data.sys.sunrise), "</p>\n                      </div>\n                      <div class=\"we-info-full__sunset\">\n                          <svg class=\"we-info-full__sun-icon\" viewBox=\"0 0 24 24\">\n                              <title>Sunset</title>\n                              <path\n                                  d=\"M10.862 9.853L9.044 8.278a.75.75 0 1 0-.982 1.134l3.003 2.602a.75.75 0 0 0 .982 0l3.004-2.602a.75.75 0 0 0-.983-1.134l-1.706 1.478V4a.75.75 0 0 0-1.5 0v5.853zM21 19.075a.75.75 0 1 0 0-1.5H3.167a.75.75 0 1 0 0 1.5H21z\">\n                              </path>\n                          </svg>\n                          <p class=\"we-info-full__sun-text\">").concat(this.getTimeForm(data.sys.sunset), "\n                          </p>\n                      </div>\n                  </div>\n              </div>\n          </div>\n          <div class=\"row we-info-full__row\">\n              <div class=\"we-info-full__card\">\n                  <svg class=\"we-info-full__icon\" viewBox=\"0 0 24 24\">\n                      <title>Temperature</title>\n                      <path\n                          d=\"M10.333 15.48v.321c.971.357 1.667 1.322 1.667 2.456 0 1.438-1.12 2.604-2.5 2.604S7 19.695 7 18.257c0-1.134.696-2.099 1.667-2.456v-.322a2.084 2.084 0 0 1-1.25-1.91V5.583a2.083 2.083 0 1 1 4.166 0v7.986c0 .855-.514 1.589-1.25 1.91zM15.8 8.1a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6zm0-1.85a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\">\n                      </path>\n                  </svg>\n                  <div class=\"we-info-full__icon-desription\">\n                      High / low\n                  </div>\n                  <div class=\"we-info-full__info-text\"><span>").concat(~~data.main.temp_max, " \xB0</span> / <span>").concat(~~data.main.temp_min, " \xB0</span>\n                  </div>\n              </div>\n              <div class=\"we-info-full__card\">\n                  <svg class=\"we-info-full__icon\" viewBox=\"0 0 24 24\">\n                      <title>Wind</title>\n                      <path\n                          d=\"M6 8.67h5.354c1.457 0 2.234-1.158 2.234-2.222S12.687 4.4 11.354 4.4c-.564 0-1.023.208-1.366.488M3 11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4 18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153 2.153 0 0 1-1.63-.742\"\n                          stroke-width=\"2\" stroke=\"currentColor\" stroke-linecap=\"round\" fill=\"none\">\n                      </path>\n                  </svg>\n                  <div class=\"we-info-full__icon-desription\">\n                      Wind\n                  </div>\n                  <div class=\"we-info-full__info-text\">\n                      <span>\n                          <svg class=\"we-info-full__info-text-icon\" style=\"transform:rotate(").concat(data.wind.deg, "deg)\" viewBox=\"0 0 24 24\">\n                              <title>Wind Direction</title>\n                              <path stroke=\"currentColor\" fill=\"none\"\n                                  d=\"M18.467 4.482l-5.738 5.738a1.005 1.005 0 0 1-1.417 0L5.575 4.482l6.446 16.44 6.446-16.44z\">\n                              </path>\n                          </svg>").concat(data.wind.speed, " km / year\n                      </span>\n                  </div>\n              </div>\n              <div class=\"we-info-full__card\">\n                  <svg class=\"we-info-full__icon\" viewBox=\"0 0 24 24\">\n                      <title>Humidity</title>\n                      <path fill-rule=\"evenodd\"\n                          d=\"M11.743 17.912a4.182 4.182 0 0 1-2.928-1.182 3.972 3.972 0 0 1-.614-4.962.743.743 0 0 1 .646-.349c.234 0 .476.095.66.275l4.467 4.355c.385.376.39.998-.076 1.275a4.216 4.216 0 0 1-2.155.588M11.855 4c.316 0 .61.14.828.395.171.2.36.416.562.647 1.857 2.126 4.965 5.684 4.965 8.73 0 3.416-2.85 6.195-6.353 6.195-3.505 0-6.357-2.78-6.357-6.195 0-3.082 2.921-6.406 4.854-8.605.242-.275.47-.535.673-.772A1.08 1.08 0 0 1 11.855 4\">\n                      </path>\n                  </svg>\n                  <div class=\"we-info-full__icon-desription\">Humidity\n                  </div>\n                  <div class=\"we-info-full__info-text\">\n                      <span>").concat(data.main.humidity, "%\n                      </span>\n                  </div>\n              </div>\n              <div class=\"we-info-full__card\" class=\"\">\n                  <svg class=\"we-info-full__icon\" viewBox=\"0 0 24 24\">\n                      <title>Pressure</title>\n                      <path\n                          d=\"M8.462 18.293l-.29-.002c-.6-.004-1.043-.007-1.259-.007-1.119 0-1.182-1.015-.34-1.734l.196-.164.508-.425 1.543-1.292c1.014-.846 1.74-1.45 2.073-1.723.735-.601 1.305-.596 2.033.022.387.329.959.805 2.207 1.841a377.936 377.936 0 0 1 2.18 1.816c.796.67.742 1.66-.295 1.66h-2.382v1.77c0 .83-.393 1.223-1.258 1.223h-2.994c-.809 0-1.258-.42-1.258-1.207v-1.773l-.664-.005zm0-12.807l-.29.002c-.6.004-1.043.006-1.259.006-1.119 0-1.182 1.016-.34 1.734l.196.164.508.426 1.543 1.29a348.68 348.68 0 0 0 2.073 1.724c.735.601 1.305.596 2.033-.022.387-.328.959-.805 2.207-1.84a377.937 377.937 0 0 0 2.18-1.817c.796-.67.742-1.659-.295-1.659h-2.382v-1.77c0-.832-.393-1.224-1.258-1.224h-2.994c-.809 0-1.258.42-1.258 1.207V5.48l-.664.005z\">\n                      </path>\n                  </svg>\n                  <div class=\"we-info-full__icon-desription\">Pressure\n                  </div>\n                  <div class=\"we-info-full__info-text\">\n                      <span>\n                          <svg class=\"we-info-full__info-text-icon\" viewBox=\"0 0 24 24\">\n                              <title>Arrow Up</title>\n                              <path d=\"M11 2.5a1 1 0 0 1 2 0v19a1 1 0 0 1-2 0v-19z\"></path>\n                              <path\n                                  d=\"M12 3.914l-7.293 7.293a1 1 0 1 1-1.414-1.414l8-8a1 1 0 0 1 1.414 0l8 8a1 1 0 1 1-1.414 1.414L12 3.914z\">\n                              </path>\n                          </svg>").concat(data.main.pressure, " mbar\n                      </span>\n                  </div>\n              </div>\n              <div class=\"we-info-full__card\">\n                  <svg class=\"we-info-full__icon\" viewBox=\"0 0 1024 1024\">\n                      <title>Visibility</title>\n                      <path\n                          d=\"M491.856 879.808c-60.48-5.056-110.848-25.184-171.328-55.424-120.96-55.424-216.704-146.112-292.256-256.96-25.248-40.352-30.24-80.64 0-126.016 80.608-115.872 186.464-211.68 317.472-272.096 110.816-50.4 226.752-50.4 337.664 0 136 60.48 241.824 156.224 317.44 282.208 15.104 25.216 25.12 65.504 10.048 85.728-105.792 191.424-256.992 367.84-519.04 342.56zm292.256-377.92c0-151.168-120.96-272.064-272.096-272.064-146.144 0-272.128 126.016-272.128 272.064 0 151.232 120.96 277.216 272.128 277.216 151.104-.032 272.096-125.984 272.096-277.216z\">\n                      </path>\n                      <path\n                          d=\"M789.808 500.416c0 156.896-125.472 287.52-282.336 282.336-156.864 0-282.336-130.656-282.336-287.488 0-146.4 130.656-277.12 282.336-277.12 156.896-.032 287.584 125.376 282.336 282.272zM512.752 348.832c-83.68 0-151.584 67.968-151.584 151.584 0 88.864 67.968 156.896 151.584 156.896 83.648 0 156.832-73.216 156.832-156.896-5.184-83.648-73.152-151.584-156.832-151.584z\">\n                      </path>\n                  </svg>\n                  <div class=\"we-info-full__icon-desription\">Visibility\n                  </div>\n                  <div class=\"we-info-full__info-text\">\n                      <span>").concat(data.visibility / 1000, " km\n                      </span>\n                  </div>\n              </div>\n          </div>\n      </div>\n            ");
     }
   }, {
+    key: "populateAirPollutionUI",
+    value: function populateAirPollutionUI(data, aqi) {
+      console.log(data, aqi);
+
+      for (var key in data) {
+        console.log(key, data[key]);
+        this.airPollutionAqi(key, data[key], aqi);
+        this.uiContainerAirPollution.innerHTML += "\n            <div class=\"col-12 col-md-4 col-sm-6 air-pollution__container\">\n                <div class=\"air-pollution__row row\">\n                    <div class=\"air-pollution__diagram-block\">\n                        <svg style=\"display: block; border-radius: 50%;\" width=\"54\" height=\"54\">\n                            <circle r=\"27\" cx=\"27\" cy=\"27\"\n                                style=\"stroke-width:10; fill: transparent; stroke: #e7ecf1;\"\n                                transform=\"rotate(90 27 27)\">\n                            </circle>\n                            <circle r=\"27\" cx=\"27\" cy=\"27\" transform=\"rotate(90 27 27)\"\n                                style=\"stroke-width:10;stroke-dasharray:".concat(this.diagramWidth, " 180;stroke:").concat(this.diagramColor, "; fill: transparent; transition: stroke-dasharray .3s ease;\">\n                            </circle>\n                            <text style=\"font-size: 24px; font-weight: 300; color: #2b2b2b;\" x=\"50%\" y=\"55%\"\n                                dominant-baseline=\"middle\" alignment-baseline=\"middle\"\n                                text-anchor=\"middle\">").concat(this.diagramValue, "</text>\n                        </svg>\n                    </div>\n                    <div class=\"air-pollution__info-block\">\n                        <p class=\"air-pollution__name-elem\">").concat(this.airPollutionNameElem, "</p>\n                        <p class=\"air-pollution__quality\">Moderate</p>\n                        <span class=\"air-pollution__measurement\">").concat(data[key], " \u03BCg/m3</span>\n                    </div>\n                </div>\n            </div>\n            ");
+      }
+    }
+  }, {
+    key: "airPollutionAqi",
+    value: function airPollutionAqi(name, data, aqi) {
+      this.airPollutionNameElem = name;
+
+      switch (aqi) {
+        case 1:
+          this.diagramWidth = 30;
+          this.diagramColor = '#00e838';
+          break;
+
+        case 2:
+          this.diagramWidth = 60;
+          this.diagramColor = '#ffff24';
+          break;
+
+        case 3:
+          this.diagramWidth = 90;
+          this.diagramColor = '#ff7200';
+          break;
+
+        case 4:
+          this.diagramWidth = 120;
+          this.diagramColor = '#ff0000';
+          break;
+
+        case 5:
+          this.diagramWidth = 150;
+          this.diagramColor = '#9d3d8c';
+          break;
+
+        case 6:
+          this.diagramWidth = 180;
+          this.diagramColor = '#8d0021';
+          break;
+      }
+
+      switch (name) {
+        case 'co':
+          this.diagramValue = ~~(data / 2);
+          break;
+
+        case 'no':
+          this.diagramValue = ~~(data / 2);
+          break;
+
+        case 'no2':
+          this.diagramValue = ~~(data / 2);
+          break;
+
+        case 'co':
+          this.diagramValue = ~~(data / 2);
+          break;
+
+        case 'o3':
+          this.diagramValue = ~~(data / 2);
+          break;
+
+        case 'so2':
+          this.diagramValue = ~~(data * 2 / 4);
+          break;
+
+        case 'pm2_5':
+          this.airPollutionNameElem = 'pm2.5';
+          this.diagramValue = ~~(data / 2);
+          break;
+
+        case 'pm10':
+          this.diagramValue = ~~data;
+          break;
+
+        case 'nh3':
+          this.diagramValue = ~~(data / 2);
+          break;
+      }
+
+      if (!this.diagramValue) this.diagramValue = 1;
+    }
+  }, {
     key: "clearUI",
     value: function clearUI() {
-      uiContainerWe.innerHTML = "";
-      uiContainerWeFull.innerHTML = "";
+      this.uiContainerWe.innerHTML = "";
+      this.uiContainerWeFull.innerHTML = "";
+      this.uiContainerAirPollution.innerHTML = "";
     }
   }, {
     key: "saveToLS",
@@ -17252,10 +17433,9 @@ var WeatherHtml = /*#__PURE__*/function () {
     value: function getFromLS() {
       if (!localStorage.getItem("city")) {
         return this.defaultCity;
-      } else {
-        this.city = JSON.parse(localStorage.getItem("city"));
       }
 
+      this.city = JSON.parse(localStorage.getItem("city"));
       return this.city;
     }
   }, {
@@ -17282,9 +17462,9 @@ var WeatherHtml = /*#__PURE__*/function () {
 /***/ }),
 
 /***/ 0:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/coCatalogHtml.js ./src/js/cocktail.js ./src/js/coDayDrink.js ./src/js/coPopDrinksHtml.js ./src/js/fetchCocktail.js ./src/js/fetchCocktailById.js ./src/js/fetchCocktailRan.js ./src/js/fetchWeather.js ./src/js/script.js ./src/js/weather.js ./src/js/weatherHtml.js ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/coCatalogHtml.js ./src/js/cocktail.js ./src/js/coDayDrink.js ./src/js/coPopDrinksHtml.js ./src/js/fetchAirPollution.js ./src/js/fetchCocktail.js ./src/js/fetchCocktailById.js ./src/js/fetchCocktailRan.js ./src/js/fetchWeather.js ./src/js/script.js ./src/js/weather.js ./src/js/weatherHtml.js ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17292,6 +17472,7 @@ __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-proj
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\cocktail.js */"./src/js/cocktail.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\coDayDrink.js */"./src/js/coDayDrink.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\coPopDrinksHtml.js */"./src/js/coPopDrinksHtml.js");
+__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchAirPollution.js */"./src/js/fetchAirPollution.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchCocktail.js */"./src/js/fetchCocktail.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchCocktailById.js */"./src/js/fetchCocktailById.js");
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\buzyl-final-project\src\js\fetchCocktailRan.js */"./src/js/fetchCocktailRan.js");

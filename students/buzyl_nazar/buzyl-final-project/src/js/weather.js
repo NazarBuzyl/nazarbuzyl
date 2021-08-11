@@ -1,13 +1,15 @@
 import FetchWeather from './fetchWeather';
+import FetchAirPollution from './fetchAirPollution';
 import WeatherHtml from './weatherHtml';
 
 const weather = document.getElementById('forecastWeather');
 
-console.log(weather);
+// console.log(weather);
 if (weather !== null) {
     // Weather
     // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     const ftWe = new FetchWeather();
+    const ftAirPollution = new FetchAirPollution();
     const weHtml = new WeatherHtml();
 
     const searchWeather = document.getElementById("searchCityWeather");
@@ -33,7 +35,12 @@ if (weather !== null) {
             };
             initMap(cordsCity);
 
+            weHtml.clearUI();
             weHtml.populateUI(data);
+
+            ftAirPollution.getCurrent(cordsCity.lat, cordsCity.lng).then((data) => {
+                weHtml.populateAirPollutionUI(data.list[0].components, data.list[0].main.aqi);
+            });
         });
         searchWeather.value = '';
     }
@@ -41,12 +48,7 @@ if (weather !== null) {
     window.addEventListener("DOMContentLoaded", () => {
         const dataSaved = weHtml.getFromLS();
 
-        if (dataSaved === weHtml.defaultCity) {
-            getInfoByName(dataSaved);
-            return;
-        }
-
-        weHtml.populateUI(dataSaved);
+        getInfoByName(dataSaved);
     });
-    // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 }
+// ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||

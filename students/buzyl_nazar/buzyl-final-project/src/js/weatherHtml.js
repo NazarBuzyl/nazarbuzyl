@@ -2,12 +2,17 @@ class WeatherHtml {
     constructor() {
         this.uiContainerWe = document.getElementById("weatherInfo");
         this.uiContainerWeFull = document.getElementById("weatherInfoFull");
+        this.uiContainerAirPollution = document.getElementById("airPollutionContainer");
         this.city;
         this.defaultCity = "Kiev";
+        this.airPollutionNameElem = '';
+        this.diagramValue = 0;
+        this.diagramWidth = 0;
+        this.diagramColor = ''
     }
 
     populateUI(data) {
-        this.saveToLS(data);
+        this.saveToLS(data.name);
         this.uiContainerWe.innerHTML = `
             <h2 class="we-info__title title-h2">Weather - ${data.name}</h2>
             <p class="we-info__time">As of ${this.getTimeForm(data.dt)} EEST</p>
@@ -152,22 +157,120 @@ class WeatherHtml {
             `;
     }
 
-    clearUI() {
-        uiContainerWe.innerHTML = "";
-        uiContainerWeFull.innerHTML = "";
+    populateAirPollutionUI(data, aqi) {
+        console.log(data, aqi);
+        for (let key in data) {
+            console.log(key, data[key]);
+            this.airPollutionAqi(key, data[key], aqi);
+            this.uiContainerAirPollution.innerHTML += `
+            <div class="col-12 col-md-4 col-sm-6 air-pollution__container">
+                <div class="air-pollution__row row">
+                    <div class="air-pollution__diagram-block">
+                        <svg style="display: block; border-radius: 50%;" width="54" height="54">
+                            <circle r="27" cx="27" cy="27"
+                                style="stroke-width:10; fill: transparent; stroke: #e7ecf1;"
+                                transform="rotate(90 27 27)">
+                            </circle>
+                            <circle r="27" cx="27" cy="27" transform="rotate(90 27 27)"
+                                style="stroke-width:10;stroke-dasharray:${this.diagramWidth} 180;stroke:${this.diagramColor}; fill: transparent; transition: stroke-dasharray .3s ease;">
+                            </circle>
+                            <text style="font-size: 24px; font-weight: 300; color: #2b2b2b;" x="50%" y="55%"
+                                dominant-baseline="middle" alignment-baseline="middle"
+                                text-anchor="middle">${this.diagramValue}</text>
+                        </svg>
+                    </div>
+                    <div class="air-pollution__info-block">
+                        <p class="air-pollution__name-elem">${this.airPollutionNameElem}</p>
+                        <p class="air-pollution__quality">Moderate</p>
+                        <span class="air-pollution__measurement">${data[key]} μg/m3</span>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+
     }
+
+    airPollutionAqi(name, data, aqi) {
+        this.airPollutionNameElem = name;
+        switch (aqi) {
+            case 1:
+                this.diagramWidth = 30;
+                this.diagramColor = '#00e838'
+                break;
+            case 2:
+                this.diagramWidth = 60;
+                this.diagramColor = '#ffff24'
+                break;
+            case 3:
+                this.diagramWidth = 90;
+                this.diagramColor = '#ff7200'
+                break;
+            case 4:
+                this.diagramWidth = 120;
+                this.diagramColor = '#ff0000'
+                break;
+            case 5:
+                this.diagramWidth = 150;
+                this.diagramColor = '#9d3d8c'
+                break;
+            case 6:
+                this.diagramWidth = 180;
+                this.diagramColor = '#8d0021'
+                break;
+        }
+        switch (name) {
+            case 'co':
+                this.diagramValue = ~~(data / 2);
+                break;
+            case 'no':
+                this.diagramValue = ~~(data / 2);
+                break;
+            case 'no2':
+                this.diagramValue = ~~(data / 2);
+                break;
+            case 'co':
+                this.diagramValue = ~~(data / 2);
+                break;
+            case 'o3':
+                this.diagramValue = ~~(data / 2);
+                break;
+            case 'so2':
+                this.diagramValue = ~~(data * 2 / 4);
+                break;
+            case 'pm2_5':
+                this.airPollutionNameElem = 'pm2.5'
+                this.diagramValue = ~~(data / 2);
+                break;
+            case 'pm10':
+                this.diagramValue = ~~(data);
+                break;
+            case 'nh3':
+                this.diagramValue = ~~(data / 2);
+                break;
+        }
+        if (!this.diagramValue) this.diagramValue = 1;
+    }
+
+    clearUI() {
+        this.uiContainerWe.innerHTML = "";
+        this.uiContainerWeFull.innerHTML = "";
+        this.uiContainerAirPollution.innerHTML = "";
+    }
+
     saveToLS(data) {
         localStorage.setItem("city", JSON.stringify(data));
     }
+
     getFromLS() {
         if (!localStorage.getItem("city")) {
             return this.defaultCity;
-        } else {
-            this.city = JSON.parse(localStorage.getItem("city"));
         }
+        this.city = JSON.parse(localStorage.getItem("city"));
 
         return this.city;
     }
+
     clearLS() {
         localStorage.clear();
     }

@@ -45,9 +45,10 @@
                         <div id="mapWeather" class="we-map__map-block"></div>
                     </section>
                 </div>
-                <div class="col-4 col-md-12 ">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6"></div>
+                <!-- Air Pollution -->
+                <div class="col-4 col-md-12">
+                    <div class="air-pollution" id="airPollutionContainer">
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,8 +58,8 @@
     <script>
         function initMap(coords) {
             if (!coords) coords = {
-                lat: JSON.parse(localStorage.getItem("city")).coord.lat,
-                lng: JSON.parse(localStorage.getItem("city")).coord.lon,
+                lat: 50.4333,
+                lng: 30.5167,
             };
 
             const map = new google.maps.Map(document.getElementById('mapWeather'), {
@@ -68,7 +69,6 @@
             const marker = new google.maps.Marker({
                 position: coords,
                 map: map,
-                icon: 'image/Pin.png'
             });
             //const contentString = '<div id="content">';
             //const infowindow = new google.maps.InfoWindow({
