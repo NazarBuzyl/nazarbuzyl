@@ -53,18 +53,15 @@ class CoDayDrinks {
     }
 
     saveToLS(data, index) {
-        console.log(data, index, 'SaveToLs');
         localStorage.setItem(`dayCocktails${index}`, JSON.stringify(data));
     }
 
     getFromLS(qty) {
-        console.log('start');
         for (let i = 1; i <= qty; i++) {
             if (!localStorage.getItem(`dayCocktails${i}`)) {
                 this.getCocktailData(i);
                 document.cookie = `dayCocktailTime=0; max-age=${this.getTimeDelete}`;
             } else if (localStorage.getItem(`dayCocktails${i}`)) {
-                console.log('Gib');
                 this.dayCocktail = JSON.parse(localStorage.getItem(`dayCocktails${i}`));
                 this.populateUI(this.dayCocktail);
             }
@@ -88,18 +85,13 @@ class CoDayDrinks {
         data.forEach((elem) => {
             // console.log(elem, data, `#${openBtnId}${elem.idDrink}`, `#${containerId}${elem.idDrink}`, `#${closeBtnId}${elem.idDrink}`);
             // console.log($(`#${openBtnId}${elem.idDrink}`), $(`#${containerId}${elem.idDrink}`),$(`#${closeBtnId}${elem.idDrink}`));
-            console.log(elem);
             $(`#${openBtnId}${elem}`).click(function () {
                 $(`#${containerId}${elem}`).addClass('visible-recipe');
                 $(document.body).addClass('recipe-open');
-
-                console.log('open');
             });
             $(`#${closeBtnId}${elem}`).click(function () {
                 $(`#${containerId}${elem}`).removeClass('visible-recipe');
                 $(document.body).removeClass('recipe-open');
-
-                console.log('close');
             });
         });
     }

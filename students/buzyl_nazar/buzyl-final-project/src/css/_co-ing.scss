@@ -1,0 +1,23 @@
+.co-ing {
+    &__container-slider {}
+
+    &__item {
+        width: 350px;
+        height: 390px;
+        display: block;
+
+        &:hover {
+            .co-ing__title {
+                color: $fire-bash;
+            }
+        }
+    }
+
+    &__img {}
+
+    &__title {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+}

@@ -4,7 +4,7 @@
 }
 
 .we-search-by-city {
-    font-family: $font-dafault;
+    font-family: $font-default;
 
     &__title {
         font-size: 24px;
@@ -26,7 +26,7 @@
         padding: 0 15px;
         border-radius: 20px;
         margin-bottom: 12px;
-        font-family: $font-dafault;
+        font-family: $font-default;
 
         &:focus,
         &:hover {

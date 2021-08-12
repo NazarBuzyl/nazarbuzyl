@@ -5,53 +5,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What do you want today?</title>
+    <title>🙂😀😉🙂😀😉</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page">
+    <a id="top"></a>
+    <header class="header" id="header">
+        <div class="header__menu container">
+            <div class="row">
+                <!-- <div class="col-3 col-md-10">
+                    <p class="header__logo">Projects by Nazar Buzyl </p>
+                </div> -->
+                <!-- Menu -->
+                <div class="col-12 col-md-12">
+                    <nav class="menu" id="menu">
+                        <input class="menu__input" type="checkbox" id="burgerMenuBtn">
+                        <label class="menu__burger-btn burger-btn" id="burgerMenuBtnItem" for="burgerMenuBtn">
+                            <span class="burger-btn__line"></span>
+                        </label>
+                        <ul class="menu__list" id="menuList">
+                            <li class="menu__item">
+                                <a class="menu__link" href="./index.html">Home</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="./weather.html">Weather</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="./cocktail.html">Cocktail</a>
+                            </li>
+                            <li class="menu__item">
+                                <span class="menu__arrow"></span>
+                                <p class="menu__link accordion">Other projects
+                                    <label class="sub-menu-btn" for="subMenuBtn"></label>
+                                </p>
+                                <ul class="sub-menu menu__sub-menu">
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link"
+                                            href="https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/examination_html-css/build/index.html">Bhromaon</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link"
+                                            href="https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/architecture/build/index.html">Monticello</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu__item">
+                                <span class="menu__arrow"></span>
+                                <p class="menu__link accordion">Contact
+                                    <label class="sub-menu-btn" for="subMenuBtn"></label>
+                                </p>
+                                <ul class="sub-menu menu__sub-menu">
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link" target="_blank"
+                                            href="https://github.com/NazarBuzyl">GitHub</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link" target="_blank"
+                                            href="https://www.linkedin.com/in/nazar-buzyl-1561a9215/">Linkedin</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link" target="_blank"
+                                            href="https://t.me/nazarbuzyl">Telegram</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- <nav class="menu">
+                        <input class="menu__input" type="checkbox" id="burgerMenuBtn">
+                        <label class="menu__burger-btn burger-btn" id="burgerMenuBtnItem" for="burgerMenuBtn">
+                            <span class="burger-btn__line"></span>
+                        </label>
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a href="#about-us" class="menu__link scroll-to active">about us</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#project" class="menu__link scroll-to">project</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#news" class="menu__link scroll-to">news</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#contact" class="menu__link scroll-to">contact</a>
+                            </li>
+                        </ul>
+                    </nav> -->
+                </div>
+            </div>
+        </div>
+    </header>
     <main class="main">
-        <!-- <section class="info-block">
+        <section class="index-info-block">
             <div class="container">
-                <h1 class="info-block__title">What do you want today?</h1>
-                <div class="row">
-                    <div class="col-6">
-                        <a class="info-block__link" href="">
-                            <div class="info-block__link-block link-block">
-                                <h2 class="link-block__title"></h2>
-                                <img class="link-block__image" src="" alt="Weather forecast">
+                <h1 class="index-info-block__title">Find your journey :)</h1>
+                <p class="index-info-block__des">This page was created for my current and future projects.</p>
+                <div class="row index-info-block__row">
+                    <div class="col-6 col-xl-7 col-lg-9 col-md-11 col-sm-12">
+                        <a class="index-info-block__link" href="./weather.html">
+                            <div class="index-info-block__link-block link-block">
+                                <h2 class="link-block__title">Weather - forecast</h2>
+                                <img class="link-block__image" src="./image/weather-title.jpg" alt="Weather forecast">
                             </div>
                         </a>
                     </div>
-                    <div class="col-6">
-                        <a class="info-block__link" href="">
-                            <div class="info-block__link-block link-block">
-                                <h2 class="link-block__title"></h2>
-                                <img class="link-block__image" src="" alt="Funny image and gifs">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a class="info-block__link" href="">
-                            <div class="info-block__link-block link-block">
-                                <h2 class="link-block__title"></h2>
-                                <img class="link-block__image" src="" alt="Currency Converter">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a class="info-block__link" href="">
-                            <div class="info-block__link-block link-block">
-                                <h2 class="link-block__title"></h2>
-                                <img class="link-block__image" src="" alt="News">
+                    <div class="col-6 col-xl-7 col-lg-9 col-md-11 col-sm-12">
+                        <a class="index-info-block__link" href="./cocktail.html">
+                            <div class="index-info-block__link-block link-block">
+                                <h2 class="link-block__title">The Cocktails</h2>
+                                <img class="link-block__image" src="./image/cocktail-title.jpg" alt="TheCocktail">
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
     </main>
-
     <footer class="footer" id="footer">
         <div class="container">
             <div class="row">
@@ -60,7 +130,6 @@
                     <a href="./index.html" class="footer-link information__link">Home</a>
                     <a href="./weather.html" class="footer-link information__link">Weather</a>
                     <a href="./cocktail.html" class="footer-link information__link">Cocktail</a>
-                    <a href="./currency-converter.html" class="footer-link information__link">Currency converter</a>
                 </div>
                 <div class="col-4 col-md-6 apis">
                     <h6 class="footer-title apis__title">I used APIs</h6>
@@ -265,6 +334,7 @@
             </div> -->
         </div>
     </footer>
+    <a class="link-to-top" id="showScroll"></a>
     <script src="js/script.js"></script>
 </body>
 

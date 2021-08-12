@@ -6,37 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find your Cocktail</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page" id="CocktailSite">
-    <header class="header">
-
-    </header>
+    <a id="top"></a>
+    //= _header.html
     <main class="main cocktail">
         <!-- Drink of the day -->
         <section class="cocktail__day-drink day-drink">
             <div class="day-drink__content row" id="dayDrink">
-                <!-- <div class="day-drink__item col-6">
-                    <img src="https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg" alt="${elem.strDrink}" class="day-drink__img">
-                    <div class="day-drink__info-wrapper">
-                        <h2 class="cocktail__h2 day-drink__title">for summer</h2>
-                        <h3 class="day-drink__name">Cosmopolitan</h3>
-                        <button id="openBtnRecipeDayDrink${elem.idDrink}" class="day-drink__btn recipe-btn">see
-                            recipe</button>
-                    </div>
-                </div>
-                <div class="day-drink__item col-6">
-                    <img src="https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg" alt="${elem.strDrink}" class="day-drink__img">
-                    <div class="day-drink__info-wrapper">
-                        <h2 class="cocktail__h2 day-drink__title">for summer</h2>
-                        <h3 class="day-drink__name">Cosmopolitan</h3>
-                        <button id="openBtnRecipeDayDrink${elem.idDrink}" class="day-drink__btn recipe-btn">see
-                            recipe</button>
-                    </div>
-                </div> -->
             </div>
         </section>
+
         <!-- Cocktail search block -->
         <section class="cocktail__co-search co-search">
             <div class="co-search__search-block">
@@ -72,14 +56,23 @@
                 </div>
             </div>
         </section>
-        <!-- Popular Ingredients -->
-        <section class="cocktail__co-pop-ing co-pop-ing" id="cocktailPoIng">
-            <div class="container">
 
+        <!-- Popular Ingredients -->
+        <section class="cocktail__co-ing co-ing" id="ingredientBlock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="cocktail__h2">Ingredients</h2>
+                    </div>
+                </div>
+                <div class="co-ing__container-slider" id="ingredientSlider">
+
+                </div>
             </div>
         </section>
     </main>
     //= _footer.html
+    <a class="link-to-top" id="showScroll"></a>
     <script src="js/script.js"></script>
 </body>
 

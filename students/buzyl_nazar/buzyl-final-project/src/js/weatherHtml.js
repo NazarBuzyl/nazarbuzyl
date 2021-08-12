@@ -158,9 +158,9 @@ class WeatherHtml {
     }
 
     populateAirPollutionUI(data, aqi) {
-        console.log(data, aqi);
+        // console.log(data, aqi);
         for (let key in data) {
-            console.log(key, data[key]);
+            // console.log(key, data[key]);
             this.airPollutionAqi(key, data[key], aqi);
             this.uiContainerAirPollution.innerHTML += `
             <div class="col-12 col-md-4 col-sm-6 air-pollution__container">

@@ -6,37 +6,105 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find your Cocktail</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page" id="CocktailSite">
-    <header class="header">
-
+    <a id="top"></a>
+    <header class="header" id="header">
+        <div class="header__menu container">
+            <div class="row">
+                <!-- <div class="col-3 col-md-10">
+                    <p class="header__logo">Projects by Nazar Buzyl </p>
+                </div> -->
+                <!-- Menu -->
+                <div class="col-12 col-md-12">
+                    <nav class="menu" id="menu">
+                        <input class="menu__input" type="checkbox" id="burgerMenuBtn">
+                        <label class="menu__burger-btn burger-btn" id="burgerMenuBtnItem" for="burgerMenuBtn">
+                            <span class="burger-btn__line"></span>
+                        </label>
+                        <ul class="menu__list" id="menuList">
+                            <li class="menu__item">
+                                <a class="menu__link" href="./index.html">Home</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="./weather.html">Weather</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="./cocktail.html">Cocktail</a>
+                            </li>
+                            <li class="menu__item">
+                                <span class="menu__arrow"></span>
+                                <p class="menu__link accordion">Other projects
+                                    <label class="sub-menu-btn" for="subMenuBtn"></label>
+                                </p>
+                                <ul class="sub-menu menu__sub-menu">
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link"
+                                            href="https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/examination_html-css/build/index.html">Bhromaon</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link"
+                                            href="https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/architecture/build/index.html">Monticello</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu__item">
+                                <span class="menu__arrow"></span>
+                                <p class="menu__link accordion">Contact
+                                    <label class="sub-menu-btn" for="subMenuBtn"></label>
+                                </p>
+                                <ul class="sub-menu menu__sub-menu">
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link" target="_blank"
+                                            href="https://github.com/NazarBuzyl">GitHub</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link" target="_blank"
+                                            href="https://www.linkedin.com/in/nazar-buzyl-1561a9215/">Linkedin</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a class="sub-menu__link" target="_blank"
+                                            href="https://t.me/nazarbuzyl">Telegram</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- <nav class="menu">
+                        <input class="menu__input" type="checkbox" id="burgerMenuBtn">
+                        <label class="menu__burger-btn burger-btn" id="burgerMenuBtnItem" for="burgerMenuBtn">
+                            <span class="burger-btn__line"></span>
+                        </label>
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a href="#about-us" class="menu__link scroll-to active">about us</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#project" class="menu__link scroll-to">project</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#news" class="menu__link scroll-to">news</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#contact" class="menu__link scroll-to">contact</a>
+                            </li>
+                        </ul>
+                    </nav> -->
+                </div>
+            </div>
+        </div>
     </header>
     <main class="main cocktail">
         <!-- Drink of the day -->
         <section class="cocktail__day-drink day-drink">
             <div class="day-drink__content row" id="dayDrink">
-                <!-- <div class="day-drink__item col-6">
-                    <img src="https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg" alt="${elem.strDrink}" class="day-drink__img">
-                    <div class="day-drink__info-wrapper">
-                        <h2 class="cocktail__h2 day-drink__title">for summer</h2>
-                        <h3 class="day-drink__name">Cosmopolitan</h3>
-                        <button id="openBtnRecipeDayDrink${elem.idDrink}" class="day-drink__btn recipe-btn">see
-                            recipe</button>
-                    </div>
-                </div>
-                <div class="day-drink__item col-6">
-                    <img src="https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg" alt="${elem.strDrink}" class="day-drink__img">
-                    <div class="day-drink__info-wrapper">
-                        <h2 class="cocktail__h2 day-drink__title">for summer</h2>
-                        <h3 class="day-drink__name">Cosmopolitan</h3>
-                        <button id="openBtnRecipeDayDrink${elem.idDrink}" class="day-drink__btn recipe-btn">see
-                            recipe</button>
-                    </div>
-                </div> -->
             </div>
         </section>
+
         <!-- Cocktail search block -->
         <section class="cocktail__co-search co-search">
             <div class="co-search__search-block">
@@ -72,10 +140,18 @@
                 </div>
             </div>
         </section>
-        <!-- Popular Ingredients -->
-        <section class="cocktail__co-pop-ing co-pop-ing" id="cocktailPoIng">
-            <div class="container">
 
+        <!-- Popular Ingredients -->
+        <section class="cocktail__co-ing co-ing" id="ingredientBlock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="cocktail__h2">Ingredients</h2>
+                    </div>
+                </div>
+                <div class="co-ing__container-slider" id="ingredientSlider">
+
+                </div>
             </div>
         </section>
     </main>
@@ -87,7 +163,6 @@
                     <a href="./index.html" class="footer-link information__link">Home</a>
                     <a href="./weather.html" class="footer-link information__link">Weather</a>
                     <a href="./cocktail.html" class="footer-link information__link">Cocktail</a>
-                    <a href="./currency-converter.html" class="footer-link information__link">Currency converter</a>
                 </div>
                 <div class="col-4 col-md-6 apis">
                     <h6 class="footer-title apis__title">I used APIs</h6>
@@ -292,6 +367,7 @@
             </div> -->
         </div>
     </footer>
+    <a class="link-to-top" id="showScroll"></a>
     <script src="js/script.js"></script>
 </body>
 
