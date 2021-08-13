@@ -1,10 +1,15 @@
 .co-ing {
-    &__container-slider {}
+    &__container-slider {
+        width: 100%;
+        height: calc(100% + 20px);
+        overflow: hidden;
+    }
 
     &__item {
         width: 350px;
         height: 390px;
         display: block;
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
 
         &:hover {
             .co-ing__title {
@@ -16,8 +21,13 @@
     &__img {}
 
     &__title {
+        max-width: 350px;
         text-align: center;
         font-size: 14px;
         margin-top: 15px;
     }
 }
+
+// .slick-dots{
+//     bottom: -5px;
+// }

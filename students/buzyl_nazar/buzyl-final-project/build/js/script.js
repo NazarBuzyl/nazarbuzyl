@@ -19760,117 +19760,118 @@ __webpack_require__.r(__webpack_exports__);
 var cocktail = document.getElementById('CocktailSite');
 
 if (cocktail !== null) {
-  (function () {
-    // Fetch Cocktail
-    var getInfoCocktail = function getInfoCocktail() {
-      var currentVal = searchCocktail.value;
-      ftCocktail.getCurrent(currentVal).then(function (data) {
-        // console.log(data);
-        if (!data.drinks) return;
-        htmlCoCatalog.clearUI();
-        htmlCoCatalog.populateUI(data);
-        addEventBtnRecipe(data, defaultOpenBtnRecipe, defaultIdRecipe, defaultCloseBtnRecipe);
-      });
-      searchCocktail.value = '';
-    }; // Pop cocktail
-
-
-    // Recipe Cocktail
-    var addEventBtnRecipe = function addEventBtnRecipe(data, openBtnId, containerId, closeBtnId) {
-      data.drinks.forEach(function (elem) {
-        // console.log(elem, data, `#${openBtnId}${elem.idDrink}`, `#${containerId}${elem.idDrink}`, `#${closeBtnId}${elem.idDrink}`);
-        // console.log($(`#${openBtnId}${elem.idDrink}`), $(`#${containerId}${elem.idDrink}`),$(`#${closeBtnId}${elem.idDrink}`));
-        jquery__WEBPACK_IMPORTED_MODULE_8___default()("#".concat(openBtnId).concat(elem.idDrink)).click(function () {
-          jquery__WEBPACK_IMPORTED_MODULE_8___default()("#".concat(containerId).concat(elem.idDrink)).addClass('visible-recipe');
-          jquery__WEBPACK_IMPORTED_MODULE_8___default()(document.body).addClass('recipe-open'); // console.log('open');
-        });
-        jquery__WEBPACK_IMPORTED_MODULE_8___default()("#".concat(closeBtnId).concat(elem.idDrink)).click(function () {
-          jquery__WEBPACK_IMPORTED_MODULE_8___default()("#".concat(containerId).concat(elem.idDrink)).removeClass('visible-recipe');
-          jquery__WEBPACK_IMPORTED_MODULE_8___default()(document.body).removeClass('recipe-open'); // console.log('close');
-        });
-      });
-    };
-
-    var getCookie = function getCookie(name) {
-      var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-      return matches ? decodeURIComponent(matches[1]) : undefined;
-    }; // Slider Ingredient
-
-
-    // Cocktail
-    // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    var ftCocktail = new _fetchCocktail__WEBPACK_IMPORTED_MODULE_10__["default"]();
-    var ftCocktailById = new _fetchCocktailById__WEBPACK_IMPORTED_MODULE_11__["default"]();
-    var ftCocktailRan = new _fetchCocktailRan__WEBPACK_IMPORTED_MODULE_12__["default"]();
-    var ftIngredientById = new _fetchIngredientById__WEBPACK_IMPORTED_MODULE_13__["default"]();
-    var ftCocktailByIng = new _fetchCocktailByIng__WEBPACK_IMPORTED_MODULE_14__["default"]();
-    var htmlPopCocktail = new _coPopDrinksHtml__WEBPACK_IMPORTED_MODULE_15__["default"]();
-    var htmlCoCatalog = new _coCatalogHtml__WEBPACK_IMPORTED_MODULE_16__["default"]();
-    var coDayDrinks = new _coDayDrink__WEBPACK_IMPORTED_MODULE_17__["default"]();
-    var searchCocktail = document.getElementById("searchCocktail");
-    var btnCocktail = document.getElementById("submitCocktail");
-    var popCocktailId = [11000, 11007, 17196];
-    var defaultOpenBtnRecipe = 'openBtnRecipe';
-    var defaultCloseBtnRecipe = 'closeBtnRecipe';
-    var defaultIdRecipe = 'coRecipeContainer';
-    var qtyDayDrinks = 2; // DayDrinks
-
-    if (!getCookie('dayCocktailTime')) {
-      coDayDrinks.clearLS();
-    }
-
-    coDayDrinks.getFromLS(qtyDayDrinks); // Search
-
-    searchCocktail.addEventListener("keyup", function (e) {
-      if (e.keyCode === 13) getInfoCocktail();
+  // Fetch Cocktail
+  var getInfoCocktail = function getInfoCocktail() {
+    var currentVal = searchCocktail.value;
+    ftCocktail.getCurrent(currentVal).then(function (data) {
+      // console.log(data);
+      if (!data.drinks) return;
+      htmlCoCatalog.clearUI();
+      htmlCoCatalog.populateUI(data);
+      addEventBtnRecipe(data, defaultOpenBtnRecipe, defaultIdRecipe, defaultCloseBtnRecipe);
     });
-    btnCocktail.addEventListener("click", getInfoCocktail);
-    popCocktailId.forEach(function (elem, index) {
-      ftCocktailById.getCurrent(popCocktailId[index]).then(function (data) {
-        htmlPopCocktail.populateUI(data);
+    searchCocktail.value = '';
+  }; // Pop cocktail
+
+
+  // Recipe Cocktail
+  var addEventBtnRecipe = function addEventBtnRecipe(data, openBtnId, containerId, closeBtnId) {
+    data.drinks.forEach(function (elem) {
+      // console.log(elem, data, `#${openBtnId}${elem.idDrink}`, `#${containerId}${elem.idDrink}`, `#${closeBtnId}${elem.idDrink}`);
+      // console.log($(`#${openBtnId}${elem.idDrink}`), $(`#${containerId}${elem.idDrink}`),$(`#${closeBtnId}${elem.idDrink}`));
+      jquery__WEBPACK_IMPORTED_MODULE_8___default()("#".concat(openBtnId).concat(elem.idDrink)).click(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_8___default()("#".concat(containerId).concat(elem.idDrink)).addClass('visible-recipe');
+        jquery__WEBPACK_IMPORTED_MODULE_8___default()(document.body).addClass('recipe-open'); // console.log('open');
+      });
+      jquery__WEBPACK_IMPORTED_MODULE_8___default()("#".concat(closeBtnId).concat(elem.idDrink)).click(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_8___default()("#".concat(containerId).concat(elem.idDrink)).removeClass('visible-recipe');
+        jquery__WEBPACK_IMPORTED_MODULE_8___default()(document.body).removeClass('recipe-open'); // console.log('close');
       });
     });
-    popCocktailId.forEach(function (elem, index) {
-      ftCocktailById.getCurrent(popCocktailId[index]).then(function (data) {
-        addEventBtnRecipe(data, "".concat(defaultOpenBtnRecipe, "Pop"), "".concat(defaultIdRecipe, "Pop"), "".concat(defaultCloseBtnRecipe, "Pop"));
-      });
+  };
+
+  var getCookie = function getCookie(name) {
+    var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }; // Slider Ingredient
+  // const sliderIng = document.getElementById("ingredientSlider");
+
+
+  // Cocktail
+  // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+  var ftCocktail = new _fetchCocktail__WEBPACK_IMPORTED_MODULE_10__["default"]();
+  var ftCocktailById = new _fetchCocktailById__WEBPACK_IMPORTED_MODULE_11__["default"]();
+  var ftCocktailRan = new _fetchCocktailRan__WEBPACK_IMPORTED_MODULE_12__["default"]();
+  var ftIngredientById = new _fetchIngredientById__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  var ftCocktailByIng = new _fetchCocktailByIng__WEBPACK_IMPORTED_MODULE_14__["default"]();
+  var htmlPopCocktail = new _coPopDrinksHtml__WEBPACK_IMPORTED_MODULE_15__["default"]();
+  var htmlCoCatalog = new _coCatalogHtml__WEBPACK_IMPORTED_MODULE_16__["default"]();
+  var coDayDrinks = new _coDayDrink__WEBPACK_IMPORTED_MODULE_17__["default"]();
+  var searchCocktail = document.getElementById("searchCocktail");
+  var btnCocktail = document.getElementById("submitCocktail");
+  var popCocktailId = [11000, 11007, 17196];
+  var defaultOpenBtnRecipe = 'openBtnRecipe';
+  var defaultCloseBtnRecipe = 'closeBtnRecipe';
+  var defaultIdRecipe = 'coRecipeContainer';
+  var qtyDayDrinks = 2; // DayDrinks
+
+  if (!getCookie('dayCocktailTime')) {
+    coDayDrinks.clearLS();
+  }
+
+  coDayDrinks.getFromLS(qtyDayDrinks); // Search
+
+  searchCocktail.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) getInfoCocktail();
+  });
+  btnCocktail.addEventListener("click", getInfoCocktail);
+  popCocktailId.forEach(function (elem, index) {
+    ftCocktailById.getCurrent(popCocktailId[index]).then(function (data) {
+      htmlPopCocktail.populateUI(data);
     });
-    var sliderIng = jquery__WEBPACK_IMPORTED_MODULE_8___default()('#ingredientSlider');
-    var ingItemHtml = '';
+  });
+  popCocktailId.forEach(function (elem, index) {
+    ftCocktailById.getCurrent(popCocktailId[index]).then(function (data) {
+      addEventBtnRecipe(data, "".concat(defaultOpenBtnRecipe, "Pop"), "".concat(defaultIdRecipe, "Pop"), "".concat(defaultCloseBtnRecipe, "Pop"));
+    });
+  });
+  var slider = jquery__WEBPACK_IMPORTED_MODULE_8___default()('#ingredientSlider'); // let ingItemHtml = '';
+  // for (let i = 1; i <= 22; i++) {
+  //     if (i === 6 || i === 7 || i === 8 || i === 10 || i === 12 || i === 15 || i === 16 || i === 19 || i === 20) continue;
+  //     ftIngredientById.getCurrent(i).then((data) => {
+  //         // console.log(data.ingredients[0].strIngredient, i);
+  //         let name = data.ingredients[0].strIngredient;
+  //         // console.log(ingItemHtml);
+  //         sliderIng.innerHTML += `
+  //             <div class="co-ing__item" id="${name}">
+  //                 <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/${name}-Medium.png" alt="${name}">
+  //                 <h4 class="co-ing__title">${name}</h4>
+  //             </div>`;
+  //     });
+  //     if (i === 22) {
+  //         console.log('start');
+  //         console.log(sliderIng);
+  //     }
+  // }
 
-    for (var i = 1; i <= 20; i++) {
-      if (i === 6 || i === 7 || i === 8 || i === 10 || i === 12 || i === 15 || i === 16 || i === 19 || i === 20) continue;
-      ftIngredientById.getCurrent(i).then(function (data) {
-        // console.log(data.ingredients[0].strIngredient, i);
-        var name = data.ingredients[0].strIngredient;
-        console.log(ingItemHtml);
-        ingItemHtml += "\n                <div class=\"co-ing__item\" id=\"".concat(name, "\">\n                    <img class=\"co-ing__img\" src=\"https://www.thecocktaildb.com/images/ingredients/").concat(name, "-Medium.png\" alt=\"").concat(name, "\">\n                    <h4 class=\"co-ing__title\">").concat(name, "</h4>\n                </div>");
-      });
-    }
-
-    console.log(ingItemHtml);
-    sliderIng.append(ingItemHtml);
-    sliderIng.slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      dots: true // responsive: [{
-      //         breakpoint: 1105,
-      //         settings: {
-      //             slidesToShow: 2,
-      //         }
-      //     },
-      //     {
-      //         breakpoint: 768,
-      //         settings: {
-      //             slidesToShow: 1,
-      //             arrows: false,
-      //         }
-      //     },
-      // ],
-
-    }); // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-  })();
+  slider.slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [{
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1
+      }
+    }]
+  }); // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 }
 
 /***/ }),

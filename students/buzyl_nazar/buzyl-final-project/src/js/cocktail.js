@@ -100,45 +100,51 @@ if (cocktail !== null) {
     }
 
     // Slider Ingredient
-    const sliderIng = $('#ingredientSlider');
-    let ingItemHtml = '';
+    // const sliderIng = document.getElementById("ingredientSlider");
+    const slider = $('#ingredientSlider')
+    // let ingItemHtml = '';
 
-    for (let i = 1; i <= 20; i++) {
-        if (i === 6 || i === 7 || i === 8 || i === 10 || i === 12 || i === 15 || i === 16 || i === 19 || i === 20) continue;
-        ftIngredientById.getCurrent(i).then((data) => {
-            // console.log(data.ingredients[0].strIngredient, i);
-            let name = data.ingredients[0].strIngredient;
-            console.log(ingItemHtml);
-            ingItemHtml += `
-                <div class="co-ing__item" id="${name}">
-                    <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/${name}-Medium.png" alt="${name}">
-                    <h4 class="co-ing__title">${name}</h4>
-                </div>`;
-        });
-    }
-
-    console.log(ingItemHtml);
-    sliderIng.append(ingItemHtml);
-    sliderIng.slick({
+    // for (let i = 1; i <= 22; i++) {
+    //     if (i === 6 || i === 7 || i === 8 || i === 10 || i === 12 || i === 15 || i === 16 || i === 19 || i === 20) continue;
+    //     ftIngredientById.getCurrent(i).then((data) => {
+    //         // console.log(data.ingredients[0].strIngredient, i);
+    //         let name = data.ingredients[0].strIngredient;
+    //         // console.log(ingItemHtml);
+    //         sliderIng.innerHTML += `
+    //             <div class="co-ing__item" id="${name}">
+    //                 <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/${name}-Medium.png" alt="${name}">
+    //                 <h4 class="co-ing__title">${name}</h4>
+    //             </div>`;
+    //     });
+    //     if (i === 22) {
+    //         console.log('start');
+            
+    //         console.log(sliderIng);
+    //     }
+    // }
+    
+    slider.slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        dots: true,
-        // responsive: [{
-        //         breakpoint: 1105,
-        //         settings: {
-        //             slidesToShow: 2,
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 768,
-        //         settings: {
-        //             slidesToShow: 1,
-        //             arrows: false,
-        //         }
-        //     },
-        // ],
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [{
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ],
     });
+    
+
 
     // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 }
