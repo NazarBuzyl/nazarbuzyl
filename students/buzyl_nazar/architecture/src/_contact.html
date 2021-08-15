@@ -42,16 +42,18 @@
             </div>
             <div class="col-6 col-res-12">
                 <div class="contact__container">
-                    <form class="validate-form contact__form" id="contactForm">
-                        <div class="contact__form-group">
-                            <input data-validate="None name" class="contact__form-element" type="text"
-                                autocomplete="off" id="fullname" placeholder="Full name">
+                    <form action="get" class="contact__form validate-form" id="contactForm">
+                        <div class="contact__form-group wrap-input validate-input" data-validate="Enter fullname">
+                            <input id="fullName" class="input contact__form-element" type="text" name="fullName"
+                                id="fullname" placeholder="Full name">
                         </div>
-                        <div class="contact__form-group">
-                            <input data-validate="Valid email is: a@b.c" class="contact__form-element" type="text"
-                                autocomplete="off" id="email" placeholder="Email">
+
+                        <div class="contact__form-group wrap-input validate-input"
+                            data-validate="Valid email is: a@b.c">
+                            <input id="email" class="input contact__form-element" type="text" name="email"
+                                placeholder="Email">
                         </div>
-                        <button type="button" class="button contact__button" id="submitContact">submit</button>
+                        <button type="submit" class="button contact__button" id="submitContact">submit</button>
                     </form>
                 </div>
             </div>

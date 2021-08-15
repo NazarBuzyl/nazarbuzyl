@@ -27820,31 +27820,68 @@ btnScroll();
 scrollNav();
 scrollTop();
 setInterval(showTopScroll, 100);
-setInterval(showHeaderMenu, 100);
-var btnSubmit = document.getElementById('submitContact');
-var formContact = document.querySelector('#contactForm');
-btnSubmit.addEventListener('click', validateForm);
+setInterval(showHeaderMenu, 100); // const btnSubmit = document.getElementById('submitContact');
+// let formContact = document.querySelector('#contactForm');
+// btnSubmit.addEventListener('click', validateForm);
+// function validateForm() {
+//     const username = document.getElementById("fullname").value;
+//     let checker = 1;
+//     if (!username) {
+//         $('#fullName').addClass('alert-validate');
+//     }
+//     if (username) {
+//         $('#fullName').removeClass('alert-validate');
+//     }
+//     if (!$('#email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
+//         $('#email').addClass('alert-validate');
+//     }
+//     if ($('#email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
+//         $('#email').removeClass('alert-validate');
+//     }
+// }
 
-function validateForm() {
-  var username = document.getElementById("fullname").value;
-  var checker = 1;
+(function ($) {
+  var input = $('.validate-input .input');
+  $('.validate-form').on('submit', function () {
+    var check = true;
 
-  if (!username) {
-    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#fullname').addClass('alert-validate');
+    for (var i = 0; i < input.length; i++) {
+      if (validate(input[i]) == false) {
+        showValidate(input[i]);
+        check = false;
+      }
+    }
+
+    return check;
+  });
+  $('.validate-form .input').each(function () {
+    $(this).focus(function () {
+      hideValidate(this);
+    });
+  });
+
+  function validate(input) {
+    if ($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
+      if ($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+        return false;
+      }
+    } else {
+      if ($(input).val().trim() == '') {
+        return false;
+      }
+    }
   }
 
-  if (username) {
-    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#fullname').removeClass('alert-validate');
+  function showValidate(input) {
+    var thisAlert = $(input).parent();
+    $(thisAlert).addClass('alert-validate');
   }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_6___default()('#email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
-    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#email').addClass('alert-validate');
+  function hideValidate(input) {
+    var thisAlert = $(input).parent();
+    $(thisAlert).removeClass('alert-validate');
   }
-
-  if (jquery__WEBPACK_IMPORTED_MODULE_6___default()('#email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
-    jquery__WEBPACK_IMPORTED_MODULE_6___default()('#email').removeClass('alert-validate');
-  }
-}
+})(jquery__WEBPACK_IMPORTED_MODULE_6___default.a);
 
 /***/ }),
 
