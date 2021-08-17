@@ -88,8 +88,14 @@ class CoCatalogHtml {
         const uiContainerRecipe = document.getElementById(`CoRecipeIng${data.idDrink}`);
         for (let i = 1; i < 16; i++) {
             // console.log(data[`strIngredient${i}`], uiContainerRecipe, i);
-            if (data[`strIngredient${i}`] === null) return
-
+            if (data[`strIngredient${i}`] === null) return;
+            if (data[`strMeasure${i}`] === null) {
+                uiContainerRecipe.innerHTML += `
+                <li class="co-recipe__ing">${data[`strIngredient${i}`]}
+                </li>
+                `;
+                continue;
+            }
             uiContainerRecipe.innerHTML += `
                 <li class="co-recipe__ing">
                     <span class="co-recipe__ing-qty">

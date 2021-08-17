@@ -58,11 +58,7 @@ class CoPopDrinksHtml {
                             <div class="co-recipe__info-block">
                                 <div class="co-recipe__ing-block">
                                     <h5 class="co-recipe__title">INGREDIENTS</h5>
-                                    <ul class="co-recipe__ing-list">
-                                        <li class="co-recipe__ing"><span
-                                                class="co-recipe__ing-qty">${elem.strMeasure1}
-                                            </span>${elem.strIngredient1}
-                                        </li>
+                                    <ul class="co-recipe__ing-list" id="CoRecipeIng${elem.idDrink}">
                                     </ul>
                                 </div>
                                 <div class="co-recipe__instruction-block">
@@ -76,9 +72,30 @@ class CoPopDrinksHtml {
                 </div>
             </div>
             `;
+            this.populateIngList(elem);
         })
     }
-
+    populateIngList(data) {
+        const uiContainerRecipe = document.getElementById(`CoRecipeIng${data.idDrink}`);
+        for (let i = 1; i < 16; i++) {
+            // console.log(data[`strIngredient${i}`], uiContainerRecipe, i);
+            if (data[`strIngredient${i}`] === null) return;
+            if (data[`strMeasure${i}`] === null) {
+                uiContainerRecipe.innerHTML += `
+                <li class="co-recipe__ing">${data[`strIngredient${i}`]}
+                </li>
+                `;
+                continue;
+            }
+            uiContainerRecipe.innerHTML += `
+                <li class="co-recipe__ing">
+                    <span class="co-recipe__ing-qty">
+                        ${data[`strMeasure${i}`]}
+                    </span>${data[`strIngredient${i}`]}
+                </li>
+            `;
+        }
+    }
 }
 
 export default CoPopDrinksHtml;
