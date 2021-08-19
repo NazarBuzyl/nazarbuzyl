@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your Cocktail</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page" id="CocktailSite">
+    <a id="top"></a>
+    //= _header.html
+    <main class="main cocktail">
+        <!-- Drink of the day -->
+        <section class="cocktail__day-drink day-drink">
+            <div class="day-drink__content row" id="dayDrink">
+            </div>
+        </section>
+
+        <!-- Cocktail search block -->
+        <section class="cocktail__co-search co-search">
+            <div class="co-search__search-block">
+                <input type="text" id="searchCocktail" class="co-search__input" placeholder="Search for a Cocktail">
+                <button class="co-search__btn" id="submitCocktail">
+                    <svg class="co-search__icon" viewBox="0 0 446.25 446.25">
+                        <g>
+                            <g id="search">
+                                <path
+                                    d="M318.75,280.5h-20.4l-7.649-7.65c25.5-28.05,40.8-66.3,40.8-107.1C331.5,73.95,257.55,0,165.75,0S0,73.95,0,165.75
+                                S73.95,331.5,165.75,331.5c40.8,0,79.05-15.3,107.1-40.8l7.65,7.649v20.4L408,446.25L446.25,408L318.75,280.5z M165.75,280.5
+                                C102,280.5,51,229.5,51,165.75S102,51,165.75,51S280.5,102,280.5,165.75S229.5,280.5,165.75,280.5z" />
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </section>
+        <section class="cocktail__co-catalog co-catalog">
+            <div class="container">
+                <div class="row co-catalog__list" id="cocktailCatalog">
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular drink -->
+        <section class="cocktail__co-info co-pop-drink ">
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="co-pop-drink__title cocktail__h2">Popular cocktails</h2>
+                </div>
+                <div class="co-pop-drink__list" id="cocktailPoDrink">
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Ingredients -->
+        <section class="cocktail__co-ing co-ing" id="ingredientBlock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="cocktail__h2">Ingredients</h2>
+                    </div>
+                </div>
+                <div class="co-ing__container-slider" id="ingredientSlider">
+                    <div class="co-ing__item" id="Scotch">
+                        <img class="co-ing__img"
+                            src="https://www.thecocktaildb.com/images/ingredients/Scotch-Medium.png" alt="Scotch">
+                        <h4 class="co-ing__title">Scotch</h4>
+                    </div>
+                    <div class="co-ing__item" id="Gin">
+                        <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/Gin-Medium.png"
+                            alt="Gin">
+                        <h4 class="co-ing__title">Gin</h4>
+                    </div>
+                    <div class="co-ing__item" id="Rum">
+                        <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/Rum-Medium.png"
+                            alt="Rum">
+                        <h4 class="co-ing__title">Rum</h4>
+                    </div>
+                    <div class="co-ing__item" id="Advocaat">
+                        <img class="co-ing__img"
+                            src="https://www.thecocktaildb.com/images/ingredients/Advocaat-Medium.png" alt="Advocaat">
+                        <h4 class="co-ing__title">Advocaat</h4>
+                    </div>
+                    <div class="co-ing__item" id="Tequila">
+                        <img class="co-ing__img"
+                            src="https://www.thecocktaildb.com/images/ingredients/Tequila-Medium.png" alt="Tequila">
+                        <h4 class="co-ing__title">Tequila</h4>
+                    </div>
+                    <div class="co-ing__item" id="Allspice">
+                        <img class="co-ing__img"
+                            src="https://www.thecocktaildb.com/images/ingredients/Allspice-Medium.png" alt="Allspice">
+                        <h4 class="co-ing__title">Allspice</h4>
+                    </div>
+                    <div class="co-ing__item" id="Vodka">
+                        <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/Vodka-Medium.png"
+                            alt="Vodka">
+                        <h4 class="co-ing__title">Vodka</h4>
+                    </div>
+                    <div class="co-ing__item" id="Ale">
+                        <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/Ale-Medium.png"
+                            alt="Ale">
+                        <h4 class="co-ing__title">Ale</h4>
+                    </div>
+                    <div class="co-ing__item" id="Almond">
+                        <img class="co-ing__img"
+                            src="https://www.thecocktaildb.com/images/ingredients/Almond-Medium.png" alt="Almond">
+                        <h4 class="co-ing__title">Almond</h4>
+                    </div>
+                    <div class="co-ing__item" id="Aftershock">
+                        <img class="co-ing__img"
+                            src="https://www.thecocktaildb.com/images/ingredients/Aftershock-Medium.png"
+                            alt="Aftershock">
+                        <h4 class="co-ing__title">Aftershock</h4>
+                    </div>
+                    <div class="co-ing__item" id="Amaretto">
+                        <img class="co-ing__img"
+                            src="https://www.thecocktaildb.com/images/ingredients/Amaretto-Medium.png" alt="Amaretto">
+                        <h4 class="co-ing__title">Amaretto</h4>
+                    </div>
+                    <div class="co-ing__item" id="Anis">
+                        <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/Anis-Medium.png"
+                            alt="Anis">
+                        <h4 class="co-ing__title">Anis</h4>
+                    </div>
+                    <div class="co-ing__item" id="Anise">
+                        <img class="co-ing__img" src="https://www.thecocktaildb.com/images/ingredients/Anise-Medium.png"
+                            alt="Anise">
+                        <h4 class="co-ing__title">Anise</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    //= _footer.html
+    <a class="link-to-top" id="showScroll"></a>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

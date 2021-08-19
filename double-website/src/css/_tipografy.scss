@@ -1,0 +1,76 @@
+@include grid();
+
+.page {
+    font-family: $font-default;
+    font-size: $default-font-size;
+    line-height: 1.4;
+    // @include bg-cover('../image/bg.jpg');
+    min-height: 100vh;
+    color: $default-color-text;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: $default-gap;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 (-$default-gap);
+}
+
+[class^="col-"] {
+    padding: $default-gap;
+}
+
+.link-to-top {
+    position: fixed;
+    z-index: 100;
+    right: 20px;
+    bottom: 40px;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(62, 119, 170, .5);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &::after {
+        content: '';
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid #fff;
+        border-top: 1px solid #fff;
+        opacity: 0.5;
+    }
+}
+
+.scroll-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+img {
+    max-width: 100%;
+}
+
+.black {
+    background-color: black;
+}
+
+.row_relative {
+    position: relative;
+}
+
+.title-h2 {
+    font-size: 20px;
+}

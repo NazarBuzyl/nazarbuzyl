@@ -1,0 +1,125 @@
+.weather {
+    &__we-info-full {}
+
+    &__section {}
+}
+
+.we-info-full {
+    padding: 0;
+    font-family: $font-default;
+
+    &__title {
+        padding: 15px;
+    }
+
+    &__temperature-block {
+        padding: 0 15px;
+        @media screen and (max-width: 319px) {
+            padding: 0 10px;
+        }
+    }
+
+    &__feel-temperature {
+        font-size: 56px;
+        font-weight: 600;
+        margin-bottom: -10px;
+        @media screen and (max-width: 319px) {
+         font-size: 48px;
+         margin-bottom: 0;   
+        }
+    }
+
+    &__descr {}
+
+    &__sun-row {
+        justify-content: space-between;
+        padding: 0px 15px 15px;
+    }
+
+    &__sun-pos {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    &__semicircle {
+        width: 80px;
+        height: 40px;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #e87538;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__sun-rise-set-block {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__sunrise,
+    &__sunset {
+        display: flex;
+    }
+
+    &__sun-icon {
+        width: 24px;
+        height: 24px;
+        fill: #febc11;
+    }
+
+    &__sun-text {}
+
+
+    &__row {}
+
+    &__card:nth-child(2n-1) {
+        margin-right: 6px;
+    }
+
+    &__card:nth-child(2n) {
+        margin-left: 6px;
+    }
+
+    &__card {
+        display: flex;
+        padding: 10px 16px;
+        border-top: 1px solid rgba(43, 43, 43, 0.5);
+        width: calc(50% - 7px);
+
+        @media screen and (max-width: 514px) {
+            width: calc(100% - 7px);
+            margin: 0 6px;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        fill: #2b2b2b;
+    }
+
+    &__icon-desription {
+        flex-grow: 1;
+        padding: 0 10px;
+    }
+
+    &__info-text {}
+
+    &__info-text-icon {
+        fill: #2b2b2b;
+        width: 15px;
+        height: 15px;
+    }
+}
