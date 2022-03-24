@@ -1,0 +1,76 @@
+.App {
+    text-align: center;
+    background-color: #fcfeff;
+    min-height: 100vh;
+  }
+  
+  .App-logo {
+    height: 80px;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .profile__h1{
+    margin: 0;
+    margin-top: 15px;
+  
+  }
+  .profile__text{
+    font-size: 18px;
+    font-weight: lighter;
+    font-family:'Times New Roman', Times, serif;
+    padding: 0 20px;
+    margin: 0 auto;
+    @media screen and (max-width: 800px) {
+      max-width: 400px;
+    }
+  }
+  
+  .social-media{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .social-media__item{
+    display: block;
+    padding: 15px 20px;
+  }
+  .social-media__link{
+  
+  }
+  .social-media__img{
+    width: 192px;
+    height: 192px;
+  }
+  
