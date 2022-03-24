@@ -4,3 +4,4 @@
 
 - [Bhromaon](https://nazarbuzyl.github.io/nazarbuzyl/bhromaon-website/build/)
 - [Monticello](https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/build/)
+- [Social media](https://nazarbuzyl.github.io/nazarbuzyl/React/social-media/build)
