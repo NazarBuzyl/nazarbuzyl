@@ -16,3 +16,4 @@ Lesson28 - [Object](https://nazarbuzyl.github.io/1-front-end/students/buzyl_naza
 Lesson31 - [Object](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/homework18-lesson-31/build/index.html)
 [Examination](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/examination_html-css/build/index.html)
 [Monticello | International group](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/architecture/build/index.html)
+[Cocktails and Weather Forecast](https://nazarbuzyl.github.io/1-front-end/students/buzyl_nazar/buzyl-final-project/build/index.html)
