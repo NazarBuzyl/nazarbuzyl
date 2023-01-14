@@ -87,3 +87,49 @@
     padding: 10px 15px 10px 20px;
     height: auto;
 }
+
+.card-info-modal-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.card-info-modal {
+    max-height: calc(100vh - 20px);
+    padding: 15px;
+    background-color: rgba(234, 234, 234);
+    border-radius: 5px;
+    position: relative;
+    max-width: 600px;
+    overflow-y: scroll;
+}
+.card-info-modal__item_photo{
+    width: 240px;
+    height: 240px;
+    margin-bottom: 10px;
+    background-color: #000;
+}
+
+.card-info-modal__item {
+    display: flex;
+}
+.card-info-modal__item:nth-of-type(5){
+    display: block;
+}
+.card-info-modal__text {
+    margin-bottom: 10px;
+}
+.card-info-modal__text:first-child {
+    margin-right: 15px;
+}
+.card-info-modal__text:nth-child(2) {
+    min-width: 300px;
+}

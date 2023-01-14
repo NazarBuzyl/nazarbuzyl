@@ -1,4 +1,4 @@
-import React, {useState, useEffect,} from 'react';
+import React, {useState} from 'react';
 import PackageRegestrationForm from "../forms/PackageRegestrationForm";
 import PackageList from "../common/PackageList";
 
@@ -15,13 +15,13 @@ export default function PackageContainer(props) {
     }
   return (
     <div className="row package-block">
-        <div className="col-6">
+        <div className="col-6 package-block__item">
 
             {/* <!-- Regisrationform fur Packungen --> */}
             <PackageRegestrationForm
             ChangeDataPackage={ChangeDataPackage}/>
         </div>
-        <div className="col-6">
+        <div className="col-6 package-block__item">
             {/* Container fur Packungen */}
             <div className="package-container">
                 <div className="d-flex space-between">

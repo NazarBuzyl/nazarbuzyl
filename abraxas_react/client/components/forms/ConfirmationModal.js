@@ -9,7 +9,7 @@ const ConfirmationModal = (props)=> {
     let setModal = props.setModal
 
   return (
-    <div className='confimation-modal-window'>
+    <div className='confimation-modal-window' onClick={(e)=>{if(e.target.className == 'confimation-modal-window') setModal(false)}}>
         <div className='confimation-modal'>
             <div className='confimation-modal__title'> Packung Info</div>
             {/* <!-- Wählen eingang oder ausgang --> */}

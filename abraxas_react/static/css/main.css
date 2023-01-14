@@ -259,6 +259,52 @@ body {
     height: auto;
 }
 
+.card-info-modal-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.card-info-modal {
+    max-height: calc(100vh - 20px);
+    padding: 15px;
+    background-color: rgba(234, 234, 234);
+    border-radius: 5px;
+    position: relative;
+    max-width: 600px;
+    overflow-y: scroll;
+}
+.card-info-modal__item_photo{
+    width: 240px;
+    height: 240px;
+    margin-bottom: 10px;
+    background-color: #000;
+}
+
+.card-info-modal__item {
+    display: flex;
+}
+.card-info-modal__item:nth-of-type(5){
+    display: block;
+}
+.card-info-modal__text {
+    margin-bottom: 10px;
+}
+.card-info-modal__text:first-child {
+    margin-right: 15px;
+}
+.card-info-modal__text:nth-child(2) {
+    min-width: 300px;
+}
+
 .confimation-modal-window {
     position: fixed;
     top: 0;
@@ -270,12 +316,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .confimation-modal {
     padding: 15px;
     background-color: rgba(234, 234, 234);
     border-radius: 5px;
+    max-height: calc(100vh - 20px);
+    max-width: 600px;
+    min-width: 400px;
 }
 
 .confimation-modal__title {
@@ -353,6 +403,11 @@ body {
     flex-direction: row-reverse;
 }
 
+.package-block__item {
+    padding: 15px;
+    width: 50%;
+}
+
 .form {
     max-width: 500px;
 }
@@ -384,6 +439,7 @@ body {
     color: rgb(0, 0, 0);
     position: relative;
 }
+
 .invalid-data {
     border-color: rgb(255, 0, 0) !important;
 }
@@ -518,11 +574,59 @@ body {
     position: relative;
 }
 
+@media screen and (max-width: 850px) {}
+
 .package-regestration h3 {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .scroll-window-regestration {
     position: sticky;
     top: 10px;
+}
+
+@media screen and (max-width: 850px) {
+    .package-block {
+        flex-direction: column;
+    }
+
+    .form {
+        max-width: none;
+    }
+
+    .package-block__item {
+        width: 100%;
+    }
+
+    .form-radio {
+        padding: 0 5px;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+.close-btn::before,
+.close-btn::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #000;
+}
+
+.close-btn::after {
+    transform: rotate(45deg);
+}
+
+.close-btn::before {
+    transform: rotate(-45deg);
 }

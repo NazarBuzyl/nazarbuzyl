@@ -9,12 +9,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .confimation-modal {
     padding: 15px;
     background-color: rgba(234, 234, 234);
     border-radius: 5px;
+    max-height: calc(100vh - 20px);
+    max-width: 600px;
+    min-width: 400px;
 }
 
 .confimation-modal__title {

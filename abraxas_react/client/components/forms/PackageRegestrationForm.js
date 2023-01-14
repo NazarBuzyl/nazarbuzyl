@@ -57,6 +57,11 @@ export default function PackageRegestrationForm(props) {
         data.append("date", date.replace(/-/g,'.'));
         data.append("description", description);
         data.append("type", type);
+        // const fetch = (...args) =>
+	    // import('node-fetch').then(({default: fetch}) => fetch(...args));
+        // fetch('http://localhost:3000/')
+        // .then((response) => response.json())
+        // .then((data) => console.log(data));
         
         // createDataNews(data);
 

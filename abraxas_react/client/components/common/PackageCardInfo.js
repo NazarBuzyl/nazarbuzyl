@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
+import CardInfoModal from './CardInfoModal';
 
 export default function PackageCardInfo(props) {
     const [descriptionCard, setDescriptionCard] = useState(false);
     let data = props.data;
+    document.body.style.overflow = descriptionCard === true ? 'hidden' : '';
+
   return (
-    <div className={"package-item"+(descriptionCard ? ' package-item_active' :'')} onClick={()=>{setDescriptionCard(!descriptionCard)}}>
+    <div className={"package-item"+(descriptionCard ? ' package-item_active' :'')} onClick={(e)=>{setDescriptionCard(!descriptionCard)}}>
         <div className="d-flex">
             <div className="package-photo"></div>
             <div className="package-info">
@@ -14,9 +17,9 @@ export default function PackageCardInfo(props) {
                     <p>{data.type == 'receive' ? data.client : data.employee}</p>
                 </div>
                 {(descriptionCard) &&
-                <div className="more-info">
-                    <p className="more-info-text">{data.description ? data.description : 'I have nothing'}</p>
-                </div>
+                    <CardInfoModal data={data}
+                    descriptionCard={descriptionCard}
+                    setDescriptionCard={setDescriptionCard}/>
                 }
             </div>
         </div>
