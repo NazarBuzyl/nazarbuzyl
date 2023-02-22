@@ -4,8 +4,6 @@ export default function QuizQuestion(props) {
   const data = props.data;
   const onClickVariant = props.onClickVariant;
   const progress = props.progress   ;
-  //   const [data, onClickVariant, progress] = props;
-  console.log(progress);
   return (
     <>
       <div className="progress">

@@ -34,7 +34,7 @@ const questions = [
       "This is a global state",
       "This is when no one needs you",
     ],
-    correct: 2,
+    correct: 1,
   },
 ];
 
