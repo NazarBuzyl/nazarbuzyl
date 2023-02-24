@@ -1,0 +1,250 @@
+$co-color-underline: #434351;
+$co-border-radius: 2px;
+
+.co-recipe {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3 ease-in-out;
+
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &__container {
+        background-color: transparent;
+        width: 900px;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: $co-border-radius;
+        background: $co-gardient;
+
+        @media screen and (max-width: 920px) {
+            max-width: 700px;
+        }
+
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            padding-top: 25px;
+        }
+    }
+
+    &__info-container {
+        position: relative;
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        color: $mine-shaft;
+
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            flex-direction: column;
+            padding: 30px;
+        }
+    }
+
+    &__img {
+        box-shadow: 0 0 12 0 #fff;
+        display: block;
+        max-width: 40%;
+        border-radius: $co-border-radius;
+        cursor: pointer;
+
+        @media screen and (max-width: 720px) {
+            max-width: 50%;
+        }
+
+        @media screen and (max-width: 480px) {
+            max-width: 70%;
+        }
+        @media screen and (max-width: 350px) {
+            max-width: 90%;
+        }
+    }
+
+    &__info-block {
+        display: flex;
+        flex-direction: column;
+        padding-left: 25px;
+        padding-right: 10px;
+        border-radius: $co-border-radius;
+        flex-grow: 1;
+        max-height: 400px;
+
+        @media screen and (max-width: 920px) {
+            max-height: 300px;
+        }
+
+        @media screen and (max-width: 720px) {
+            max-height: 50vh;
+            padding: 0;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__name {
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $mine-shaft;
+        border-bottom: 1px solid $co-color-underline;
+    }
+
+    &__ing-block {
+        position: relative;
+        padding-bottom: 15px;
+        width: 100%;
+        height: 50%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            display: block;
+            background-color: $co-color-underline;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__ing-qty {}
+
+    &__instruction-block {
+        padding-top: 15px;
+        flex-grow: 1;
+        height: 50%;
+    }
+
+    &__title {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    &__ing-list {
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100% - 44px);
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            border-radius: 20px;
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $color-white;
+            border-radius: 20px;
+        }
+    }
+
+    &__instruction,
+    &__ing {
+        font-size: 16px;
+    }
+
+    &__ing {
+        display: block;
+    }
+
+    &__instruction {
+        padding-right: 10px;
+        max-height: calc(100% - 44px);
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            border-radius: 20px;
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $color-white;
+            border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+            border-radius: 20px;
+        }
+    }
+
+    &__close-btn {
+        position: absolute;
+        border-radius: $co-border-radius;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 23px;
+        height: 23px;
+        right: 10px;
+        top: 10px;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background-color: $co-color-underline;
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.recipe-btn {
+    background-color: transparent;
+    padding: 0 25px 0 10px;
+    line-height: 32px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    min-width: 105px;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    @media screen and (max-width: 800px) {
+        line-height: 26px;
+    }
+
+    &::after {
+        content: '»';
+        position: absolute;
+        right: 10px;
+        top: -1px;
+    }
+}
+
+.visible-recipe {
+    display: block;
+    opacity: 1;
+}
+
+.recipe-open {
+    // overflow-y: scroll;
+    overflow: hidden;
+}

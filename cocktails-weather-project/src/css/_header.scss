@@ -1,0 +1,367 @@
+$bg-menu-color: #363636;
+$text-menu-color: #fff;
+$underline-hover-color: #919191;
+$box-shadow-sub-menu: rgba(0, 0, 0, 0.35);
+$menu-font-weight: 400;
+$menu-font-family: $font-default;
+$menu-font-size: 16px;
+$menu-letter-spacing: 0.5px;
+$menu-border-radius: 0px;
+
+.header {
+    background-color: $bg-menu-color;
+
+    &__menu {
+        position: relative;
+        z-index: 14;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &__logo {
+        color: $text-menu-color;
+        text-transform: uppercase;
+        line-height: 31.5px;
+        padding-left: 15px;
+    }
+}
+
+.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        opacity: 0;
+        opacity: 1;
+        transition: opacity 1s;
+    }
+}
+
+.menu {
+    font-family: $menu-font-family;
+    font-weight: $menu-font-weight;
+    font-size: $menu-font-size;
+    letter-spacing: $menu-letter-spacing;
+    display: flex;
+    justify-content: flex-end;
+
+
+    &__list {
+        display: flex;
+
+        @media screen and (max-width: 768px) {
+            background: $bg-menu-color;
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 0;
+            padding: 25px !important;
+            border-radius: 20px;
+            transform: translate(-50%, -110%);
+            pointer-events: none;
+            transition: transform .5s ease-in-out;
+            overflow-y: auto;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        &:hover,
+        &_active {
+
+            .menu__link::before,
+            .menu__link::after {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            .menu__sub-menu {
+                visibility: visible;
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        font-family: $menu-font-family;
+        font-weight: $menu-font-weight;
+        font-size: $menu-font-size;
+        color: $text-menu-color;
+        letter-spacing: $menu-letter-spacing;
+        display: inline-block;
+        padding: 0px 20px;
+        line-height: 32px;
+        position: relative;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: calc(100% - 25px);
+            border-radius: 10px;
+            left: 50%;
+            bottom: 2px;
+            transform: translateX(-50%);
+            height: 1px;
+            background-color: $underline-hover-color;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+        }
+
+        @include media('md') {
+            width: 100%;
+        }
+    }
+
+    &__arrow {
+        &::after {
+            content: "";
+            right: 5px;
+            top: 50%;
+            width: 5px;
+            height: 5px;
+            transform: translateY(-50%) rotate(45deg);
+            position: absolute;
+            border-right: 1px solid $underline-hover-color;
+            border-bottom: 1px solid $underline-hover-color;
+        }
+    }
+
+    &__sub-menu {
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        transition: opacity .5s ease-in-out;
+    }
+
+    &__input {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+
+        @include media('md') {
+            &:checked {
+                &+.menu__burger-btn .burger-btn__line {
+                    background-color: transparent;
+
+                    &::after,
+                    &::before {
+                        top: 0;
+                        bottom: 0;
+                    }
+
+                    &::after {
+                        transform: rotate(45deg);
+                    }
+
+                    &::before {
+                        transform: rotate(-45deg);
+                    }
+                }
+
+                &~.menu__list {
+                    display: block;
+                    visibility: visible;
+                    pointer-events: all;
+                    transform: translate(-50%, 80px);
+                }
+            }
+        }
+    }
+}
+
+.burger-btn {
+    border: $text-menu-color;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 19;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+
+    &__line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $text-menu-color;
+        position: relative;
+        transition: background-color .5s ease-in-out;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: $text-menu-color;
+            position: absolute;
+            transition: all .5s ease-in-out;
+        }
+
+        &::before {
+            top: -8px;
+        }
+
+        &::after {
+            bottom: -8px;
+        }
+    }
+}
+
+.sub-menu-btn-input {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+.sub-menu-btn-input {
+    @include media('md') {
+        &:checked {
+
+            ~.menu__sub-menu,
+            ~.sub-menu__sub-menu {
+                height: 257px;
+                border-bottom: $text-menu-color;
+                overflow-y: auto;
+            }
+
+
+        }
+    }
+}
+
+.sub-menu-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-left: 62px;
+    display: none;
+
+    &::after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        border: $text-menu-color;
+        border-left: none;
+        border-bottom: none;
+        border-width: 3px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    @include media('md') {
+        display: block;
+    }
+}
+
+.sub-menu {
+    position: absolute;
+    width: 320px;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $bg-menu-color;
+    box-shadow: $box-shadow-sub-menu 1px 1px 5px -1px;
+    border-radius: $menu-border-radius;
+
+    @include media('md') {
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+        position: relative;
+        max-height: 0;
+        overflow: hidden;
+        border: none;
+        transition: max-height .5s ease-in-out;
+        box-shadow: none;
+    }
+
+    &__item {
+        padding: 10px 15px;
+        width: 300px;
+        position: relative;
+    }
+
+    &__state-full {
+        width: 1200px;
+        left: -200px;
+    }
+
+    &__link {
+        width: 100%;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 20px;
+        position: relative;
+        font-family: $menu-font-family;
+        font-weight: $menu-font-weight;
+        font-size: $menu-font-size;
+        color: $text-menu-color;
+        letter-spacing: $menu-letter-spacing;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $underline-hover-color;
+        }
+
+        @include media('md') {
+            position: relative;
+        }
+    }
+
+    // @include media('md') {
+    //     padding-left: 20px;
+    //     background-color: #000;
+    // }
+}
+
+@media screen and (max-width: 768px) {}
+
+.menu-active{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+}

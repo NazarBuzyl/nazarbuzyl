@@ -1,0 +1,108 @@
+$co-day-btn-color: $color-white;
+
+.cocktail {
+    &__day-drink {}
+}
+
+.day-drink {
+
+    overflow: hidden;
+
+    &__content {
+        color: $color-white;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    &__item {
+        position: relative;
+        max-height: 500px;
+        overflow: hidden;
+
+        @media screen and (max-width: 1200px) {
+            max-height: 400px;
+        }
+
+        @media screen and (max-width: 800px) {
+            max-height: 350px;
+        }
+
+        @media screen and (max-width: 700px) {
+            max-height: 300px;
+        }
+        @media screen and (max-width: 576px) {
+            max-height: 50vh;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            opacity: 0.2;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 0.05;
+            }
+        }
+    }
+
+    &__info-wrapper {
+        @include position-center;
+        text-align: center;
+        cursor: default;
+        width: 100%;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 18px;
+        border-color: $co-day-btn-color;
+        border-top: none;
+        padding: 15px;
+        margin-bottom: 10px;
+
+        // @media screen and (max-width: 800px) {
+        //     font-size: 16px;
+        //     padding: 10px;
+        // }
+
+        &::after {
+            border-color: $co-day-btn-color;
+            border-top: none;
+        }
+    }
+
+    &__name {
+        font-size: 25px;
+        margin-bottom: 10px;
+
+        // @media screen and (max-width: 800px) {
+        //     font-size: 20px;
+        // }
+    }
+
+    &__btn {
+        border: 2px solid $co-day-btn-color;
+        color: $co-day-btn-color;
+    }
+
+    &__img {
+        object-fit: fill;
+        width: 100%;
+    }
+
+    &__item:hover &__btn {
+        background-color: $co-day-btn-color;
+        color: #000;
+    }
+}
+
+.recipe-btn {}

@@ -1,0 +1,9 @@
+@include fonts($font-default-name, 'noto-sans-jp-v28-latin-regular', 400);
+
+@include fonts($font-default-name, 'noto-sans-jp-v28-latin-700', 700);
+
+@include fonts($font-secondary-name, 'raleway-v22-latin-regular', 400);
+
+@include fonts($font-secondary-name, 'raleway-v22-latin-600', 600);
+
+@include fonts($font-secondary-name, 'raleway-v22-latin-700', 700);
