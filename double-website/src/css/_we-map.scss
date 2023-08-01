@@ -1,0 +1,17 @@
+.weather {
+    &__we-map {
+    padding: 20px 0 0px;
+    }
+}
+.we-map {
+    text-align: center;
+    overflow: hidden;
+    &_title {
+        font-family: $font-default;
+        margin-bottom: 24px;
+    }
+    &__map-block {
+        width: 100%;
+        height: 400px;
+    }
+}

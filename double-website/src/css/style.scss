@@ -1,0 +1,22 @@
+@import "./vars";
+@import "./reset";
+@import "./mixins";
+@import "./fonts";
+@import "./tipografy";
+// Weather
+@import "./we-search-by-city";
+@import "./we-info";
+@import "./we-info-full";
+@import "./we-map";
+@import "./we-air-pollution";
+// Cocktail
+@import "./co-search";
+@import "./co-pop-drink";
+@import "./co-catalog";
+@import "./co-recipe";
+@import "./co-day-drink";
+@import "./co-ing";
+// Main blocks
+@import "./header";
+@import "./index-info-block";
+@import "./footer";

@@ -4,4 +4,6 @@
 
 - [Bhromaon](https://nazarbuzyl.github.io/nazarbuzyl/bhromaon-website/build/)
 - [Monticello](https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/build/)
+- [Weather & Cocktails](https://nazarbuzyl.github.io/nazarbuzyl/double-website/build/)
 - [Social media](https://nazarbuzyl.github.io/nazarbuzyl/React/social-media-without-react/)
+- [Form for package in react](https://nazarbuzyl.github.io/nazarbuzyl/abraxas_react/static/)

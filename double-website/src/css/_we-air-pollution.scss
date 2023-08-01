@@ -1,0 +1,78 @@
+.air-pollution {
+    @media screen and(max-width: 769px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @media screen and(max-width: 376px) {
+        display: block;
+    }
+
+    &__container {
+        padding: 10px 25px;
+        margin-bottom: 12px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px 0 rgb(0 0 0 / 20%);
+        background-color: #fff;
+        color: #2b2b2b;
+
+        @media screen and(max-width: 769px) {
+            max-width: calc(33.33333% - 8px);
+
+            &:nth-child(3n-1) {
+                margin-left: 12px;
+                margin-right: 12px;
+
+                @media screen and(max-width: 576px) {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        @media screen and(max-width: 576px) {
+            max-width: calc(50% - 6px);
+
+            &:nth-child(3n-1) {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            &:nth-child(2n-1) {
+                margin-right: 12px;
+            }
+        }
+
+        @media screen and(max-width: 376px) {
+            max-width: 100%;
+
+
+            &:nth-child(2n-1) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__row {}
+
+    &__diagram-block {}
+
+    &__info-block {
+        padding-left: 15px;
+
+        @media screen and(max-width: 600px) {
+            padding-left: 10px;
+        }
+    }
+
+    &__name-elem {
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    &__quality,
+    &__measurement {
+        font-size: 13px;
+        color: #6f7585;
+    }
+}
