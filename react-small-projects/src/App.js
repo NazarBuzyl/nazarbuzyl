@@ -6,6 +6,7 @@ import Quiz from "./components/Quiz/";
 import Invitation from "./components/Invitation/";
 import ModalWindow from "./components/Modal/";
 import Dropdown from "./components/Dropdown";
+import Coffee from "./components/Coffee";
 
 export default function App() {
   const [activeProject, setActiveProject] = React.useState({
@@ -33,6 +34,10 @@ export default function App() {
     {
       name: "Dropdown",
       component: <Dropdown />,
+    },
+    {
+      name: "Coffee",
+      component: <Coffee />,
     },
   ];
 
