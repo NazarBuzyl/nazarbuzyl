@@ -1,17 +1,57 @@
 import React from "react";
 import "./index.scss";
+import ButtonComponent from "./components/ButtonComponent";
 import Counter from "./components/Counter";
-import ModalBlock from "./components/ModalBlock";
-import Quiz from "./components/Quiz";
-import InvitationBlock from "./components/InvitationBlock";
+import Quiz from "./components/Quiz/";
+import Invitation from "./components/Invitation/";
+import ModalWindow from "./components/Modal/";
+import Dropdown from "./components/Dropdown";
 
 export default function App() {
+  const [activeProject, setActiveProject] = React.useState({
+    name: "Initation",
+    component: <Invitation />,
+  });
+
+  const projects = [
+    {
+      name: "Initation",
+      component: <Invitation />,
+    },
+    {
+      name: "Counter",
+      component: <Counter />,
+    },
+    {
+      name: "ModalWindow",
+      component: <ModalWindow />,
+    },
+    {
+      name: "Quiz",
+      component: <Quiz />,
+    },
+    {
+      name: "Dropdown",
+      component: <Dropdown />,
+    },
+  ];
+
   return (
     <div className="App">
-        <InvitationBlock />
-        <Counter />
-        <ModalBlock />
-        <Quiz />
+      <div className="categories">
+        <ul className="categories__list">
+          {projects.map((item, index) => (
+            <ButtonComponent
+              activeProject={activeProject}
+              setActiveProject={setActiveProject}
+              data={item}
+              key={index}
+            />
+          ))}
+        </ul>
+      </div>
+
+      {activeProject.component}
     </div>
   );
 }

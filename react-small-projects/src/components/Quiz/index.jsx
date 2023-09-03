@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import QuizQuestion from "./QuizQuestion";
 import QuizResult from "./QuizResult";
-import "../sass/quiz.scss";
+import "../../sass/quiz.scss";
 
 const questions = [
   {
@@ -46,10 +46,10 @@ export default function Quiz() {
     if (questions[step].correct === index) setCorrect(correct + 1);
     setStep(step + 1);
   };
-  const clear = ()=>{
+  const clear = () => {
     setStep(0);
     setCorrect(0);
-  }
+  };
   return (
     <div className="project-section">
       <div className="quiz">
@@ -57,10 +57,16 @@ export default function Quiz() {
           <QuizQuestion
             data={questions[step]}
             onClickVariant={onClickVariant}
-            progress={((step+1)/questions.length)*100}
+            progress={((step + 1) / questions.length) * 100}
           />
         )}
-        {step === questions.length && <QuizResult correct={correct} count={questions.length} clear={clear}/>}
+        {step === questions.length && (
+          <QuizResult
+            correct={correct}
+            count={questions.length}
+            clear={clear}
+          />
+        )}
       </div>
     </div>
   );

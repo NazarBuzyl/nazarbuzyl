@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "../sass/invitation-list.scss";
+import axios from "axios";
+import "../../sass/invitation-list.scss";
 import InvitationList from "./InvitationList";
 import InvitationSuccess from "./InvitationSuccess";
 
-export default function InvitationBlock() {
+export default function Invitation() {
   const [users, setUsers] = useState([]);
   const [invites, setInvites] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -11,21 +12,22 @@ export default function InvitationBlock() {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    fetch("https://reqres.in/api/users")
-      .then((res) => res.json())
-      .then((json) => {
-        setUsers(json.data);
-      })
-      .catch((err) => {
-        console.warn(err);
-        alert("Wrong with users");
-      })
-      .finally(() => setLoading(false));
+    async function fetchUsers() {
+      try {
+        const { data } = await axios.get("https://reqres.in/api/users");
+        setUsers(data.data);
+      } catch (err) {
+        alert(err);
+      }
+    }
+    fetchUsers();
+    setLoading(false);
   }, []);
 
   const onChangeSearchValue = (event) => {
     setSearchValue(event.target.value);
   };
+
   const onClickInvite = (id) => {
     if (invites.includes(id)) {
       setInvites((prev) => prev.filter((_id) => _id !== id));
