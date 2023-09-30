@@ -18,12 +18,7 @@ While I'm still in the early stages of my development journey, I've embarked on 
 ### [Project 1: Monticello](https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/)
 - Description: "Monticello" became my project where I could merge my passion for web development with the beauty of art.
 - Technologies Used: HTML, CSS, JavaScript, jQuery, BEM.
-- [https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/build/]
-
-### [Project 2: Project Name](link to repository)
-- Description: A brief description of the project and its objectives.
-- Technologies Used: Mention the programming languages, frameworks, and tools applied.
-- [Demo](link to a live example, if available)
+- [Demo](https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/build/)
 
 ## Get in Touch
 
