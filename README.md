@@ -15,8 +15,8 @@ While I may be a junior developer, my enthusiasm and eagerness to learn drive me
 
 While I'm still in the early stages of my development journey, I've embarked on several projects to apply and enhance my skills:
 
-### [Project 1: Monticelдo](https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/)
-- Description: "Monticelдo" became my project where I could merge my passion for web development with the beauty of art.
+### [Project 1: Monticello](https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/)
+- Description: "Monticello" became my project where I could merge my passion for web development with the beauty of art.
 - Technologies Used: HTML, CSS, JavaScript, jQuery, BEM.
 - [https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/build/]
 
