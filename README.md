@@ -15,10 +15,11 @@ While I may be a junior developer, my enthusiasm and eagerness to learn drive me
 
 While I'm still in the early stages of my development journey, I've embarked on several projects to apply and enhance my skills:
 
-### [Project 1: Monticello](https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/)
-- Description: "Monticello" became my project where I could merge my passion for web development with the beauty of art.
-- Technologies Used: HTML, CSS, JavaScript, jQuery, BEM.
-- [Demo](https://nazarbuzyl.github.io/nazarbuzyl/monticello-website/build/)
+**Project 1: Nazar Blog**: A full-stack [blogging platform](https://github.com/NazarBuzyl/buzyl-blog-frontend) for effortless post creation, user-friendly interface, and post filtering by popularity. Explore in-depth content on dedicated [post pages](https://github.com/NazarBuzyl/buzyl-blog-backend).
+
+- **Front-End (FE)**: [React](https://reactjs.org/), [Redux](https://redux.js.org/), [Material-UI (MUI)](https://mui.com/), [Axios](https://axios-http.com/), and more.
+- **Back-End (BE)**: [Node.js](https://nodejs.org/), [Express](https://expressjs.com/), [MongoDB](https://www.mongodb.com/), and more.
+- **Demo**: [Explore Nazar Blog](https://buzyl-blog-frontend.vercel.app/)
 
 ## Get in Touch
 
